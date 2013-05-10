@@ -1,11 +1,3 @@
-//
-//  DetailViewController.m
-//  ios
-//
-//  Created by George Dean on 5/10/13.
-//  Copyright (c) 2013 George Dean. All rights reserved.
-//
-
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
@@ -40,12 +32,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
