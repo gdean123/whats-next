@@ -11,6 +11,9 @@ describe "asking to be a beta tester" do
     click_on 'Be a beta tester'
 
     page.should have_content 'Thank you'
-    BetaTester.find_by_email('user@example.com').should_not be_nil
+
+    beta_tester = BetaTester.find_by_email('user@example.com')
+    beta_tester.should_not be_nil
+    beta_tester.application.should == 'live_data'
   end
 end

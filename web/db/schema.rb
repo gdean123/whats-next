@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130530001028) do
+ActiveRecord::Schema.define(version: 20130530002750) do
 
   create_table "beta_testers", force: true do |t|
     t.string "email"
+    t.string "application"
   end
 
 end
