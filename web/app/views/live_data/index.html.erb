@@ -1,7 +1,10 @@
-<h1>Collect live data from your audience</h1>
+<div class="hero-unit">
+  <h1>Collect live data from your audience</h1>
+  <p>Ask questions and see the results rendered directly on your slide</p>
+</div>
 
-<%= form_tag("/beta_tester", :method => "post") do %>
-    <%= text_field_tag 'email', nil, :placeholder => 'Enter your email' %>
+<%= form_tag("/beta_tester", :method => "post", :class => 'well') do %>
     <%= hidden_field_tag 'application', 'live_data' %>
-    <%= submit_tag("Be a beta tester") %>
+    <%= text_field_tag 'email', nil, :placeholder => 'Enter your email', :class => 'text-xlarge' %>
+    <%= submit_tag("Be a beta tester", :class => 'btn-xlarge btn-primary') %>
 <% end %>
