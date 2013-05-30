@@ -1,5 +1,6 @@
 Web::Application.routes.draw do
-  root :to => 'live_data#index'
+  root 'live_data#index'
+  resource :beta_tester, :only => [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
