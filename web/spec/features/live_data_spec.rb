@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe "asking to be a beta tester" do
   it "records me as an interested party" do
-    BetaTester.find_by_email('user@example.com').should be_nil
+    visit '/admin'
+    page.should have_content "live_data: 0"
 
     visit '/live_data'
     page.should have_content 'Collect live data from your audience'
@@ -12,8 +13,7 @@ describe "asking to be a beta tester" do
 
     page.should have_content 'Thank you'
 
-    beta_tester = BetaTester.find_by_email('user@example.com')
-    beta_tester.should_not be_nil
-    beta_tester.application.should == 'live_data'
+    visit '/admin'
+    page.should have_content "live_data: 1"
   end
 end
