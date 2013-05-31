@@ -1,5 +1,7 @@
 Web::Application.routes.draw do
-  root 'live_data#index'
+  get 'live_data' => 'potential_applications#index', :potential_application => 'live_data'
+  get 'slide_saver' => 'potential_applications#index', :potential_application => 'slide_saver'
+
   resource :beta_tester, :only => [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
