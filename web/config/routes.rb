@@ -1,4 +1,5 @@
 Web::Application.routes.draw do
+  get 'admin'  => "admin#index"
   get 'live_data' => 'potential_applications#index', :potential_application => 'live_data'
   get 'slide_saver' => 'potential_applications#index', :potential_application => 'slide_saver'
 
