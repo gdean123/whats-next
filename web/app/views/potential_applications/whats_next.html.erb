@@ -1,0 +1,21 @@
+<% content_for :body_style do %>
+    mural
+<% end %>
+
+<br />
+
+<div class="row">
+  <div class="span8">
+    <h1><%= @title %></h1>
+    <p><%= @subtitle %></p>
+
+    <%= form_tag("/beta_tester", :method => "post", :class => 'push-down') do %>
+        <%= hidden_field_tag 'application', @potential_application %>
+        <%= text_field_tag 'email', nil, :placeholder => 'Enter your email', :class => 'text-xlarge' %>
+        <%= submit_tag("Be a beta tester", :class => 'btn-xlarge btn-primary', :style => "float:right") %>
+    <% end %>
+  </div>
+  <div class="span3 offset1">
+    <%= youtube_tag @video_id, @video_orientation %>
+  </div>
+</div>

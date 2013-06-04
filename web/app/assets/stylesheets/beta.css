@@ -1,0 +1,36 @@
+.mural {
+    background: url(bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');*/
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";*/
+    color: rgb(255, 255, 255);
+}
+
+.mural h1 {
+    font-weight: 400;
+    font-size: 70px;
+    color: inherit;
+    text-shadow: 0 0px 12px rgba(36, 36, 36, 0.55);
+    padding: 0px 0 40px 0;
+}
+
+
+.mural p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+    text-shadow: 0 0px 12px rgba(24, 24, 24, 1);
+}
+
+.mural .text-xlarge {
+    padding: 22px 28px;
+    width: 290px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}

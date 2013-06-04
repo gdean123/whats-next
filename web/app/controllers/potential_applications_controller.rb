@@ -15,10 +15,13 @@ class PotentialApplicationsController < ApplicationController
         @video_id = 'L4rETpPWgtY'
       when 'whats_next'
         @title = 'Find unique experiences near you'
-        @subtitle = 'Get inspired! Browse and recommend cool experiences near you.'
+        @subtitle = 'Checking out a mural in the mission. Hanging out with the parrots of telegraph hill. ' +
+                    'Running the lyon street steps. The next time you have a great experience you snap a photo,' +
+                    ' add a tagline, and share the idea with others.'
         @potential_application = 'whats_next'
-        @video_orientation = :horizontal
+        @video_orientation = :extra_tall
         @video_id = 'WlYT7sVoZmk'
+        render 'whats_next'
     end
   end
 end
