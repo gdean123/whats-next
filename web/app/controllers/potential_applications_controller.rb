@@ -13,6 +13,12 @@ class PotentialApplicationsController < ApplicationController
         @potential_application = 'slide_saver'
         @video_orientation = :vertical
         @video_id = 'L4rETpPWgtY'
+      when 'whats_next'
+        @title = 'Find unique experiences near you'
+        @subtitle = 'Get inspired! Browse and recommend cool experiences near you.'
+        @potential_application = 'whats_next'
+        @video_orientation = :horizontal
+        @video_id = 'WlYT7sVoZmk'
     end
   end
 end

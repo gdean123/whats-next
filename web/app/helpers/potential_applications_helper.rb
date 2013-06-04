@@ -7,6 +7,9 @@ module PotentialApplicationsHelper
       when :vertical
         width = 480
         height = 360
+      when :extra_tall
+        width = 480
+        height = 640
     end
 
     tag("iframe",
