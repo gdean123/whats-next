@@ -20,6 +20,13 @@
 		5E827895173D77F900C34000 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E827893173D77F900C34000 /* MainStoryboard.storyboard */; };
 		5E827898173D77F900C34000 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E827897173D77F900C34000 /* MasterViewController.m */; };
 		5E82789B173D77F900C34000 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E82789A173D77F900C34000 /* DetailViewController.m */; };
+		9E2C8D5F1762D70A00190A4D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8278A2173D77FA00C34000 /* SenTestingKit.framework */; };
+		9E2C8D601762D70A00190A4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787F173D77F900C34000 /* CoreGraphics.framework */; };
+		9E2C8D611762D70A00190A4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787B173D77F900C34000 /* UIKit.framework */; };
+		9E2C8D621762D70A00190A4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787D173D77F900C34000 /* Foundation.framework */; };
+		9E2C8D681762D70A00190A4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E2C8D661762D70A00190A4D /* InfoPlist.strings */; };
+		9E2C8D6A1762D70A00190A4D /* ExampleSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C8D691762D70A00190A4D /* ExampleSpec.mm */; };
+		9E2C8D6D1762D70B00190A4D /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2C8D6C1762D70B00190A4D /* Cedar-iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,13 @@
 		5E827899173D77F900C34000 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5E82789A173D77F900C34000 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5E8278A2173D77FA00C34000 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9E2C8D5E1762D70A00190A4D /* specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E2C8D651762D70A00190A4D /* specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "specs-Info.plist"; sourceTree = "<group>"; };
+		9E2C8D671762D70A00190A4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9E2C8D691762D70A00190A4D /* ExampleSpec.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ExampleSpec.mm; sourceTree = "<group>"; };
+		9E2C8D6B1762D70A00190A4D /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		9E2C8D6C1762D70B00190A4D /* Cedar-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Cedar-iOS.framework"; path = "Frameworks/Cedar-iOS.framework"; sourceTree = "<group>"; };
+		9E2C8D6E1762D70B00190A4D /* specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "specs-Prefix.pch"; sourceTree = "<group>"; };
 		B0EDC89F118140FC8C89ACF0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7B54470C504370ADB40E16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -58,6 +72,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9E2C8D5A1762D70A00190A4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2C8D5F1762D70A00190A4D /* SenTestingKit.framework in Frameworks */,
+				9E2C8D601762D70A00190A4D /* CoreGraphics.framework in Frameworks */,
+				9E2C8D611762D70A00190A4D /* UIKit.framework in Frameworks */,
+				9E2C8D621762D70A00190A4D /* Foundation.framework in Frameworks */,
+				9E2C8D6D1762D70B00190A4D /* Cedar-iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				5E827881173D77F900C34000 /* ios */,
+				9E2C8D631762D70A00190A4D /* specs */,
 				5E82787A173D77F900C34000 /* Frameworks */,
 				5E827879173D77F900C34000 /* Products */,
 				FC7B54470C504370ADB40E16 /* Pods.xcconfig */,
@@ -75,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				5E827878173D77F900C34000 /* ios.app */,
+				9E2C8D5E1762D70A00190A4D /* specs.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +148,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9E2C8D631762D70A00190A4D /* specs */ = {
+			isa = PBXGroup;
+			children = (
+				9E2C8D691762D70A00190A4D /* ExampleSpec.mm */,
+				9E2C8D6B1762D70A00190A4D /* Rakefile */,
+				9E2C8D6C1762D70B00190A4D /* Cedar-iOS.framework */,
+				9E2C8D641762D70A00190A4D /* Supporting Files */,
+			);
+			path = specs;
+			sourceTree = "<group>";
+		};
+		9E2C8D641762D70A00190A4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9E2C8D651762D70A00190A4D /* specs-Info.plist */,
+				9E2C8D661762D70A00190A4D /* InfoPlist.strings */,
+				9E2C8D6E1762D70B00190A4D /* specs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +190,24 @@
 			productName = ios;
 			productReference = 5E827878173D77F900C34000 /* ios.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9E2C8D5D1762D70A00190A4D /* specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E2C8D6F1762D70B00190A4D /* Build configuration list for PBXNativeTarget "specs" */;
+			buildPhases = (
+				9E2C8D591762D70A00190A4D /* Sources */,
+				9E2C8D5A1762D70A00190A4D /* Frameworks */,
+				9E2C8D5B1762D70A00190A4D /* Resources */,
+				9E2C8D5C1762D70A00190A4D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = specs;
+			productName = specs;
+			productReference = 9E2C8D5E1762D70A00190A4D /* specs.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -164,6 +231,7 @@
 			projectRoot = "";
 			targets = (
 				5E827877173D77F900C34000 /* ios */,
+				9E2C8D5D1762D70A00190A4D /* specs */,
 			);
 		};
 /* End PBXProject section */
@@ -178,6 +246,14 @@
 				5E827890173D77F900C34000 /* Default@2x.png in Resources */,
 				5E827892173D77F900C34000 /* Default-568h@2x.png in Resources */,
 				5E827895173D77F900C34000 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E2C8D5B1762D70A00190A4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2C8D681762D70A00190A4D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +273,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+		9E2C8D5C1762D70A00190A4D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 		D08E815D0E19476BACA415B6 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -226,6 +315,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9E2C8D591762D70A00190A4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2C8D6A1762D70A00190A4D /* ExampleSpec.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -243,6 +340,14 @@
 				5E827894173D77F900C34000 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		9E2C8D661762D70A00190A4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E2C8D671762D70A00190A4D /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -328,6 +433,52 @@
 			};
 			name = Release;
 		};
+		9E2C8D701762D70B00190A4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios.app/ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/specs/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "specs/specs-Prefix.pch";
+				INFOPLIST_FILE = "specs/specs-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9E2C8D711762D70B00190A4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios.app/ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/specs/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "specs/specs-Prefix.pch";
+				INFOPLIST_FILE = "specs/specs-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -348,6 +499,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9E2C8D6F1762D70B00190A4D /* Build configuration list for PBXNativeTarget "specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E2C8D701762D70B00190A4D /* Debug */,
+				9E2C8D711762D70B00190A4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
