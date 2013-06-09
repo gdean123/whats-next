@@ -1,13 +1,9 @@
-//
-//  Experience.h
-//  ios
-//
-//  Created by George Dean on 6/9/13.
-//  Copyright (c) 2013 George Dean. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface Experience : NSObject
+
+@property (strong, nonatomic) NSString *tagline;
+
+- (Experience *)initWithDictionary:(NSDictionary *)experienceDictionary;
 
 @end
