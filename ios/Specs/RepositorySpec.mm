@@ -9,7 +9,7 @@ using namespace Cedar::Doubles;
 @property (strong, nonatomic) NSString *name;
 
 - (NSDictionary *)serialize;
-+ (FakeModel *)deserialize:(NSDictionary *)attributes;
++ (id)deserialize:(NSDictionary *)attributes;
 
 @end
 
@@ -20,7 +20,7 @@ using namespace Cedar::Doubles;
     return @{@"name": name};
 }
 
-+ (FakeModel *)deserialize:(NSDictionary *)attributes {
++ (id)deserialize:(NSDictionary *)attributes {
     FakeModel *fakeModel = [[FakeModel alloc] init];
     fakeModel.name = attributes[@"name"];
     return fakeModel;
