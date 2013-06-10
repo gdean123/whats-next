@@ -1,4 +1,7 @@
 Web::Application.routes.draw do
+
+  resources :experience, :only => [:index, :show, :create, :update] do
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
