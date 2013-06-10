@@ -32,6 +32,8 @@
 		9E2C8D8F1762DE6300190A4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C8D8C1762DE6300190A4D /* main.m */; };
 		9E2C8D961762DF0100190A4D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E2C8D951762DF0100190A4D /* MainStoryboard.storyboard */; };
 		9E2C8D9E1762E0AD00190A4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E2C8D9B1762E0AD00190A4D /* InfoPlist.strings */; };
+		9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
+		9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		9E2C8D9B1762E0AD00190A4D /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "App/Supporting Files/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		9E2C8D9C1762E0AD00190A4D /* ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ios-Info.plist"; path = "App/Supporting Files/ios-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9E2C8D9D1762E0AD00190A4D /* ios-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ios-Prefix.pch"; path = "App/Supporting Files/ios-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		9E5CFE0317654FC4001D0BF0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = App/Models/Model.h; sourceTree = SOURCE_ROOT; };
+		9E5CFE0417654FC4001D0BF0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = App/Models/Model.m; sourceTree = SOURCE_ROOT; };
 		FC7B54470C504370ADB40E16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -237,6 +241,8 @@
 				5EFCCF8317653C4500E6B5D1 /* Experience.m */,
 				5EFCCF89176542AE00E6B5D1 /* Repository.h */,
 				5EFCCF8A176542AE00E6B5D1 /* Repository.m */,
+				9E5CFE0317654FC4001D0BF0 /* Model.h */,
+				9E5CFE0417654FC4001D0BF0 /* Model.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 				9E2C8D8F1762DE6300190A4D /* main.m in Sources */,
 				5EFCCF8417653C4500E6B5D1 /* Experience.m in Sources */,
 				5EFCCF8B176542AE00E6B5D1 /* Repository.m in Sources */,
+				9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +436,7 @@
 				5EFCCF8517653C4500E6B5D1 /* Experience.m in Sources */,
 				5EFCCF881765429300E6B5D1 /* RepositorySpec.mm in Sources */,
 				5EFCCF8C176542AE00E6B5D1 /* Repository.m in Sources */,
+				9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

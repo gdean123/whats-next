@@ -1,21 +1,50 @@
 #import "Repository.h"
+#import "Model.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
+
+@interface FakeModel : Model
+
+@property (strong, nonatomic) NSString *name;
+
+- (NSDictionary *)serialize;
++ (FakeModel *)deserialize:(NSDictionary *)attributes;
+
+@end
+
+@implementation FakeModel
+@synthesize name;
+
+- (NSDictionary *)serialize {
+    return @{@"name": name};
+}
+
++ (FakeModel *)deserialize:(NSDictionary *)attributes {
+    FakeModel *fakeModel = [[FakeModel alloc] init];
+    fakeModel.name = attributes[@"name"];
+    return fakeModel;
+}
+
+@end
 
 SPEC_BEGIN(RepositorySpec)
 
 describe(@"Repository", ^{
     __block Repository *repository;
+    __block FakeModel *fakeModel;
 
     beforeEach(^{
-        repository = [[Repository alloc] init];
+        fakeModel = [[FakeModel alloc] init];
+        fakeModel.name = @"Experience";
+        repository = [[Repository alloc] initWithModel:fakeModel];
+        
     });
     
     it(@"can retrieve a saved model", ^{
-        // Save a model with an attribute (returns an id?)
-        // Retrieve the model
-        // Assert that the attribute is the same
+        int objectId = [repository save];
+        FakeModel *retrievedModel = [FakeModel deserialize:[repository retrieve:objectId]];
+        retrievedModel.name should equal(@"Experience");        
     });
 });
 
