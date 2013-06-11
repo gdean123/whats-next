@@ -10,20 +10,6 @@
 
 @implementation Model
 
-- (id) init
-{
-    if ([self class] == [Model class])
-    {
-        @throw [NSException exceptionWithName:@"ModelInitialization"
-                                       reason:@"Abstract class Model cannot be initiated"
-                                     userInfo:nil];
-    }
-    
-    self = [super init];
-    
-    return self;
-}
-
 - (NSDictionary *)serialize
 {
     @throw [NSException exceptionWithName:@"NonimplementedMethod"
@@ -31,10 +17,10 @@
                                  userInfo:nil];
 }
 
-- (id)deserialize:(NSDictionary *)attributes
+- (id)initWithDictionary:(NSDictionary *)attributes
 {
     @throw [NSException exceptionWithName:@"NonimplementedMethod"
-                                   reason:@"deserialize is not implemented"
+                                   reason:@"initWithDictionary is not implemented"
                                  userInfo:nil];
 
 }

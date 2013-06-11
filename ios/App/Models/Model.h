@@ -10,9 +10,7 @@
 
 @interface Model : NSObject
 
-- (id) init;
-
 - (NSDictionary *)serialize;
-- (id)deserialize:(NSDictionary *)attributes;
+- (id)initWithDictionary:(NSDictionary *)attributes;
 
 @end
