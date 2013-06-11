@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "Model.h"
 
-@interface Experience : NSObject
+@interface Experience : Model
 
 @property (strong, nonatomic) NSString *tagline;
 

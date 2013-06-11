@@ -1,50 +1,25 @@
 #import "Repository.h"
 #import "Model.h"
+#import "Experience.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-@interface FakeModel : Model
-
-@property (strong, nonatomic) NSString *name;
-
-- (NSDictionary *)serialize;
-+ (id)deserialize:(NSDictionary *)attributes;
-
-@end
-
-@implementation FakeModel
-@synthesize name;
-
-- (NSDictionary *)serialize {
-    return @{@"name": name};
-}
-
-+ (id)deserialize:(NSDictionary *)attributes {
-    FakeModel *fakeModel = [[FakeModel alloc] init];
-    fakeModel.name = attributes[@"name"];
-    return fakeModel;
-}
-
-@end
-
 SPEC_BEGIN(RepositorySpec)
 
 describe(@"Repository", ^{
-    __block Repository *repository;
-    __block FakeModel *fakeModel;
-
-    beforeEach(^{
-        fakeModel = [[FakeModel alloc] init];
-        fakeModel.name = @"Experience";
-        repository = [[Repository alloc] initWithModel:fakeModel];
-        
-    });
-    
     it(@"can retrieve a saved model", ^{
-        int objectId = [repository save];
-        FakeModel *retrievedModel = [FakeModel deserialize:[repository retrieve:objectId]];
-        retrievedModel.name should equal(@"Experience");        
+        Experience *modelToCreate = [[Experience alloc] init];
+        modelToCreate.tagline = @"Run the Lyon Street stairs";
+        Repository *createRepository = [[Repository alloc] initWithModel:modelToCreate];
+        int objectId = [createRepository save];
+
+        [Poller waitForModel:]
+        
+        Experience *retrievedModel = [[Experience alloc] init];
+        Repository *retrieveRepository = [[Repository alloc] initWithModel:retrievedModel];
+        [retrieveRepository retrieve:objectId];
+        retrievedModel.tagline should equal(@"Run the Lyon Street stairs");
     });
 });
 

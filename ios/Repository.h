@@ -5,9 +5,9 @@
 @interface Repository : NSObject
 
 - (Repository *)initWithModel:(Model *)someModel;
-- (int)save;
+- (void)create;
 // return a dictionary of attributes
-- (NSDictionary *)retrieve:(int)objectId;
+- (void)retrieve:(int)objectId;
 
 @end
 

@@ -19,7 +19,10 @@ describe(@"Model", ^{
     it(@"should throw an execption when initWithDictionary is not overridden", ^{
         expect(^{(void)[model initWithDictionary:@{@"name": @"Experience"}];}).to(raise_exception.with_reason(@"initWithDictionary is not implemented"));
     });
-
+    
+    it(@"should throw an exception when path is not overridden", ^{
+        expect(^{(void)[model path];}).to(raise_exception.with_reason(@"path is not implemented"));
+    });
 });
 
 SPEC_END

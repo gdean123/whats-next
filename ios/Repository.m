@@ -1,8 +1,13 @@
 #import "Repository.h"
+#import "Model.h"
+#import <AFNetworking/AFNetworking.h>
+
 
 // private properties
-@interface Repository()
+@interface Repository ()
+
 @property (strong, nonatomic) Model* model;
+
 @end
 
 @implementation Repository
@@ -16,15 +21,24 @@
     return repository;
 }
 
-- (int)save
+- (void)create
 {
-    return 0;
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:3000/" ]];
+    
+    NSURLRequest* postRequest = [httpClient requestWithMethod:@"POST" path:[self.model path] parameters:nil];
+    
+    AFJSONRequestOperation* operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:postRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+
+    }];
+    
+    [operation start];
 }
 
-- (NSDictionary *)retrieve:(int)objectId
-{
-    // hardcoded a value here and shoule be replaced with real implementation.
-    return @{@"name": @"Experience"};
+- (void)retrieve:(int)objectId
+{    
 }
 
 @end
