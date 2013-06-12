@@ -35,6 +35,7 @@
 		9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0B17657134001D0BF0 /* ModelSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */; };
+		9EB0277D176708A8009F9477 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB0277C176708A8009F9477 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		9E5CFE0317654FC4001D0BF0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = App/Models/Model.h; sourceTree = SOURCE_ROOT; };
 		9E5CFE0417654FC4001D0BF0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = App/Models/Model.m; sourceTree = SOURCE_ROOT; };
 		9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ModelSpec.mm; path = Models/ModelSpec.mm; sourceTree = "<group>"; };
+		9EB0277C176708A8009F9477 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		FC7B54470C504370ADB40E16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				5E82787C173D77F900C34000 /* UIKit.framework in Frameworks */,
 				5E82787E173D77F900C34000 /* Foundation.framework in Frameworks */,
 				5E827880173D77F900C34000 /* CoreGraphics.framework in Frameworks */,
+				9EB0277D176708A8009F9477 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +128,7 @@
 		5E82787A173D77F900C34000 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				9EB0277C176708A8009F9477 /* libPods.a */,
 				5EFCCF7A1765379400E6B5D1 /* Cedar-iOS.framework */,
 				5E82787B173D77F900C34000 /* UIKit.framework */,
 				5E82787D173D77F900C34000 /* Foundation.framework */,
@@ -537,6 +541,7 @@
 		};
 		5EF8DF40176534D3009393E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -560,6 +565,7 @@
 		};
 		5EF8DF41176534D3009393E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 				FRAMEWORK_SEARCH_PATHS = (
