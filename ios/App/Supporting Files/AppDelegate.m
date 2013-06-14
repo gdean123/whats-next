@@ -7,12 +7,39 @@
 //
 
 #import "AppDelegate.h"
+#import <RestKit/RestKit.h>
+#include "Experience.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //let AFNetworking manage the activity indicator
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    
+    // Initialize HTTPClient
+    NSURL *baseURL = [NSURL URLWithString:@"http://localhost:3000"];
+    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    //we want to work with JSON-Data
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    
+    // Initialize RestKit
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    
     // Override point for customization after application launch.
+    RKObjectMapping *experienceMapping = [RKObjectMapping mappingForClass:[Experience class]];
+    [experienceMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"dbId",
+     @"tagline" : @"tagline",     
+     }];
+    
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:experienceMapping
+                                                                                       pathPattern:@"/experience/1"
+                                                                                           keyPath:nil
+                                                                                       statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseDescriptor];   
+    
+    
     return YES;
 }
 							

@@ -1,1 +1,2 @@
 pod 'AFNetworking', '~> 1.2.1'
+pod 'RestKit', '~> 0.20.0rc'

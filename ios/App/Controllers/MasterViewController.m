@@ -9,6 +9,8 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import <RestKit/RestKit.h>
+#include "Experience.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -30,6 +32,24 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager getObjectsAtPath:@"/experience/1"
+                         parameters:nil
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                NSArray* experiences = [mappingResult array];
+                                NSLog(@"Loaded statuses: %@", ((Experience *)[experiences objectAtIndex:0]).tagline);
+                                
+                            }
+                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                message:[error localizedDescription]
+                                                                               delegate:nil
+                                                                      cancelButtonTitle:@"OK"
+                                                                      otherButtonTitles:nil];
+                                [alert show];
+                                NSLog(@"Hit error: %@", error);
+                            }];
 }
 
 - (void)didReceiveMemoryWarning
