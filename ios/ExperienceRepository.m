@@ -40,7 +40,18 @@
     [manager addResponseDescriptor:responseDescriptor];
     
     // POST to create
-    [manager postObject:self.model path:@"/experiences" parameters:nil success:nil failure:nil];
+    
+    void (^success)(RKObjectRequestOperation*, RKMappingResult*) = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        Experience *experience = [[mappingResult array] objectAtIndex:0];
+        self.model.dbId = experience.dbId;
+        NSLog(@"================> RETURNED ID: %@", self.model.dbId);
+    };
+    
+    void (^failure)(RKObjectRequestOperation *, NSError *) = ^(RKObjectRequestOperation *operation, NSError *error) {
+        NSLog(@"================> FAILURE");
+    };
+    
+    [manager postObject:self.model path:@"/experiences" parameters:nil success:success failure:failure];
 }
 
 - (Experience*)getModel:(NSNumber *)id
