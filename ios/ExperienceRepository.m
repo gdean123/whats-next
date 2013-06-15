@@ -1,15 +1,7 @@
 #import "ExperienceRepository.h"
 #import "Experience.h"
 
-@interface ExperienceRepository ()
-
-@property (strong, nonatomic) Model* model;
-
-@end
-
 @implementation ExperienceRepository
-
-@synthesize model;
 
 - (void)create:(Model *)model
 {
@@ -25,7 +17,7 @@
     
     RKObjectMapping *requestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
     [requestMapping addAttributeMappingsFromDictionary:@{
-     @"id":          @"dbId",
+     @"dbId":          @"id",
      @"tagline":     @"tagline",
      }];
     
@@ -43,15 +35,15 @@
     
     void (^success)(RKObjectRequestOperation*, RKMappingResult*) = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         Experience *experience = (Experience *)[[mappingResult array] objectAtIndex:0];
-        self.model.dbId = experience.dbId;
-        NSLog(@"================> RETURNED ID: %@", self.model.dbId);
+        model.dbId = experience.dbId;
+        NSLog(@"================> RETURNED ID: %@", model.dbId);
     };
     
     void (^failure)(RKObjectRequestOperation *, NSError *) = ^(RKObjectRequestOperation *operation, NSError *error) {
         NSLog(@"================> FAILURE");
     };
     
-    [manager postObject:self.model path:@"/experiences" parameters:nil success:success failure:failure];
+    [manager postObject:model path:@"/experiences" parameters:nil success:success failure:failure];
 }
 
 - (Experience*)getModel:(NSNumber *)id

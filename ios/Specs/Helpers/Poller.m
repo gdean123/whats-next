@@ -9,6 +9,8 @@
         NSLog(@"Waiting for model creation");
         sleep(1);
     };
+    
+    NSLog(@"================> RETURNED ID: %@", modelToCreate.dbId);
 }
 
 @end
