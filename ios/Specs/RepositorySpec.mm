@@ -1,24 +1,22 @@
-#import "Repository.h"
+#import "ExperienceRepository.h"
 #import "Model.h"
 #import "Experience.h"
+#import "Poller.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
 
-SPEC_BEGIN(RepositorySpec)
+SPEC_BEGIN(ExperienceRepositorySpec)
 
-describe(@"Repository", ^{
+describe(@"ExperienceRepository", ^{
     it(@"can retrieve a saved model", ^{
-        Experience *modelToCreate = [[Experience alloc] init];
-        modelToCreate.tagline = @"Run the Lyon Street stairs";
-        Repository *createRepository = [[Repository alloc] initWithModel:modelToCreate];
-        int objectId = [createRepository save];
-
-        [Poller waitForModel:]
+        ExperienceRepository *repository = [[ExperienceRepository alloc] init];
+        Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
+        [repository create:modelToCreate];
         
-        Experience *retrievedModel = [[Experience alloc] init];
-        Repository *retrieveRepository = [[Repository alloc] initWithModel:retrievedModel];
-        [retrieveRepository retrieve:objectId];
+        [Poller waitForCreation:modelToCreate];
+        
+        Experience *retrievedModel = [repository getModel:modelToCreate.dbId];
         retrievedModel.tagline should equal(@"Run the Lyon Street stairs");
     });
 });

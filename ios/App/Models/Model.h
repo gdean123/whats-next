@@ -2,8 +2,8 @@
 
 @interface Model : NSObject
 
-- (NSDictionary *)serialize;
-- (id)initWithDictionary:(NSDictionary *)attributes;
+@property (assign, nonatomic) NSNumber *dbId;
+
 - (NSString *)path;
 
 @end

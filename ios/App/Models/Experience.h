@@ -5,8 +5,6 @@
 
 @property (copy, nonatomic) NSString *tagline;
 
-@property (copy, nonatomic) NSNumber *dbId;
-
 - (Experience *)initWithDictionary:(NSDictionary *)experienceDictionary;
 
 @end

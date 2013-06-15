@@ -3,7 +3,6 @@
 @implementation Experience
 
 @synthesize tagline;
-@synthesize dbId;
 
 - (Experience *)initWithDictionary:(NSDictionary *)experienceDictionary
 {

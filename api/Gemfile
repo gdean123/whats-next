@@ -4,7 +4,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0.rc1'
 gem 'pg'
 
-group :test do
+group :development, :test do
   gem "rspec-rails"
   gem "capybara"
   gem "factory_girl_rails", '~> 4.2.0'
