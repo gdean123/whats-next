@@ -17,7 +17,7 @@ describe(@"Model", ^{
     });
     
     it(@"starts with an NULL dbId", ^{
-        expect(model.dbId).to(equal(@1));
+        expect(model.dbId).to(equal(NULL));
     });
 });
 
