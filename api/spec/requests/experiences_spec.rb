@@ -11,9 +11,12 @@ describe "Experiences" do
     result["tagline"].should == @experience.tagline
   end
 
-  it "creates an experience" do
-      lambda {
-        post "/experiences", { tagline: @experience.tagline }
-      }.should change(Experience, :count).by(1)
+  it "creates an experience and renders the id" do
+    lambda {
+      post "/experiences", { tagline: @experience.tagline }
+    }.should change(Experience, :count).by(1)
+
+    result = JSON.parse(response.body)
+    result["id"].should == Experience.last.id
   end
 end
