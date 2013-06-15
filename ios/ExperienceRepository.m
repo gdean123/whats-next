@@ -9,7 +9,7 @@
 
 @implementation ExperienceRepository
 
-- (ExperienceRepository *) init
+- (ExperienceRepository *)init
 {
     self = [super init];
     
@@ -22,7 +22,7 @@
          @"tagline":     @"tagline",
          }];
         
-        RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:nil keyPath:nil statusCodes:successStatusCodes];
+        RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences/1" keyPath:nil statusCodes:successStatusCodes];
         
         RKObjectMapping *requestMapping = [RKObjectMapping requestMapping];
         [requestMapping addAttributeMappingsFromDictionary:@{
@@ -32,8 +32,11 @@
         
         RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[Experience class] rootKeyPath:nil];
         
-        NSURL *url = [NSURL URLWithString:@"http://localhost:3000"];
-        self.manager = [RKObjectManager managerWithBaseURL:url];
+        NSURL *baseURL = [NSURL URLWithString:@"http://localhost:3000"];
+        AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+        [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+
+        self.manager = [[RKObjectManager alloc] initWithHTTPClient:client];
         
         [self.manager addRequestDescriptor:requestDescriptor];
         [self.manager addResponseDescriptor:responseDescriptor];
@@ -56,7 +59,17 @@
 
 - (Experience*)getModel:(NSNumber *)id
 {
-    return NULL;
+    [self.manager getObjectsAtPath:@"/experiences/1"
+                         parameters:nil
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                NSArray* experiences = [mappingResult array];
+                                NSLog(@"========> Loaded experience: %@", ((Experience *)[experiences objectAtIndex:0]).tagline);
+                            }
+                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                NSLog(@"========> Error");
+                            }];
+
+    return [[Experience alloc] init];
 }
 
 @end

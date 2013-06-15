@@ -24,7 +24,7 @@
 		5EFCCF8117653A5B00E6B5D1 /* ExperienceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8017653A5B00E6B5D1 /* ExperienceSpec.mm */; };
 		5EFCCF8417653C4500E6B5D1 /* Experience.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8317653C4500E6B5D1 /* Experience.m */; };
 		5EFCCF8517653C4500E6B5D1 /* Experience.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8317653C4500E6B5D1 /* Experience.m */; };
-		5EFCCF881765429300E6B5D1 /* RepositorySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF861765429300E6B5D1 /* RepositorySpec.mm */; };
+		5EFCCF881765429300E6B5D1 /* ExperienceRepositorySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF861765429300E6B5D1 /* ExperienceRepositorySpec.mm */; };
 		5EFCCF8B176542AE00E6B5D1 /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8A176542AE00E6B5D1 /* ExperienceRepository.m */; };
 		5EFCCF8C176542AE00E6B5D1 /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8A176542AE00E6B5D1 /* ExperienceRepository.m */; };
 		9E2C8D7D1762DE4000190A4D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C8D7A1762DE4000190A4D /* DetailViewController.m */; };
@@ -62,7 +62,7 @@
 		5EFCCF8017653A5B00E6B5D1 /* ExperienceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceSpec.mm; path = Models/ExperienceSpec.mm; sourceTree = "<group>"; };
 		5EFCCF8217653C4500E6B5D1 /* Experience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Experience.h; path = App/Models/Experience.h; sourceTree = SOURCE_ROOT; };
 		5EFCCF8317653C4500E6B5D1 /* Experience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Experience.m; path = App/Models/Experience.m; sourceTree = SOURCE_ROOT; };
-		5EFCCF861765429300E6B5D1 /* RepositorySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RepositorySpec.mm; sourceTree = "<group>"; };
+		5EFCCF861765429300E6B5D1 /* ExperienceRepositorySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ExperienceRepositorySpec.mm; sourceTree = "<group>"; };
 		5EFCCF89176542AE00E6B5D1 /* ExperienceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceRepository.h; sourceTree = SOURCE_ROOT; };
 		5EFCCF8A176542AE00E6B5D1 /* ExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceRepository.m; sourceTree = SOURCE_ROOT; };
 		9E2C8D791762DE4000190A4D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = App/Controllers/DetailViewController.h; sourceTree = SOURCE_ROOT; };
@@ -82,7 +82,7 @@
 		9E5CFE0317654FC4001D0BF0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = App/Models/Model.h; sourceTree = SOURCE_ROOT; };
 		9E5CFE0417654FC4001D0BF0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = App/Models/Model.m; sourceTree = SOURCE_ROOT; };
 		9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ModelSpec.mm; path = Models/ModelSpec.mm; sourceTree = "<group>"; };
-		9EDEDC20176C2D5C00B012D6 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		9EDEDC20176C2D5C00B012D6 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EDEDC22176C2DFD00B012D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FC7B54470C504370ADB40E16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -229,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				5EFCCF8017653A5B00E6B5D1 /* ExperienceSpec.mm */,
-				5EFCCF861765429300E6B5D1 /* RepositorySpec.mm */,
+				5EFCCF861765429300E6B5D1 /* ExperienceRepositorySpec.mm */,
 				9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */,
 			);
 			name = Models;
@@ -466,7 +466,7 @@
 			files = (
 				5EFCCF8117653A5B00E6B5D1 /* ExperienceSpec.mm in Sources */,
 				5EFCCF8517653C4500E6B5D1 /* Experience.m in Sources */,
-				5EFCCF881765429300E6B5D1 /* RepositorySpec.mm in Sources */,
+				5EFCCF881765429300E6B5D1 /* ExperienceRepositorySpec.mm in Sources */,
 				5EFCCF8C176542AE00E6B5D1 /* ExperienceRepository.m in Sources */,
 				9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */,
 				9E5CFE0B17657134001D0BF0 /* ModelSpec.mm in Sources */,
