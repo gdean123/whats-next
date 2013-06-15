@@ -25,8 +25,8 @@
     
     RKObjectMapping *requestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
     [requestMapping addAttributeMappingsFromDictionary:@{
-     @"dbId":          @"id",
-     @"tagline":       @"tagline",
+     @"id":          @"dbId",
+     @"tagline":     @"tagline",
      }];
     
     // For any object of class Experience, serialize into an NSMutableDictionary using the given mapping and nest
@@ -42,7 +42,7 @@
     // POST to create
     
     void (^success)(RKObjectRequestOperation*, RKMappingResult*) = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        Experience *experience = [[mappingResult array] objectAtIndex:0];
+        Experience *experience = (Experience *)[[mappingResult array] objectAtIndex:0];
         self.model.dbId = experience.dbId;
         NSLog(@"================> RETURNED ID: %@", self.model.dbId);
     };
