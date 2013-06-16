@@ -16,8 +16,19 @@ describe(@"ExperienceRepository", ^{
         
         [Poller waitForCreation:modelToCreate];
         
-        Experience *retrievedModel = [repository getModel:modelToCreate.dbId];
-        retrievedModel.tagline should equal(@"Run the Lyon Street stairs");
+        __block Experience *experience;
+        
+        [repository getModel:modelToCreate.dbId
+                     success:^( Experience * e){
+                         experience = e;                         
+                     }
+                     failure:^( NSError * error){
+                         NSLog(@">>>>>>>>>>>>>>>Error: %@", error);
+                     }];
+        
+        [Poller waitForGet:experience];
+
+        experience.tagline should equal(@"Run the Lyon Street stairs");
     });
 });
 

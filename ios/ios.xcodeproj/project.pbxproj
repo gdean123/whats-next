@@ -39,7 +39,10 @@
 		9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0B17657134001D0BF0 /* ModelSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */; };
-		9EDEDC21176C2D5C00B012D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDEDC20176C2D5C00B012D6 /* libPods.a */; };
+		9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCC176D4D4F0065EFF9 /* libPods.a */; };
+		9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
+		9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
+		9EC03BD2176D59330065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BD1176D59330065EFF9 /* libPods.a */; };
 		9EDEDC23176C2DFD00B012D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDEDC22176C2DFD00B012D6 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +85,9 @@
 		9E5CFE0317654FC4001D0BF0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = App/Models/Model.h; sourceTree = SOURCE_ROOT; };
 		9E5CFE0417654FC4001D0BF0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = App/Models/Model.m; sourceTree = SOURCE_ROOT; };
 		9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ModelSpec.mm; path = Models/ModelSpec.mm; sourceTree = "<group>"; };
-		9EDEDC20176C2D5C00B012D6 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9EC03BD1176D59330065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EDEDC22176C2DFD00B012D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FC7B54470C504370ADB40E16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -92,7 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EDEDC21176C2D5C00B012D6 /* libPods.a in Frameworks */,
+				9EC03BD2176D59330065EFF9 /* libPods.a in Frameworks */,
+				9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */,
 				5E83CEF8176C033C00D49DAC /* MobileCoreServices.framework in Frameworks */,
 				5E83CEF4176C032700D49DAC /* SystemConfiguration.framework in Frameworks */,
 				5E82787C173D77F900C34000 /* UIKit.framework in Frameworks */,
@@ -105,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */,
+				9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */,
 				9EDEDC23176C2DFD00B012D6 /* CoreData.framework in Frameworks */,
 				5E83CEFA176C071800D49DAC /* MobileCoreServices.framework in Frameworks */,
 				5E83CEF9176C071100D49DAC /* SystemConfiguration.framework in Frameworks */,
@@ -142,8 +150,10 @@
 		5E82787A173D77F900C34000 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				9EC03BD1176D59330065EFF9 /* libPods.a */,
+				9EC03BCC176D4D4F0065EFF9 /* libPods.a */,
+				9EC03BCE176D4D990065EFF9 /* Security.framework */,
 				9EDEDC22176C2DFD00B012D6 /* CoreData.framework */,
-				9EDEDC20176C2D5C00B012D6 /* libPods.a */,
 				5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */,
 				5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */,
 				5EFCCF7A1765379400E6B5D1 /* Cedar-iOS.framework */,

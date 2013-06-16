@@ -6,6 +6,6 @@
 
 - (ExperienceRepository *) init;
 - (void)create:(Model *)model;
-- (Experience*)getModel:(NSNumber *)id;
+- (void)getModel:(NSNumber *)id success:(void ( ^ ) ( Experience * ))success failure:(void ( ^ ) ( NSError *error ))failure;
 
 @end

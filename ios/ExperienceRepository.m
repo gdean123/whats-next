@@ -22,7 +22,10 @@
          @"tagline":     @"tagline",
          }];
         
-        RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences" keyPath:nil statusCodes:successStatusCodes];
+        // Will match Post and Get index
+        RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences" keyPath:nil statusCodes:successStatusCodes],
+        
+        *responseDescriptor1 = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences/:id" keyPath:nil statusCodes:successStatusCodes];
         
         RKObjectMapping *requestMapping = [RKObjectMapping requestMapping];
         [requestMapping addAttributeMappingsFromDictionary:@{
@@ -40,6 +43,7 @@
         
         [self.manager addRequestDescriptor:requestDescriptor];
         [self.manager addResponseDescriptor:responseDescriptor];
+        [self.manager addResponseDescriptor:responseDescriptor1];
     }
 
     return self;
@@ -57,19 +61,20 @@
     [self.manager postObject:model path:@"/experiences" parameters:nil success:success failure:failure];
 }
 
-- (Experience*)getModel:(NSNumber *)id
+- (void)getModel:(NSNumber *)id success:(void ( ^ ) ( Experience * ))success failure:(void ( ^ ) ( NSError *error ))failure
 {
-    [self.manager getObjectsAtPath:@"/experiences/1"
+    NSString *path = [NSString stringWithFormat:@"/experiences/%@", id];
+    [self.manager getObjectsAtPath:path
                          parameters:nil
                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                 NSArray* experiences = [mappingResult array];
                                 NSLog(@"========> Loaded experience: %@", ((Experience *)[experiences objectAtIndex:0]).tagline);
+                                success((Experience *)[experiences objectAtIndex:0]);
                             }
                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                NSLog(@"========> Error");
-                            }];
-
-    return [[Experience alloc] init];
+                                NSLog(@"========> Error: %@", error);
+                                failure(error);
+                            }];   
 }
 
 @end
