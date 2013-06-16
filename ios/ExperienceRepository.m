@@ -22,7 +22,7 @@
          @"tagline":     @"tagline",
          }];
         
-        RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences/1" keyPath:nil statusCodes:successStatusCodes];
+        RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences" keyPath:nil statusCodes:successStatusCodes];
         
         RKObjectMapping *requestMapping = [RKObjectMapping requestMapping];
         [requestMapping addAttributeMappingsFromDictionary:@{
