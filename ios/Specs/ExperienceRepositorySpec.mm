@@ -17,16 +17,20 @@ describe(@"ExperienceRepository", ^{
         [Poller waitForCreation:modelToCreate];
         
         __block Experience *experience;
+
+        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
         
         [repository getModel:modelToCreate.dbId
                      success:^( Experience * e){
-                         experience = e;                         
+                         experience = e;
+                         
+                         // Done waiting
+                         dispatch_semaphore_signal(sema);
                      }
-                     failure:^( NSError * error){
-                         NSLog(@">>>>>>>>>>>>>>>Error: %@", error);
-                     }];
+                     failure:NULL];
         
-        [Poller waitForGet:experience];
+        // Wait
+        while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) { [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]]; }
 
         experience.tagline should equal(@"Run the Lyon Street stairs");
     });

@@ -11,12 +11,4 @@
     };
 }
 
-+ (void)waitForGet:(Model *)modelToGet
-{
-    while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true) && modelToGet.dbId == NULL){
-        NSLog(@"Waiting for model get");
-        sleep(1);
-    };
-}
-
 @end
