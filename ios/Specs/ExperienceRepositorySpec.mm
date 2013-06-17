@@ -18,9 +18,11 @@ describe(@"ExperienceRepository", ^{
     it(@"can retrieve a saved model", ^{
         ExperienceRepository *repository = [[ExperienceRepository alloc] init];
         Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
-        [repository create:modelToCreate];
-        
-        [Poller waitForCreation:modelToCreate];
+
+        [repository create:modelToCreate then:^(Experience * e){
+            [poller doneWaiting];
+        }];
+        [poller wait];
         
         __block Experience *experience;
         

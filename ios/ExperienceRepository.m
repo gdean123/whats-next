@@ -49,16 +49,13 @@
     return self;
 }
 
-- (void)create:(Model *)model
+- (void)create:(Experience *)experience then:(void (^) (Experience *))successBlock
 {
     void (^success)(RKObjectRequestOperation*, RKMappingResult*) = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        Experience *experience = (Experience *)[[mappingResult array] objectAtIndex:0];
-        model.dbId = experience.dbId;
+        successBlock(experience);
     };
     
-    void (^failure)(RKObjectRequestOperation *, NSError *) = ^(RKObjectRequestOperation *operation, NSError *error) {};
-    
-    [self.manager postObject:model path:@"/experiences" parameters:nil success:success failure:failure];
+    [self.manager postObject:experience path:@"/experiences" parameters:nil success:success failure:NULL];
 }
 
 - (void)get:(NSNumber *)id then:(void (^) (Experience *))successBlock

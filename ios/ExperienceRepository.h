@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 
-@class Model, Experience;
+@class Experience;
 
 @interface ExperienceRepository : NSObject
 
 - (ExperienceRepository *) init;
-- (void)create:(Model *)model;
+- (void)create:(Experience *)experience then:(void (^) (Experience *))successBlock;
 - (void)get:(NSNumber *)id then:(void (^) (Experience *))successBlock;
 
 @end
