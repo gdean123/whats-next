@@ -60,13 +60,11 @@
 - (void)get:(NSNumber *)id then:(void (^) (Experience *))successBlock
 {
     NSString *path = [NSString stringWithFormat:@"/experiences/%@", id];
-    [self.manager getObjectsAtPath:path
-                         parameters:nil
-                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                Experience* retrievedExperience = (Experience *)[[mappingResult array] objectAtIndex:0];
-                                successBlock(retrievedExperience);
-                            }
-                            failure:nil];
+
+    [self.manager getObject:NULL path:path parameters:NULL success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        Experience* retrievedExperience = (Experience *)[[mappingResult array] objectAtIndex:0];
+        successBlock(retrievedExperience);
+    } failure:NULL];
 }
 
 - (void)destroy:(Experience *)experience then:(void (^) ())successBlock
