@@ -1,7 +1,7 @@
 #import "ExperienceRepository.h"
 #import "Model.h"
 #import "Experience.h"
-#import "Poller.h"
+#import "Blocker.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -9,10 +9,10 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(ExperienceRepositorySpec)
 
 describe(@"ExperienceRepository", ^{
-    __block Poller *poller;
+    __block Blocker *blocker;
     
     beforeEach(^{
-        poller = [[Poller alloc] init];
+        blocker = [[Blocker alloc] init];
     });
     
     it(@"can retrieve a saved model", ^{
@@ -20,19 +20,19 @@ describe(@"ExperienceRepository", ^{
         Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
 
         [repository create:modelToCreate then:^(Experience * e){
-            [poller doneWaiting];
+            [blocker doneWaiting];
         }];
-        [poller wait];
+        [blocker wait];
         
         __block Experience *experience;
         
         [repository get:modelToCreate.dbId
                    then:^(Experience * e){
                          experience = e;
-                         [poller doneWaiting];
+                         [blocker doneWaiting];
                      }];
         
-        [poller wait];
+        [blocker wait];
 
         experience.tagline should equal(@"Run the Lyon Street stairs");
     });

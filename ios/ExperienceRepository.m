@@ -22,10 +22,9 @@
          @"tagline":     @"tagline",
          }];
         
-        // Will match Post and Get index
-        RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences" keyPath:nil statusCodes:successStatusCodes],
+        RKResponseDescriptor *postResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences" keyPath:nil statusCodes:successStatusCodes];
         
-        *responseDescriptor1 = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences/:id" keyPath:nil statusCodes:successStatusCodes];
+        RKResponseDescriptor *getResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences/:id" keyPath:nil statusCodes:successStatusCodes];
         
         RKObjectMapping *requestMapping = [RKObjectMapping requestMapping];
         [requestMapping addAttributeMappingsFromDictionary:@{
@@ -42,8 +41,8 @@
         self.manager = [[RKObjectManager alloc] initWithHTTPClient:client];
         
         [self.manager addRequestDescriptor:requestDescriptor];
-        [self.manager addResponseDescriptor:responseDescriptor];
-        [self.manager addResponseDescriptor:responseDescriptor1];
+        [self.manager addResponseDescriptor:postResponseDescriptor];
+        [self.manager addResponseDescriptor:getResponseDescriptor];
     }
 
     return self;

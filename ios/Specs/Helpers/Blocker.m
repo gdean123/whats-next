@@ -1,15 +1,15 @@
-#import "Poller.h"
+#import "Blocker.h"
 #import "Model.h"
 
-@interface Poller()
+@interface Blocker()
 
 @property (strong, nonatomic) dispatch_semaphore_t semaphore;
 
 @end
 
-@implementation Poller
+@implementation Blocker
 
-- (Poller *) init
+- (Blocker *)init
 {
     self = [super init];
     
@@ -18,14 +18,6 @@
     }
     
     return self;
-}
-
-+ (void)waitForCreation:(Model *)modelToCreate
-{
-    while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true) && modelToCreate.dbId == NULL){
-        NSLog(@"Waiting for model creation");
-        sleep(1);
-    };
 }
 
 - (void)wait
