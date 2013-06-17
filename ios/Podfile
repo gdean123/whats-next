@@ -1,2 +1,13 @@
+platform :ios, '5.0'
+
+# Link libPods to both App and Specs instead of just the default target
+link_with %w{App Specs}
+
 pod 'AFNetworking', '~> 1.2.1'
 pod 'RestKit', '~> 0.20.0rc'
+
+# Link libPods-test to my Specs target only
+target :test, :exclusive => true do
+    link_with "Specs"
+    pod 'OCMock', '~> 2.1.1'
+end
