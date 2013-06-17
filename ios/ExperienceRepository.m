@@ -69,4 +69,10 @@
                             failure:nil];
 }
 
+- (void)destroy:(Experience *)experience then:(void (^) ())successBlock
+{
+    NSString *path = [NSString stringWithFormat:@"/experiences/%@", experience.dbId];
+    [self.manager deleteObject:NULL path:path parameters:NULL success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) { successBlock(); } failure:NULL];
+}
+
 @end

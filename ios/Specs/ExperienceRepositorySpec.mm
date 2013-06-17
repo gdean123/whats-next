@@ -37,11 +37,17 @@ describe(@"ExperienceRepository", ^{
         [blocker wait];
         return retrievedExperience;
     };
+
+    void(^deleteExperience)(Experience *) = ^(Experience *experience) {
+        [repository destroy:experience then:^(){ [blocker doneWaiting];} ];
+        [blocker wait];
+    };
     
-    it(@"can retrieve a saved model", ^{
+    it(@"can retrieve a saved experience", ^{
         Experience *createdExperience = createExperienceWithTagline(@"Run the Lyon Street stairs");
         Experience *retrievedExperience = getExperienceWithId(createdExperience.dbId);
         retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
+        deleteExperience(createdExperience);
     });
 });
 

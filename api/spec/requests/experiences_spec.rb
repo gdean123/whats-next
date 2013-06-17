@@ -19,4 +19,11 @@ describe "Experiences" do
     result = JSON.parse(response.body)
     result["id"].should == Experience.last.id
   end
+
+  it "deletes an experience" do
+    experience = FactoryGirl.create(:experience)
+    expect {
+      delete "/experiences/#{experience.id}"
+    }.to change(Experience, :count).by(-1)
+  end
 end

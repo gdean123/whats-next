@@ -8,4 +8,9 @@ class ExperiencesController < ApplicationController
     experience = Experience.create(tagline: params[:tagline])
     render :json=>{:id=> experience.id}
   end
+
+  def destroy
+    Experience.find(params[:id]).destroy
+    head 200
+  end
 end
