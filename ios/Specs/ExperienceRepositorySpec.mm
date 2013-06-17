@@ -24,12 +24,11 @@ describe(@"ExperienceRepository", ^{
         
         __block Experience *experience;
         
-        [repository getModel:modelToCreate.dbId
-                     success:^(Experience * e){
+        [repository get:modelToCreate.dbId
+                   then:^(Experience * e){
                          experience = e;
                          [poller doneWaiting];
-                     }
-                     failure:NULL];
+                     }];
         
         [poller wait];
 

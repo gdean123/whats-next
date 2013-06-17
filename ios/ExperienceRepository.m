@@ -61,20 +61,16 @@
     [self.manager postObject:model path:@"/experiences" parameters:nil success:success failure:failure];
 }
 
-- (void)getModel:(NSNumber *)id success:(void ( ^ ) ( Experience * ))success failure:(void ( ^ ) ( NSError *error ))failure
+- (void)get:(NSNumber *)id then:(void (^) (Experience *))successBlock
 {
     NSString *path = [NSString stringWithFormat:@"/experiences/%@", id];
     [self.manager getObjectsAtPath:path
                          parameters:nil
                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                NSArray* experiences = [mappingResult array];
-                                NSLog(@"========> Loaded experience: %@", ((Experience *)[experiences objectAtIndex:0]).tagline);
-                                success((Experience *)[experiences objectAtIndex:0]);
+                                Experience* retrievedExperience = (Experience *)[[mappingResult array] objectAtIndex:0];
+                                successBlock(retrievedExperience);
                             }
-                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                NSLog(@"========> Error: %@", error);
-                                failure(error);
-                            }];   
+                            failure:nil];
 }
 
 @end
