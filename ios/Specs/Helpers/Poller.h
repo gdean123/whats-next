@@ -6,4 +6,8 @@
 
 + (void)waitForCreation:(Model *)modelToCreate;
 
+- (Poller *) init;
+- (void)wait;
+- (void)doneWaiting;
+
 @end

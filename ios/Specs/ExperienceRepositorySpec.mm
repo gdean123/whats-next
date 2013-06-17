@@ -9,6 +9,12 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(ExperienceRepositorySpec)
 
 describe(@"ExperienceRepository", ^{
+    __block Poller *poller;
+    
+    beforeEach(^{
+        poller = [[Poller alloc] init];
+    });
+    
     it(@"can retrieve a saved model", ^{
         ExperienceRepository *repository = [[ExperienceRepository alloc] init];
         Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
@@ -17,20 +23,15 @@ describe(@"ExperienceRepository", ^{
         [Poller waitForCreation:modelToCreate];
         
         __block Experience *experience;
-
-        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
         
         [repository getModel:modelToCreate.dbId
-                     success:^( Experience * e){
+                     success:^(Experience * e){
                          experience = e;
-                         
-                         // Done waiting
-                         dispatch_semaphore_signal(sema);
+                         [poller doneWaiting];
                      }
                      failure:NULL];
         
-        // Wait
-        while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) { [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]]; }
+        [poller wait];
 
         experience.tagline should equal(@"Run the Lyon Street stairs");
     });
