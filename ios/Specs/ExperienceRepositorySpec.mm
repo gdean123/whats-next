@@ -9,32 +9,31 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(ExperienceRepositorySpec)
 
 describe(@"ExperienceRepository", ^{
+    __block ExperienceRepository *repository;
     __block Blocker *blocker;
     
     beforeEach(^{
+        repository = [[ExperienceRepository alloc] init];
         blocker = [[Blocker alloc] init];
     });
     
     it(@"can retrieve a saved model", ^{
-        ExperienceRepository *repository = [[ExperienceRepository alloc] init];
         Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
 
-        [repository create:modelToCreate then:^(Experience * e){
-            [blocker doneWaiting];
-        }];
+        [repository create:modelToCreate then:^(Experience * e){ [blocker doneWaiting]; }];
         [blocker wait];
         
-        __block Experience *experience;
+        __block Experience *retrievedExperience;
         
         [repository get:modelToCreate.dbId
                    then:^(Experience * e){
-                         experience = e;
+                         retrievedExperience = e;
                          [blocker doneWaiting];
                      }];
         
         [blocker wait];
 
-        experience.tagline should equal(@"Run the Lyon Street stairs");
+        retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
     });
 });
 
