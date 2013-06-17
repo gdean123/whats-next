@@ -17,22 +17,30 @@ describe(@"ExperienceRepository", ^{
         blocker = [[Blocker alloc] init];
     });
     
-    it(@"can retrieve a saved model", ^{
-        Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
-
+    Experience *(^createExperienceWithTagline)(NSString *) = ^(NSString *tagline) {
+        Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": tagline}];
         [repository create:modelToCreate then:^(Experience * e){ [blocker doneWaiting]; }];
         [blocker wait];
         
+        return modelToCreate;
+    };
+
+    Experience *(^getExperienceWithId)(NSNumber *) = ^(NSNumber *dbId) {
         __block Experience *retrievedExperience;
         
-        [repository get:modelToCreate.dbId
+        [repository get:dbId
                    then:^(Experience * e){
-                         retrievedExperience = e;
-                         [blocker doneWaiting];
-                     }];
+                       retrievedExperience = e;
+                       [blocker doneWaiting];
+                   }];
         
         [blocker wait];
-
+        return retrievedExperience;
+    };
+    
+    it(@"can retrieve a saved model", ^{
+        Experience *createdExperience = createExperienceWithTagline(@"Run the Lyon Street stairs");
+        Experience *retrievedExperience = getExperienceWithId(createdExperience.dbId);
         retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
     });
 });
