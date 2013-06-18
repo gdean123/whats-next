@@ -23,7 +23,7 @@ describe(@"ExperienceBrowserViewController", ^{
     it(@"renders the tagline returned by the ExperienceRepository", ^{
         ExperienceBrowserViewController *viewController = [[ExperienceBrowserViewController alloc] initWithRepository:repository];
         
-        taglineLabel.text should equal(@"Run the Lyon Street stairs");
+        viewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
     })
 });
 
