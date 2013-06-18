@@ -1,4 +1,5 @@
 #import "ExperienceBrowserViewController.h"
+#import "ExperienceRepository.h"
 #import "Experience.h"
 
 using namespace Cedar::Matchers;
@@ -7,10 +8,20 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(ExperienceBrowserViewControllerSpec)
 
 describe(@"ExperienceBrowserViewController", ^{
-    it(@"renders the tagline returned by the ExperienceRepository", ^{
-        Experience *experience = [Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
+    __block Experience *experience;
+    __block id repository;
+    
+    beforeEach(^{
+        experience = [Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
         
-        ExperienceBrowserViewController *viewController = [[ExperienceBrowserViewController alloc] initWithExperiences:@[experience]];
+        repository = [OCMockObject mockForClass:[ExperienceRepository class]];
+        [[[repository stub] andReturn:experience] get:@0 then:^(Experience *) {
+            
+        }];
+    });
+
+    it(@"renders the tagline returned by the ExperienceRepository", ^{
+        ExperienceBrowserViewController *viewController = [[ExperienceBrowserViewController alloc] initWithRepository:repository];
         
         taglineLabel.text should equal(@"Run the Lyon Street stairs");
     })
