@@ -1,24 +1,20 @@
-//
-//  ExperienceBrowserViewController.m
-//  ios
-//
-//  Created by Jason Leng on 6/17/13.
-//  Copyright (c) 2013 George Dean. All rights reserved.
-//
-
 #import "ExperienceBrowserViewController.h"
+#import "ExperienceRepository.h"
+#import "Experience.h"
 
 @interface ExperienceBrowserViewController ()
+
+@property (nonatomic, strong) ExperienceRepository *experienceRepository;
 
 @end
 
 @implementation ExperienceBrowserViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithRepository:(ExperienceRepository *)repository
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"ExperienceBrowserViewController" bundle:nil];
     if (self) {
-        // Custom initialization
+        self.experienceRepository = repository;
     }
     return self;
 }
@@ -27,6 +23,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.experienceRepository get:@10
+               then:^(Experience *e){
+                   self.taglineLabel.text = e.tagline;
+               }];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,13 +1,11 @@
-//
-//  ExperienceBrowserViewController.h
-//  ios
-//
-//  Created by Jason Leng on 6/17/13.
-//  Copyright (c) 2013 George Dean. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
+@class ExperienceRepository;
+
 @interface ExperienceBrowserViewController : UIViewController
+
+- (id)initWithRepository:(ExperienceRepository *)repository;
+
+@property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
 
 @end

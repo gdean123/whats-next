@@ -2,15 +2,18 @@
 #import <RestKit/RestKit.h>
 #include "Experience.h"
 #include "ExperienceBrowserViewController.h"
+#include "ExperienceRepository.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    ExperienceRepository *experienceRepository = [[ExperienceRepository alloc] init];
 
-    ExperienceBrowserViewController *masterViewController = [[ExperienceBrowserViewController alloc] initWithNibName:@"ExperienceBrowserViewController" bundle:nil];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    ExperienceBrowserViewController *experienceViewController = [[ExperienceBrowserViewController alloc] initWithRepository:experienceRepository];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:experienceViewController];
     self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];
