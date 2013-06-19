@@ -4,7 +4,7 @@
 
 @interface ExperienceBrowserViewController ()
 
-@property (nonatomic, strong) ExperienceRepository *experienceRepository;
+@property (nonatomic, strong) id<Repository> experienceRepository;
 
 @end
 
