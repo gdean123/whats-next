@@ -17,7 +17,7 @@ describe(@"ExperienceBrowserViewController", ^{
         
         void (^theBlock)(NSInvocation *) = ^(NSInvocation *invocation) {
             void (^then)(Experience *e) = nil;
-            [invocation getArgument:&then atIndex:1];
+            [invocation getArgument:&then atIndex:3];
             then(experience);
         }; 
                 
@@ -27,8 +27,7 @@ describe(@"ExperienceBrowserViewController", ^{
     it(@"renders the tagline returned by the ExperienceRepository", ^{
         ExperienceBrowserViewController *viewController = [[ExperienceBrowserViewController alloc] initWithRepository:repository];
         viewController.view should_not be_nil;
-        //[viewController.view setNeedsDisplay];
-        //viewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
+        viewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
     });
 });
 
