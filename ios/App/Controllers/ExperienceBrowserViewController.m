@@ -10,7 +10,7 @@
 
 @implementation ExperienceBrowserViewController
 
-- (id)initWithRepository:(ExperienceRepository *)repository
+- (id)initWithRepository:(id<Repository>)repository
 {
     self = [super initWithNibName:@"ExperienceBrowserViewController" bundle:nil];
     if (self) {
@@ -22,7 +22,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     [self.experienceRepository get:@10
                then:^(Experience *e){
                    self.taglineLabel.text = e.tagline;

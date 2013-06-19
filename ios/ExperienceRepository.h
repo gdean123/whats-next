@@ -1,8 +1,9 @@
 #import <Foundation/Foundation.h>
+#import "Repository.h"
 
 @class Experience;
 
-@interface ExperienceRepository : NSObject
+@interface ExperienceRepository : NSObject <Repository>
 
 - (ExperienceRepository *) init;
 

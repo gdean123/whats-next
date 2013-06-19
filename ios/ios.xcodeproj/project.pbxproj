@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		39F645E1E1C54D6981FFF0DB /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EB444B1E624FA1B3911503 /* libPods-test.a */; };
 		5E0EB6F9176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */; };
+		5E0EB6FD17713D7900E147EE /* FakeExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */; };
 		5E82787C173D77F900C34000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787B173D77F900C34000 /* UIKit.framework */; };
 		5E82787E173D77F900C34000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787D173D77F900C34000 /* Foundation.framework */; };
 		5E827880173D77F900C34000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787F173D77F900C34000 /* CoreGraphics.framework */; };
@@ -53,6 +54,9 @@
 		10AD608AB6D34C89BB8E3CEA /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
 		11EB444B1E624FA1B3911503 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceBrowserViewControllerSpec.mm; path = Controllers/ExperienceBrowserViewControllerSpec.mm; sourceTree = "<group>"; };
+		5E0EB6FB17713D7900E147EE /* FakeExperienceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeExperienceRepository.h; path = Fakes/FakeExperienceRepository.h; sourceTree = "<group>"; };
+		5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeExperienceRepository.m; path = Fakes/FakeExperienceRepository.m; sourceTree = "<group>"; };
+		5E0EB70217713EDA00E147EE /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repository.h; path = App/Interfaces/Repository.h; sourceTree = SOURCE_ROOT; };
 		5E827878173D77F900C34000 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E82787B173D77F900C34000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E82787D173D77F900C34000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,6 +144,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5E0EB6FA17713D5300E147EE /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				5E0EB6FB17713D7900E147EE /* FakeExperienceRepository.h */,
+				5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */,
+			);
+			name = Fakes;
+			sourceTree = "<group>";
+		};
 		5E82786F173D77F900C34000 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 		5EF8DF33176534D2009393E7 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				5E0EB6FA17713D5300E147EE /* Fakes */,
 				5E83CEED176BAF5800D49DAC /* Helpers */,
 				5EFCCF741765368300E6B5D1 /* Views */,
 				5EFCCF721765366500E6B5D1 /* Models */,
@@ -287,6 +301,7 @@
 		9E2C8D741762DDD100190A4D /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				5E0EB70217713EDA00E147EE /* Repository.h */,
 			);
 			name = Interfaces;
 			sourceTree = "<group>";
@@ -527,6 +542,7 @@
 				5E83CEF0176BAF7200D49DAC /* Blocker.m in Sources */,
 				5E0EB6F9176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm in Sources */,
 				9E0BFD5C177008A100ABA42F /* ExperienceBrowserViewController.m in Sources */,
+				5E0EB6FD17713D7900E147EE /* FakeExperienceRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
