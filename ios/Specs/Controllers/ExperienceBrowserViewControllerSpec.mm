@@ -1,6 +1,7 @@
 #import "ExperienceBrowserViewController.h"
 #import "FakeExperienceRepository.h"
 #import "Experience.h"
+#import "ExperienceViewController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -21,7 +22,8 @@ describe(@"ExperienceBrowserViewController", ^{
 
     it(@"renders the tagline returned by the ExperienceRepository", ^{
         repository.successBlock(experience);
-        controller.taglineLabel.text should equal(@"Run the Lyon Street stairs");
+        controller.currentExperienceViewController.taglinelabel.text should equal(@"Run the Lyon Street stairs");
+
     });
 });
 

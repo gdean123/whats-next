@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Repository.h"
 
-@class ExperienceRepository;
+@class ExperienceRepository, ExperienceViewController;
 
 @interface ExperienceBrowserViewController : UIViewController
 
@@ -9,4 +9,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
 
+@property (weak, nonatomic) ExperienceViewController *currentExperienceViewController;
+
 @end
+
+

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305E63EC17740622003189BB /* ExperienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E63EA17740622003189BB /* ExperienceViewController.m */; };
+		305E63ED17740622003189BB /* ExperienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305E63EA17740622003189BB /* ExperienceViewController.m */; };
+		305E63F1177406E2003189BB /* ExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E63F0177406E2003189BB /* ExperienceViewController.xib */; };
+		305E63F2177406E2003189BB /* ExperienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305E63F0177406E2003189BB /* ExperienceViewController.xib */; };
+		305E63F417740AA1003189BB /* ExperienceViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 305E63F317740AA1003189BB /* ExperienceViewControllerSpec.mm */; };
+		305E63F517740AA1003189BB /* ExperienceViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 305E63F317740AA1003189BB /* ExperienceViewControllerSpec.mm */; };
 		39F645E1E1C54D6981FFF0DB /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EB444B1E624FA1B3911503 /* libPods-test.a */; };
 		5E0EB6F9176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */; };
 		5E0EB6FD17713D7900E147EE /* FakeExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */; };
@@ -53,6 +59,10 @@
 /* Begin PBXFileReference section */
 		10AD608AB6D34C89BB8E3CEA /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
 		11EB444B1E624FA1B3911503 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		305E63E917740622003189BB /* ExperienceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceViewController.h; path = App/Controllers/ExperienceViewController.h; sourceTree = SOURCE_ROOT; };
+		305E63EA17740622003189BB /* ExperienceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceViewController.m; path = App/Controllers/ExperienceViewController.m; sourceTree = SOURCE_ROOT; };
+		305E63F0177406E2003189BB /* ExperienceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperienceViewController.xib; path = App/Views/ExperienceViewController.xib; sourceTree = SOURCE_ROOT; };
+		305E63F317740AA1003189BB /* ExperienceViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceViewControllerSpec.mm; path = Controllers/ExperienceViewControllerSpec.mm; sourceTree = "<group>"; };
 		5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceBrowserViewControllerSpec.mm; path = Controllers/ExperienceBrowserViewControllerSpec.mm; sourceTree = "<group>"; };
 		5E0EB6FB17713D7900E147EE /* FakeExperienceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeExperienceRepository.h; path = Fakes/FakeExperienceRepository.h; sourceTree = "<group>"; };
 		5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeExperienceRepository.m; path = Fakes/FakeExperienceRepository.m; sourceTree = "<group>"; };
@@ -247,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */,
+				305E63F317740AA1003189BB /* ExperienceViewControllerSpec.mm */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -287,6 +298,8 @@
 			children = (
 				9E0BFD59177008A100ABA42F /* ExperienceBrowserViewController.h */,
 				9E0BFD5A177008A100ABA42F /* ExperienceBrowserViewController.m */,
+				305E63E917740622003189BB /* ExperienceViewController.h */,
+				305E63EA17740622003189BB /* ExperienceViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +358,7 @@
 		9E2C8D781762DE0500190A4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				305E63F0177406E2003189BB /* ExperienceViewController.xib */,
 				9E0BFD561770088400ABA42F /* ExperienceBrowserViewController.xib */,
 			);
 			name = Views;
@@ -429,6 +443,7 @@
 				9E2C8D881762DE5800190A4D /* Default@2x.png in Resources */,
 				9E2C8D9E1762E0AD00190A4D /* InfoPlist.strings in Resources */,
 				9E0BFD571770088400ABA42F /* ExperienceBrowserViewController.xib in Resources */,
+				305E63F1177406E2003189BB /* ExperienceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +453,7 @@
 			files = (
 				5EFCCF78176536C000E6B5D1 /* InfoPlist.strings in Resources */,
 				9E0BFD581770088400ABA42F /* ExperienceBrowserViewController.xib in Resources */,
+				305E63F2177406E2003189BB /* ExperienceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +542,8 @@
 				5EFCCF8B176542AE00E6B5D1 /* ExperienceRepository.m in Sources */,
 				9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */,
 				9E0BFD5B177008A100ABA42F /* ExperienceBrowserViewController.m in Sources */,
+				305E63EC17740622003189BB /* ExperienceViewController.m in Sources */,
+				305E63F417740AA1003189BB /* ExperienceViewControllerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +561,8 @@
 				5E0EB6F9176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm in Sources */,
 				9E0BFD5C177008A100ABA42F /* ExperienceBrowserViewController.m in Sources */,
 				5E0EB6FD17713D7900E147EE /* FakeExperienceRepository.m in Sources */,
+				305E63ED17740622003189BB /* ExperienceViewController.m in Sources */,
+				305E63F517740AA1003189BB /* ExperienceViewControllerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

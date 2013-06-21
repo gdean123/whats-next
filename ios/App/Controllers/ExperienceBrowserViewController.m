@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.experienceRepository get:@10
+    [self.experienceRepository get:@2
                then:^(Experience *e){
                    self.taglineLabel.text = e.tagline;
                }];
