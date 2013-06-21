@@ -22,8 +22,7 @@ describe(@"ExperienceBrowserViewController", ^{
 
     it(@"renders the tagline returned by the ExperienceRepository", ^{
         repository.successBlock(experience);
-        controller.currentExperienceViewController.taglinelabel.text should equal(@"Run the Lyon Street stairs");
-
+        controller.currentExperienceViewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
     });
 });
 

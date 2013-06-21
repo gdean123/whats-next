@@ -24,15 +24,8 @@
     [super viewDidLoad];
     [self.experienceRepository get:@2
                then:^(Experience *e){
-                   self.taglineLabel.text = e.tagline;
+//                   self.taglineLabel.text = e.tagline;
                }];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

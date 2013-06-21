@@ -7,8 +7,6 @@
 
 - (id)initWithRepository:(id<Repository>)repository;
 
-@property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
-
 @property (weak, nonatomic) ExperienceViewController *currentExperienceViewController;
 
 @end

@@ -13,10 +13,11 @@ describe(@"ExperienceViewController", ^{
     beforeEach(^{
         experience = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
         controller = [[ExperienceViewController alloc] initWithExperience:experience];
+        [controller.view setNeedsDisplay];
     });
     
-    it(@"displays a tagline", ^{
-        controller.taglinelabel.text should equal(@"Run the Lyon Street stairs");
+    it(@"renders the tagline", ^{
+        controller.taglineLabel.text should equal(@"Run the Lyon Street stairs");
     });
 });
 

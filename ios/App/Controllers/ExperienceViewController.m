@@ -1,7 +1,9 @@
-
 #import "ExperienceViewController.h"
+#import "Experience.h"
 
 @interface ExperienceViewController ()
+
+@property (strong, nonatomic) Experience *experience;
 
 @end
 
@@ -11,7 +13,7 @@
 {
     self = [super initWithNibName:@"ExperienceViewController" bundle:nil];
     if (self) {
-        // Custom initialization
+        self.experience = experience;
     }
     return self;
 }
@@ -19,10 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.taglineLabel.text = self.experience.tagline;
 }
-
-
-
 
 @end
