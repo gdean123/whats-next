@@ -33,8 +33,6 @@
 		5EFCCF8417653C4500E6B5D1 /* Experience.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8317653C4500E6B5D1 /* Experience.m */; };
 		5EFCCF8517653C4500E6B5D1 /* Experience.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8317653C4500E6B5D1 /* Experience.m */; };
 		5EFCCF881765429300E6B5D1 /* ExperienceRepositorySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF861765429300E6B5D1 /* ExperienceRepositorySpec.mm */; };
-		5EFCCF8B176542AE00E6B5D1 /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8A176542AE00E6B5D1 /* ExperienceRepository.m */; };
-		5EFCCF8C176542AE00E6B5D1 /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFCCF8A176542AE00E6B5D1 /* ExperienceRepository.m */; };
 		9E0BFD571770088400ABA42F /* ExperienceBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0BFD561770088400ABA42F /* ExperienceBrowserViewController.xib */; };
 		9E0BFD581770088400ABA42F /* ExperienceBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0BFD561770088400ABA42F /* ExperienceBrowserViewController.xib */; };
 		9E0BFD5B177008A100ABA42F /* ExperienceBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0BFD5A177008A100ABA42F /* ExperienceBrowserViewController.m */; };
@@ -48,6 +46,8 @@
 		9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0B17657134001D0BF0 /* ModelSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */; };
+		9E689FA81775609700333DDA /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FA71775609700333DDA /* ExperienceRepository.m */; };
+		9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FA71775609700333DDA /* ExperienceRepository.m */; };
 		9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCC176D4D4F0065EFF9 /* libPods.a */; };
 		9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
 		9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
@@ -85,8 +85,6 @@
 		5EFCCF8217653C4500E6B5D1 /* Experience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Experience.h; path = App/Models/Experience.h; sourceTree = SOURCE_ROOT; };
 		5EFCCF8317653C4500E6B5D1 /* Experience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Experience.m; path = App/Models/Experience.m; sourceTree = SOURCE_ROOT; };
 		5EFCCF861765429300E6B5D1 /* ExperienceRepositorySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ExperienceRepositorySpec.mm; sourceTree = "<group>"; };
-		5EFCCF89176542AE00E6B5D1 /* ExperienceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceRepository.h; sourceTree = SOURCE_ROOT; };
-		5EFCCF8A176542AE00E6B5D1 /* ExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceRepository.m; sourceTree = SOURCE_ROOT; };
 		9E0BFD561770088400ABA42F /* ExperienceBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperienceBrowserViewController.xib; path = App/Views/ExperienceBrowserViewController.xib; sourceTree = SOURCE_ROOT; };
 		9E0BFD59177008A100ABA42F /* ExperienceBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceBrowserViewController.h; path = App/Controllers/ExperienceBrowserViewController.h; sourceTree = SOURCE_ROOT; };
 		9E0BFD5A177008A100ABA42F /* ExperienceBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceBrowserViewController.m; path = App/Controllers/ExperienceBrowserViewController.m; sourceTree = SOURCE_ROOT; };
@@ -102,6 +100,8 @@
 		9E5CFE0317654FC4001D0BF0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = App/Models/Model.h; sourceTree = SOURCE_ROOT; };
 		9E5CFE0417654FC4001D0BF0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = App/Models/Model.m; sourceTree = SOURCE_ROOT; };
 		9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ModelSpec.mm; path = Models/ModelSpec.mm; sourceTree = "<group>"; };
+		9E689FA61775609700333DDA /* ExperienceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceRepository.h; path = App/Models/ExperienceRepository.h; sourceTree = SOURCE_ROOT; };
+		9E689FA71775609700333DDA /* ExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceRepository.m; path = App/Models/ExperienceRepository.m; sourceTree = SOURCE_ROOT; };
 		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9EC03BD1176D59330065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -321,10 +321,10 @@
 		9E2C8D751762DDD900190A4D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E689FA61775609700333DDA /* ExperienceRepository.h */,
+				9E689FA71775609700333DDA /* ExperienceRepository.m */,
 				5EFCCF8217653C4500E6B5D1 /* Experience.h */,
 				5EFCCF8317653C4500E6B5D1 /* Experience.m */,
-				5EFCCF89176542AE00E6B5D1 /* ExperienceRepository.h */,
-				5EFCCF8A176542AE00E6B5D1 /* ExperienceRepository.m */,
 				9E5CFE0317654FC4001D0BF0 /* Model.h */,
 				9E5CFE0417654FC4001D0BF0 /* Model.m */,
 			);
@@ -538,10 +538,10 @@
 				9E2C8D8D1762DE6300190A4D /* AppDelegate.m in Sources */,
 				9E2C8D8F1762DE6300190A4D /* main.m in Sources */,
 				5EFCCF8417653C4500E6B5D1 /* Experience.m in Sources */,
-				5EFCCF8B176542AE00E6B5D1 /* ExperienceRepository.m in Sources */,
 				9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */,
 				9E0BFD5B177008A100ABA42F /* ExperienceBrowserViewController.m in Sources */,
 				305E63EC17740622003189BB /* ExperienceViewController.m in Sources */,
+				9E689FA81775609700333DDA /* ExperienceRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +552,6 @@
 				5EFCCF8117653A5B00E6B5D1 /* ExperienceSpec.mm in Sources */,
 				5EFCCF8517653C4500E6B5D1 /* Experience.m in Sources */,
 				5EFCCF881765429300E6B5D1 /* ExperienceRepositorySpec.mm in Sources */,
-				5EFCCF8C176542AE00E6B5D1 /* ExperienceRepository.m in Sources */,
 				9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */,
 				9E5CFE0B17657134001D0BF0 /* ModelSpec.mm in Sources */,
 				5E83CEF0176BAF7200D49DAC /* Blocker.m in Sources */,
@@ -561,6 +560,7 @@
 				5E0EB6FD17713D7900E147EE /* FakeExperienceRepository.m in Sources */,
 				305E63ED17740622003189BB /* ExperienceViewController.m in Sources */,
 				5E5822A717741873005EDA6F /* ExperienceViewControllerSpec.mm in Sources */,
+				9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
