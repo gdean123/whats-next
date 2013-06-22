@@ -2,6 +2,7 @@
 #import "Model.h"
 #import "Experience.h"
 #import "Blocker.h"
+#import "DatabaseCleaner.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -52,9 +53,16 @@ describe(@"ExperienceRepository", ^{
         [blocker wait];
     };
     
+    void(^cleanDatabase)() = ^() {
+        [DatabaseCleaner cleanThen:^(){ [blocker doneWaiting];} ];
+        [blocker wait];
+    };
+    
     beforeEach(^{
         repository = [[ExperienceRepository alloc] init];
         blocker = [[Blocker alloc] init];
+        
+        cleanDatabase();
         
         firstExperience = createExperienceWithTagline(@"Run the Lyon Street stairs");
         secondExperience = createExperienceWithTagline(@"Check out a mural in the mission");
