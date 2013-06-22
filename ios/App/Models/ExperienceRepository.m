@@ -34,7 +34,7 @@
         
         RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[Experience class] rootKeyPath:nil];
         
-        NSURL *baseURL = [NSURL URLWithString:@"http://localhost:3000"];
+        NSURL *baseURL = [NSURL URLWithString:ROOT_URL];
         AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
         [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
 
