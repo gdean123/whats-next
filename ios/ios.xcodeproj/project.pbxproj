@@ -48,6 +48,7 @@
 		9E5CFE0B17657134001D0BF0 /* ModelSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */; };
 		9E689FA81775609700333DDA /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FA71775609700333DDA /* ExperienceRepository.m */; };
 		9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FA71775609700333DDA /* ExperienceRepository.m */; };
+		9E689FB01775611900333DDA /* DatabaseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FAF1775611900333DDA /* DatabaseCleaner.m */; };
 		9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCC176D4D4F0065EFF9 /* libPods.a */; };
 		9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
 		9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
@@ -102,6 +103,8 @@
 		9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ModelSpec.mm; path = Models/ModelSpec.mm; sourceTree = "<group>"; };
 		9E689FA61775609700333DDA /* ExperienceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceRepository.h; path = App/Models/ExperienceRepository.h; sourceTree = SOURCE_ROOT; };
 		9E689FA71775609700333DDA /* ExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceRepository.m; path = App/Models/ExperienceRepository.m; sourceTree = SOURCE_ROOT; };
+		9E689FAE1775611900333DDA /* DatabaseCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseCleaner.h; path = Helpers/DatabaseCleaner.h; sourceTree = "<group>"; };
+		9E689FAF1775611900333DDA /* DatabaseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseCleaner.m; path = Helpers/DatabaseCleaner.m; sourceTree = "<group>"; };
 		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9EC03BD1176D59330065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 		5E83CEED176BAF5800D49DAC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9E689FAE1775611900333DDA /* DatabaseCleaner.h */,
+				9E689FAF1775611900333DDA /* DatabaseCleaner.m */,
 				5E83CEEE176BAF7200D49DAC /* Blocker.h */,
 				5E83CEEF176BAF7200D49DAC /* Blocker.m */,
 			);
@@ -561,6 +566,7 @@
 				305E63ED17740622003189BB /* ExperienceViewController.m in Sources */,
 				5E5822A717741873005EDA6F /* ExperienceViewControllerSpec.mm in Sources */,
 				9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */,
+				9E689FB01775611900333DDA /* DatabaseCleaner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
