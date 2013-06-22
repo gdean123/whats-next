@@ -8,6 +8,7 @@
 - (id)initWithRepository:(id<Repository>)repository;
 
 @property (strong, nonatomic) ExperienceViewController *currentExperienceViewController;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 

@@ -20,11 +20,19 @@ describe(@"ExperienceBrowserViewController", ^{
         [controller.view setNeedsDisplay];
     });
 
-    it(@"shows an experience", ^{
-        repository.successBlock(experience);
-        [controller.currentExperienceViewController.view setNeedsDisplay];
-
-        controller.currentExperienceViewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
+    context(@"when the request for an experience returns", ^{
+        beforeEach(^{
+            repository.successBlock(experience);
+            [controller.currentExperienceViewController.view setNeedsDisplay];
+        });
+        
+        it(@"shows an experience", ^{
+            controller.currentExperienceViewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
+        });
+        
+        it(@"adds the experience view as a subview of the scroll view", ^{
+            [controller.scrollView.subviews objectAtIndex:0] should equal(controller.currentExperienceViewController.view);
+        });
     });
 });
 

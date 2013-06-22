@@ -28,13 +28,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator = NO;
 }
 
 - (void)loadExperience
 {
-    [self.experienceRepository get:@2
+    [self.experienceRepository get:@10
                               then:^(Experience *experience) {
                                   self.currentExperienceViewController = [[ExperienceViewController alloc] initWithExperience:experience];
+                                  
+                                  [self.scrollView addSubview:self.currentExperienceViewController.view];
                               }];
 }
 @end
