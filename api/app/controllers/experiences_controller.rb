@@ -1,4 +1,8 @@
 class ExperiencesController < ApplicationController
+  def index
+    render :json => Experience.all
+  end
+
   def show
     experience = Experience.find_by_id params[:id]
     render :json => experience
