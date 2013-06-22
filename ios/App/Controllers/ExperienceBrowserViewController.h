@@ -7,7 +7,7 @@
 
 - (id)initWithRepository:(id<Repository>)repository;
 
-@property (weak, nonatomic) ExperienceViewController *currentExperienceViewController;
+@property (strong, nonatomic) ExperienceViewController *currentExperienceViewController;
 
 @end
 
