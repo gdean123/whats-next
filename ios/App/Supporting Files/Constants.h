@@ -13,4 +13,8 @@
 #define ROOT_URL @"http://production.example.com"
 #endif
 
+#ifdef TEST
+#define ROOT_URL @"http://localhost:3000"
+#endif
+
 #endif

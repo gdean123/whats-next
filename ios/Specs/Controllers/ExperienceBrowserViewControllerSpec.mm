@@ -28,12 +28,16 @@ describe(@"ExperienceBrowserViewController", ^{
             [controller.currentExperienceViewController.view setNeedsDisplay];
         });
         
-        fit(@"shows an experience", ^{
+        it(@"shows an experience", ^{
             controller.currentExperienceViewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
         });
         
         it(@"adds the experience view as a subview of the scroll view", ^{
             [controller.scrollView.subviews objectAtIndex:0] should equal(controller.currentExperienceViewController.view);
+        });
+        
+        it(@"scroll view should have two subviews", ^{
+            [controller.scrollView.subviews count] should equal(2);
         });
     });
 });

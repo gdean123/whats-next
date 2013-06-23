@@ -15,7 +15,7 @@
 
     ExperienceBrowserViewController *experienceViewController = [[ExperienceBrowserViewController alloc] initWithRepository:experienceRepository];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:experienceViewController];
-    NSLog(@"we are logging from APPDELEGATE");
+
     self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];
