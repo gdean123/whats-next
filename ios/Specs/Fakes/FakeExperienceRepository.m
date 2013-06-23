@@ -2,7 +2,8 @@
 
 @implementation FakeExperienceRepository
 
-- (void)get:(NSNumber *)id then:(void (^) (Experience *))successBlock
+
+- (void)getAllThen:(void (^) (NSArray *experiences))successBlock
 {
     self.successBlock = successBlock;
 }

@@ -11,10 +11,12 @@ SPEC_BEGIN(ExperienceBrowserViewControllerSpec)
 describe(@"ExperienceBrowserViewController", ^{
     __block ExperienceBrowserViewController *controller;
     __block FakeExperienceRepository *repository;
-    __block Experience *experience;
+    __block Experience *firstExperience;
+    __block Experience *secondExperience;
     
     beforeEach(^{
-        experience = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
+        firstExperience = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
+        secondExperience = [[Experience alloc] initWithDictionary:@{@"tagline": @"Check out the mural in the Mission"}];
         repository = [[FakeExperienceRepository alloc] init];
         controller = [[ExperienceBrowserViewController alloc] initWithRepository:repository];
         [controller.view setNeedsDisplay];
@@ -22,11 +24,11 @@ describe(@"ExperienceBrowserViewController", ^{
 
     context(@"when the request for an experience returns", ^{
         beforeEach(^{
-            repository.successBlock(experience);
+            repository.successBlock(@[firstExperience, secondExperience]);
             [controller.currentExperienceViewController.view setNeedsDisplay];
         });
         
-        it(@"shows an experience", ^{
+        fit(@"shows an experience", ^{
             controller.currentExperienceViewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
         });
         

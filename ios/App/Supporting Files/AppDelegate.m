@@ -4,16 +4,18 @@
 #include "ExperienceBrowserViewController.h"
 #include "ExperienceRepository.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
     ExperienceRepository *experienceRepository = [[ExperienceRepository alloc] init];
 
     ExperienceBrowserViewController *experienceViewController = [[ExperienceBrowserViewController alloc] initWithRepository:experienceRepository];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:experienceViewController];
+    NSLog(@"we are logging from APPDELEGATE");
     self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];

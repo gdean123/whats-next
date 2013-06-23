@@ -4,8 +4,8 @@
 
 @interface FakeExperienceRepository : NSObject <Repository>
 
-@property (strong, nonatomic) void (^successBlock)(Experience *);
+@property (strong, nonatomic) void (^successBlock)(NSArray *);
 
-- (void)get:(NSNumber *)id then:(void (^) (Experience *))successBlock;
+- (void)getAllThen:(void (^) (NSArray *experiences))successBlock;
 
 @end

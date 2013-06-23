@@ -35,11 +35,11 @@
 
 - (void)loadExperience
 {
-    [self.experienceRepository get:@10
-                              then:^(Experience *experience) {
-                                  self.currentExperienceViewController = [[ExperienceViewController alloc] initWithExperience:experience];
-                                  
-                                  [self.scrollView addSubview:self.currentExperienceViewController.view];
-                              }];
+    [self.experienceRepository getAllThen:^(NSArray *experiences) {
+        Experience *experience = [[Experience alloc] initWithDictionary:@{@"tagline": @"This is a damn test!"}];
+        self.currentExperienceViewController = [[ExperienceViewController alloc] initWithExperience:experience];
+    
+        [self.scrollView addSubview:self.currentExperienceViewController.view];
+    }];
 }
 @end
