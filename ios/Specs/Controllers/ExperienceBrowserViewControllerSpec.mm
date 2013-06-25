@@ -32,11 +32,14 @@ describe(@"ExperienceBrowserViewController", ^{
             controller.currentExperienceViewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
         });
         
-        it(@"adds the experience view as a subview of the scroll view", ^{
-            [controller.scrollView.subviews objectAtIndex:0] should equal(controller.currentExperienceViewController.view);
+        it(@"displays next experience when swiped", ^{
+            [controller.scrollView setContentOffset:(CGPoint{ CGRectGetWidth([controller scrollView].frame), 0 })];
+            [controller scrollViewDidEndDecelerating:controller.scrollView];
+            controller.currentExperienceViewController.taglineLabel.text should equal(@"Check out the mural in the Mission");
         });
         
-        it(@"scroll view should have two subviews", ^{
+        it(@"adds an experience view controller for each experience to the scroll view", ^{
+            [controller.scrollView.subviews objectAtIndex:0] should equal(controller.currentExperienceViewController.view);
             [controller.scrollView.subviews count] should equal(2);
         });
     });

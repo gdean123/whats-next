@@ -33,6 +33,8 @@
     if (self) {
         self.experienceRepository = repository;
         
+        self.scrollView.delegate = self;
+        
         [self loadExperiences];
     }
     
@@ -80,5 +82,13 @@
     [experienceViewController didMoveToParentViewController:self];
     
     return experienceViewController;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+    NSUInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    
+    self.currentExperienceViewController = self.experienceViewControllers[page];
 }
 @end
