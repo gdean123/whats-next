@@ -7,11 +7,25 @@
 
 @property (nonatomic, strong) id<Repository> experienceRepository;
 
-- (void)loadExperience;
+- (void)loadExperiences;
+
+@property (nonatomic, strong) NSMutableArray *experienceViewControllers;
 
 @end
 
 @implementation ExperienceBrowserViewController
+
+@synthesize experienceViewControllers = _experienceViewControllers;
+
+- (NSMutableArray *)experienceViewControllers
+{
+    if (!_experienceViewControllers)
+    {
+        _experienceViewControllers = [[NSMutableArray alloc] init];
+    }
+    
+    return _experienceViewControllers;
+}
 
 - (id)initWithRepository:(id<Repository>)repository
 {
@@ -19,7 +33,7 @@
     if (self) {
         self.experienceRepository = repository;
         
-        [self loadExperience];
+        [self loadExperiences];
     }
     
     return self;
@@ -35,42 +49,36 @@
     self.scrollView.scrollsToTop = NO;   
 }
 
-- (void)loadExperience
+- (void)loadExperiences
 {
     [self.experienceRepository getAllThen:^(NSArray *experiences) {
-        if (experiences && [experiences count] != 0)
-        {
-            self.scrollView.contentSize =
-            CGSizeMake(CGRectGetWidth(self.scrollView.frame) * [experiences count], CGRectGetHeight(self.scrollView.frame));
-            
-            
-            for (int i = 0; i < [experiences count]; i++) {
-                
-                Experience *experience = experiences[i];
-                
-                ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience];
-
-                if (!self.currentExperienceViewController)
-                {
-                    self.currentExperienceViewController = experienceViewController;
-                }
-                
-                CGRect frame = self.scrollView.frame;
-                frame.origin.x = CGRectGetWidth(frame) * i;
-                frame.origin.y = 0;
-                experienceViewController.view.frame = frame;
-                
-                [self addChildViewController:experienceViewController];
-                [self.scrollView addSubview:experienceViewController.view];
-                [experienceViewController didMoveToParentViewController:self];              
-            }
+        if (!experiences || [experiences count] == 0) return;
+        
+        self.scrollView.contentSize =
+        CGSizeMake(CGRectGetWidth(self.scrollView.frame) * [experiences count], CGRectGetHeight(self.scrollView.frame));        
+        
+        for (int i = 0; i < [experiences count]; i++) {
+            ExperienceViewController *experienceViewController = [self createViewControllerForExperience:experiences[i] forIndex:i];
+            [self.experienceViewControllers addObject:experienceViewController];
         }
-        else{
-//            @throw [NSException exceptionWithName:@"NoImplementation"
-//                                           reason:@"Should finish the case that database has no experiences"
-//                                         userInfo:nil];
-        }
-            
+        
+        self.currentExperienceViewController = self.experienceViewControllers[0];        
     }];
+}
+
+- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience forIndex:(int)i
+{
+    ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience];   
+
+    CGRect frame = self.scrollView.frame;
+    frame.origin.x = CGRectGetWidth(frame) * i;
+    frame.origin.y = 0;
+    experienceViewController.view.frame = frame;
+    
+    [self addChildViewController:experienceViewController];
+    [self.scrollView addSubview:experienceViewController.view];
+    [experienceViewController didMoveToParentViewController:self];
+    
+    return experienceViewController;
 }
 @end
