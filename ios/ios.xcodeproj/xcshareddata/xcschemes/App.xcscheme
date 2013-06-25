@@ -91,6 +91,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Staging"
+      customArchiveName = "What&apos;s Next"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
