@@ -9,7 +9,7 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    experience = Experience.create(tagline: params[:tagline])
+    experience = Experience.create(tagline: params[:tagline], image: params[:image])
     render :json=>{:id=> experience.id}
   end
 

@@ -15,8 +15,8 @@ describe(@"ExperienceRepository", ^{
     __block Experience *firstExperience;
     __block Experience *secondExperience;
 
-    Experience *(^createExperienceWithTagline)(NSString *) = ^(NSString *tagline) {
-        Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": tagline}];
+    Experience *(^createExperience)(NSString *, NSString *) = ^(NSString *tagline, NSString *image) {
+        Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": tagline, @"image": image}];
         [repository create:modelToCreate then:^(Experience * e){ [blocker doneWaiting]; }];
         [blocker wait];
         
@@ -64,8 +64,10 @@ describe(@"ExperienceRepository", ^{
         
         cleanDatabase();
         
-        firstExperience = createExperienceWithTagline(@"Run the Lyon Street stairs");
-        secondExperience = createExperienceWithTagline(@"Check out a mural in the mission");
+        firstExperience = createExperience(@"Run the Lyon Street stairs",
+                                           @"http://localhost:3000/first.jpg");
+        secondExperience = createExperience(@"Check out a mural in the mission",
+                                            @"http://localhost:3000/second.jpg");
     });
     
     afterEach(^{
@@ -76,6 +78,7 @@ describe(@"ExperienceRepository", ^{
     it(@"can retrieve a saved experience", ^{
         Experience *retrievedExperience = getExperienceWithId(firstExperience.dbId);
         retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
+        retrievedExperience.image should equal(@"http://localhost:3000/first.jpg");
     });
     
     it(@"can retrieve all experiences", ^{
@@ -84,7 +87,10 @@ describe(@"ExperienceRepository", ^{
         Experience *secondRetrievedExperience = experiences[1];
         
         secondRetrievedExperience.tagline should equal(@"Check out a mural in the mission");
+        secondRetrievedExperience.image should equal(@"http://localhost:3000/second.jpg");
+        
         firstRetrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
+        firstRetrievedExperience.image should equal(@"http://localhost:3000/first.jpg");
     });
 });
 

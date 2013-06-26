@@ -23,6 +23,11 @@
     [super viewDidLoad];
     
     self.taglineLabel.text = self.experience.tagline;
+    
+    NSString *image = self.experience.image;
+    
+    (void)[self.imageView initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:image]]]];
+ 
 }
 
 @end

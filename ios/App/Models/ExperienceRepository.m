@@ -20,6 +20,7 @@
         [responseMapping addAttributeMappingsFromDictionary:@{
          @"id":          @"dbId",
          @"tagline":     @"tagline",
+         @"image":       @"image",
          }];
         
         RKResponseDescriptor *postResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences" keyPath:nil statusCodes:successStatusCodes];
@@ -30,6 +31,7 @@
         [requestMapping addAttributeMappingsFromDictionary:@{
          @"dbId":          @"id",
          @"tagline":       @"tagline",
+         @"image":      @"image",
          }];
         
         RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[Experience class] rootKeyPath:nil];
