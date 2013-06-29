@@ -18,6 +18,8 @@
 
     self.window.rootViewController = self.navigationController;
     
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
