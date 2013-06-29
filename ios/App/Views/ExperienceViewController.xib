@@ -76,11 +76,13 @@
 						<int key="IBUITextAlignment">1</int>
 						<int key="IBUILineBreakMode">0</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">1</int>
+							<string key="name">Verdana</string>
+							<string key="family">Verdana</string>
+							<int key="traits">0</int>
 							<double key="pointSize">20</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica</string>
+							<string key="NSName">Verdana</string>
 							<double key="NSSize">20</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -159,7 +161,7 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="95355542">
+							<object class="IBNSLayoutConstraint" id="843374000">
 								<reference key="firstItem" ref="731973596"/>
 								<int key="firstAttribute">4</int>
 								<int key="relation">0</int>
@@ -175,7 +177,7 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="261591143">
+							<object class="IBNSLayoutConstraint" id="896539160">
 								<reference key="firstItem" ref="731973596"/>
 								<int key="firstAttribute">6</int>
 								<int key="relation">0</int>
@@ -191,7 +193,7 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="412117640">
+							<object class="IBNSLayoutConstraint" id="218601223">
 								<reference key="firstItem" ref="731973596"/>
 								<int key="firstAttribute">5</int>
 								<int key="relation">0</int>
@@ -275,7 +277,7 @@
 						<int key="objectID">4</int>
 						<reference key="object" ref="731973596"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="277262336">
+							<object class="IBNSLayoutConstraint" id="1061954545">
 								<reference key="firstItem" ref="731973596"/>
 								<int key="firstAttribute">8</int>
 								<int key="relation">0</int>
@@ -339,22 +341,22 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">37</int>
-						<reference key="object" ref="412117640"/>
+						<reference key="object" ref="218601223"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">38</int>
-						<reference key="object" ref="261591143"/>
+						<reference key="object" ref="896539160"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">40</int>
-						<reference key="object" ref="95355542"/>
+						<reference key="object" ref="843374000"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">42</int>
-						<reference key="object" ref="277262336"/>
+						<reference key="object" ref="1061954545"/>
 						<reference key="parent" ref="731973596"/>
 					</object>
 				</array>
@@ -369,9 +371,9 @@
 					<reference ref="315286052"/>
 					<reference ref="908088527"/>
 					<reference ref="929408101"/>
-					<reference ref="412117640"/>
-					<reference ref="261591143"/>
-					<reference ref="95355542"/>
+					<reference ref="218601223"/>
+					<reference ref="896539160"/>
+					<reference ref="843374000"/>
 				</array>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array class="NSMutableArray" key="24.IBViewMetadataConstraints">
@@ -386,7 +388,7 @@
 				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array class="NSMutableArray" key="4.IBViewMetadataConstraints">
-					<reference ref="277262336"/>
+					<reference ref="1061954545"/>
 				</array>
 				<boolean value="NO" key="4.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<object class="NSMutableAttributedString" key="4.notes">
