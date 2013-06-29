@@ -1,5 +1,6 @@
 #import "ExperienceViewController.h"
 #import "Experience.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ExperienceViewController ()
 
@@ -23,6 +24,8 @@
     [super viewDidLoad];
     
     self.taglineLabel.text = self.experience.tagline;
+    
+    self.taglineLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];    
     
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
