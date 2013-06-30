@@ -49,6 +49,10 @@
 		9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FA71775609700333DDA /* ExperienceRepository.m */; };
 		9E689FB01775611900333DDA /* DatabaseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FAF1775611900333DDA /* DatabaseCleaner.m */; };
 		9E689FB21775632500333DDA /* ExperienceRepositorySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FB11775632500333DDA /* ExperienceRepositorySpec.mm */; };
+		9EB14007177FA8B60018242A /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB14006177FA8B60018242A /* LocationManager.m */; };
+		9EB14008177FA8B60018242A /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB14006177FA8B60018242A /* LocationManager.m */; };
+		9EB1400A177FA8FA0018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
+		9EB1400B177FCAE50018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
 		9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCC176D4D4F0065EFF9 /* libPods.a */; };
 		9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
 		9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
@@ -106,6 +110,9 @@
 		9E689FAE1775611900333DDA /* DatabaseCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseCleaner.h; path = Helpers/DatabaseCleaner.h; sourceTree = "<group>"; };
 		9E689FAF1775611900333DDA /* DatabaseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseCleaner.m; path = Helpers/DatabaseCleaner.m; sourceTree = "<group>"; };
 		9E689FB11775632500333DDA /* ExperienceRepositorySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceRepositorySpec.mm; path = Models/ExperienceRepositorySpec.mm; sourceTree = "<group>"; };
+		9EB14005177FA8B60018242A /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = "App/Supporting Files/LocationManager.h"; sourceTree = SOURCE_ROOT; };
+		9EB14006177FA8B60018242A /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = "App/Supporting Files/LocationManager.m"; sourceTree = SOURCE_ROOT; };
+		9EB14009177FA8FA0018242A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9EC03BD1176D59330065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -118,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EB1400A177FA8FA0018242A /* CoreLocation.framework in Frameworks */,
 				9EC03BD2176D59330065EFF9 /* libPods.a in Frameworks */,
 				9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */,
 				5E83CEF8176C033C00D49DAC /* MobileCoreServices.framework in Frameworks */,
@@ -132,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EB1400B177FCAE50018242A /* CoreLocation.framework in Frameworks */,
 				9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */,
 				9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */,
 				9EDEDC23176C2DFD00B012D6 /* CoreData.framework in Frameworks */,
@@ -193,6 +202,7 @@
 			children = (
 				9EC03BD1176D59330065EFF9 /* libPods.a */,
 				9EC03BCC176D4D4F0065EFF9 /* libPods.a */,
+				9EB14009177FA8FA0018242A /* CoreLocation.framework */,
 				9EC03BCE176D4D990065EFF9 /* Security.framework */,
 				9EDEDC22176C2DFD00B012D6 /* CoreData.framework */,
 				5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */,
@@ -350,6 +360,8 @@
 		9E2C8D771762DDF700190A4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9EB14005177FA8B60018242A /* LocationManager.h */,
+				9EB14006177FA8B60018242A /* LocationManager.m */,
 				9E2C8D9B1762E0AD00190A4D /* InfoPlist.strings */,
 				9E2C8D9C1762E0AD00190A4D /* ios-Info.plist */,
 				9E2C8D9D1762E0AD00190A4D /* ios-Prefix.pch */,
@@ -549,6 +561,7 @@
 				9E0BFD5B177008A100ABA42F /* ExperienceBrowserViewController.m in Sources */,
 				305E63EC17740622003189BB /* ExperienceViewController.m in Sources */,
 				9E689FA81775609700333DDA /* ExperienceRepository.m in Sources */,
+				9EB14007177FA8B60018242A /* LocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +582,7 @@
 				9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */,
 				9E689FB01775611900333DDA /* DatabaseCleaner.m in Sources */,
 				9E689FB21775632500333DDA /* ExperienceRepositorySpec.mm in Sources */,
+				9EB14008177FA8B60018242A /* LocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

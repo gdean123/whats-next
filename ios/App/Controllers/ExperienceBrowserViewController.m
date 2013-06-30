@@ -17,6 +17,8 @@
 
 @synthesize experienceViewControllers = _experienceViewControllers;
 
+@synthesize locationManager;
+
 - (NSMutableArray *)experienceViewControllers
 {
     if (!_experienceViewControllers)
@@ -32,6 +34,8 @@
     self = [super initWithNibName:@"ExperienceBrowserViewController" bundle:nil];
     if (self) {
         self.experienceRepository = repository;
+        
+        self.locationManager = [[LocationManager alloc] init];
         
         self.scrollView.delegate = self;
         
@@ -60,7 +64,7 @@
         CGSizeMake(CGRectGetWidth(self.scrollView.frame) * [experiences count], CGRectGetHeight(self.scrollView.frame));        
         
         for (int i = 0; i < [experiences count]; i++) {
-            ExperienceViewController *experienceViewController = [self createViewControllerForExperience:experiences[i] forIndex:i];
+            ExperienceViewController *experienceViewController = [self createViewControllerForExperience:experiences[i] withLocationManager:self.locationManager forIndex:i];
             [self.experienceViewControllers addObject:experienceViewController];
         }
         
@@ -68,9 +72,9 @@
     }];
 }
 
-- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience forIndex:(int)i
+- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:manager forIndex:(int)i
 {
-    ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience];   
+    ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience locationManager:manager];
 
     CGRect frame = self.scrollView.frame;
     frame.origin.x = CGRectGetWidth(frame) * i;
@@ -91,4 +95,5 @@
     
     self.currentExperienceViewController = self.experienceViewControllers[page];
 }
+
 @end

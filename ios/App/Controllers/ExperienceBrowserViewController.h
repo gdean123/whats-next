@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "Repository.h"
+#import "LocationManager.h"
 
 @class ExperienceRepository, ExperienceViewController;
 
@@ -10,6 +11,7 @@
 
 @property (strong, nonatomic) ExperienceViewController *currentExperienceViewController;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) LocationManager *locationManager;
 
 @end
 

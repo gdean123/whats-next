@@ -12,7 +12,7 @@ describe(@"ExperienceViewController", ^{
     
     beforeEach(^{
         experience = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
-        controller = [[ExperienceViewController alloc] initWithExperience:experience];
+        controller = [[ExperienceViewController alloc] initWithExperience:experience locationManager:nil];
         [controller.view setNeedsDisplay];
     });
     

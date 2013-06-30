@@ -21,6 +21,8 @@
          @"id":          @"dbId",
          @"tagline":     @"tagline",
          @"image":       @"image",
+         @"latitude":    @"latitude",
+         @"longitude":   @"longitude",
          }];
         
         RKResponseDescriptor *postResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/experiences" keyPath:nil statusCodes:successStatusCodes];
@@ -31,7 +33,9 @@
         [requestMapping addAttributeMappingsFromDictionary:@{
          @"dbId":          @"id",
          @"tagline":       @"tagline",
-         @"image":      @"image",
+         @"image":         @"image",
+         @"latitude":      @"latitude",
+         @"longitude":     @"longitude",
          }];
         
         RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping objectClass:[Experience class] rootKeyPath:nil];
