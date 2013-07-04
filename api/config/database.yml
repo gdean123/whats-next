@@ -6,6 +6,10 @@ test:
   adapter: sqlite3
   database: engage_me_api_test
 
+integration:
+  adapter: sqlite3
+  database: engage_me_api_integration
+
 production:
   adapter: postgresql
   database: engage_me_api_production
