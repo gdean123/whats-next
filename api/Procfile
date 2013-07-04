@@ -1,0 +1,2 @@
+web: rails s -P tmp/pids/web_server.pid
+integration: env RAILS_ENV=integration rails s -p 3001 -P tmp/pids/integration_server.pid

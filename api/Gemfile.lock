@@ -35,12 +35,16 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     diff-lcs (1.2.4)
+    dotenv (0.8.0)
     erubis (2.7.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
     hike (1.2.2)
     i18n (0.6.4)
     mail (2.5.4)
@@ -107,6 +111,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   factory_girl_rails (~> 4.2.0)
+  foreman
   pg
   rails (= 4.0.0.rc1)
   rspec-rails
