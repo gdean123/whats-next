@@ -10,7 +10,7 @@
 #endif
 
 #ifdef STAGING
-#define ROOT_URL @"http://engage-me-api.herokuapp.com/"
+#define ROOT_URL @"http://engage-me-api.herokuapp.com"
 #endif
 
 #ifdef PRODUCTION

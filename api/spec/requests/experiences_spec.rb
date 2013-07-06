@@ -34,4 +34,11 @@ describe "Experiences" do
       delete "/experiences/#{experience.id}"
     }.to change(Experience, :count).by(-1)
   end
+
+  it "generates the right url" do
+    experience = FactoryGirl.create(:experience, image: "mural.png")
+    get "/experiences/#{experience.id}"
+    result = JSON.parse(response.body)
+    result["image"].should == "http://localhost:3000/images/mural.png"
+  end
 end
