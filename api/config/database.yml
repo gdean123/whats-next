@@ -1,7 +1,3 @@
-development:
-  adapter: sqlite3
-  database: engage_me_api_development
-
 test:
   adapter: sqlite3
   database: engage_me_api_test
@@ -9,6 +5,14 @@ test:
 integration:
   adapter: sqlite3
   database: engage_me_api_integration
+
+development:
+  adapter: sqlite3
+  database: engage_me_api_development
+
+staging:
+  adapter: postgresql
+  database: engage_me_api_staging
 
 production:
   adapter: postgresql
