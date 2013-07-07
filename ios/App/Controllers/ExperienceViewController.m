@@ -40,7 +40,9 @@
     
     self.taglineLabel.text = self.experience.tagline;
     
-    self.taglineLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];    
+    self.taglineLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
+    
+    self.distanceLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
