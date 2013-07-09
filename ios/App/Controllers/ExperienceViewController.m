@@ -1,11 +1,13 @@
-#import "ExperienceViewController.h"
-#import "Experience.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreLocation/CoreLocation.h>
+
+#import "ExperienceViewController.h"
+#import "Experience.h"
 #import "ExperienceBrowserViewController.h"
 
-
 @interface ExperienceViewController ()
+
+- (NSString *)formatDistance:(CLLocationDistance)distance;
 
 @property (strong, nonatomic) Experience *experience;
 @property (weak, nonatomic) LocationManager *locationManager;
@@ -27,22 +29,33 @@
 
 - (void)refreshLocation
 {
-    CLLocationDistance distance = [self.locationManager getDistanceFromLatitude:[self.experience.latitude doubleValue] longitude:[self.experience.longitude doubleValue]];
+    CLLocationDegrees latitude = [self.experience.latitude doubleValue];
+    CLLocationDegrees longitude = [self.experience.longitude doubleValue];
     
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.0fm", distance];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    
+    CLLocationDistance distance = [self.locationManager getDistanceFromLocation:location];
+    
+    self.distanceLabel.text = [self formatDistance:distance];
+}
+
+- (NSString *)formatDistance:(CLLocationDistance)distance
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:1];
+    [formatter setRoundingMode: NSNumberFormatterRoundDown];
+    
+    NSString *distanceString = [formatter stringFromNumber:[NSNumber numberWithFloat:distance]];
+    
+    return [NSString stringWithFormat:@"%@mi", distanceString];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
     [self refreshLocation];
     
     self.taglineLabel.text = self.experience.tagline;
-    
-    self.taglineLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
-    
-    self.distanceLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     

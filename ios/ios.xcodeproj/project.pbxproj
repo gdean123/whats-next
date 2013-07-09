@@ -23,6 +23,9 @@
 		5E83CEF8176C033C00D49DAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */; };
 		5E83CEF9176C071100D49DAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */; };
 		5E83CEFA176C071800D49DAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */; };
+		5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
+		5ED77E16178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
+		5ED77E18178BBAE70049EB07 /* LocationManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */; };
 		5EFCCF78176536C000E6B5D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EFCCF75176536C000E6B5D1 /* InfoPlist.strings */; };
 		5EFCCF7B1765379400E6B5D1 /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCCF7A1765379400E6B5D1 /* Cedar-iOS.framework */; };
 		5EFCCF7C176537C800E6B5D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787B173D77F900C34000 /* UIKit.framework */; };
@@ -49,8 +52,6 @@
 		9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FA71775609700333DDA /* ExperienceRepository.m */; };
 		9E689FB01775611900333DDA /* DatabaseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FAF1775611900333DDA /* DatabaseCleaner.m */; };
 		9E689FB21775632500333DDA /* ExperienceRepositorySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FB11775632500333DDA /* ExperienceRepositorySpec.mm */; };
-		9EB14007177FA8B60018242A /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB14006177FA8B60018242A /* LocationManager.m */; };
-		9EB14008177FA8B60018242A /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB14006177FA8B60018242A /* LocationManager.m */; };
 		9EB1400A177FA8FA0018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
 		9EB1400B177FCAE50018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
 		9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCC176D4D4F0065EFF9 /* libPods.a */; };
@@ -81,6 +82,9 @@
 		5E83CEEF176BAF7200D49DAC /* Blocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blocker.m; path = Helpers/Blocker.m; sourceTree = "<group>"; };
 		5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5ED77E13178BBAC30049EB07 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = App/Models/LocationManager.h; sourceTree = SOURCE_ROOT; };
+		5ED77E14178BBAC30049EB07 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = App/Models/LocationManager.m; sourceTree = SOURCE_ROOT; };
+		5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LocationManagerSpec.mm; path = Models/LocationManagerSpec.mm; sourceTree = "<group>"; };
 		5EF8DF29176534D2009393E7 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF8DF3B176534D2009393E7 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		5EFCCF75176536C000E6B5D1 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "Supporting Files/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -110,8 +114,6 @@
 		9E689FAE1775611900333DDA /* DatabaseCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseCleaner.h; path = Helpers/DatabaseCleaner.h; sourceTree = "<group>"; };
 		9E689FAF1775611900333DDA /* DatabaseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseCleaner.m; path = Helpers/DatabaseCleaner.m; sourceTree = "<group>"; };
 		9E689FB11775632500333DDA /* ExperienceRepositorySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceRepositorySpec.mm; path = Models/ExperienceRepositorySpec.mm; sourceTree = "<group>"; };
-		9EB14005177FA8B60018242A /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = "App/Supporting Files/LocationManager.h"; sourceTree = SOURCE_ROOT; };
-		9EB14006177FA8B60018242A /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = "App/Supporting Files/LocationManager.m"; sourceTree = SOURCE_ROOT; };
 		9EB14009177FA8FA0018242A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -297,6 +299,7 @@
 				9E689FB11775632500333DDA /* ExperienceRepositorySpec.mm */,
 				5EFCCF8017653A5B00E6B5D1 /* ExperienceSpec.mm */,
 				9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */,
+				5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -337,6 +340,8 @@
 		9E2C8D751762DDD900190A4D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5ED77E13178BBAC30049EB07 /* LocationManager.h */,
+				5ED77E14178BBAC30049EB07 /* LocationManager.m */,
 				9E689FA61775609700333DDA /* ExperienceRepository.h */,
 				9E689FA71775609700333DDA /* ExperienceRepository.m */,
 				5EFCCF8217653C4500E6B5D1 /* Experience.h */,
@@ -360,8 +365,6 @@
 		9E2C8D771762DDF700190A4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9EB14005177FA8B60018242A /* LocationManager.h */,
-				9EB14006177FA8B60018242A /* LocationManager.m */,
 				9E2C8D9B1762E0AD00190A4D /* InfoPlist.strings */,
 				9E2C8D9C1762E0AD00190A4D /* ios-Info.plist */,
 				9E2C8D9D1762E0AD00190A4D /* ios-Prefix.pch */,
@@ -561,7 +564,7 @@
 				9E0BFD5B177008A100ABA42F /* ExperienceBrowserViewController.m in Sources */,
 				305E63EC17740622003189BB /* ExperienceViewController.m in Sources */,
 				9E689FA81775609700333DDA /* ExperienceRepository.m in Sources */,
-				9EB14007177FA8B60018242A /* LocationManager.m in Sources */,
+				5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +585,8 @@
 				9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */,
 				9E689FB01775611900333DDA /* DatabaseCleaner.m in Sources */,
 				9E689FB21775632500333DDA /* ExperienceRepositorySpec.mm in Sources */,
-				9EB14008177FA8B60018242A /* LocationManager.m in Sources */,
+				5ED77E16178BBAC30049EB07 /* LocationManager.m in Sources */,
+				5ED77E18178BBAE70049EB07 /* LocationManagerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

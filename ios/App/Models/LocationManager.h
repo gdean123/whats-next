@@ -9,10 +9,12 @@
 
 @end
 
+
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 
-- (CLLocationDistance)getDistanceFromLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude;
+- (CLLocationDistance)getDistanceFromLocation:(CLLocation*)location;
 
 @property (nonatomic,assign) id<LocationManagerDelegate> delegate;
+@property (nonatomic, strong) CLLocation *currentLocation;
 
 @end
