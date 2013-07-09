@@ -64,10 +64,8 @@ describe(@"ExperienceRepository", ^{
         
         cleanDatabase();
         
-        firstExperience = createExperience(@"Run the Lyon Street stairs",
-                                           @"http://localhost:3000/first.jpg");
-        secondExperience = createExperience(@"Check out a mural in the mission",
-                                            @"http://localhost:3000/second.jpg");
+        firstExperience = createExperience(@"Run the Lyon Street stairs", @"first.jpg");
+        secondExperience = createExperience(@"Check out a mural in the mission", @"second.jpg");
     });
     
     afterEach(^{
@@ -78,7 +76,7 @@ describe(@"ExperienceRepository", ^{
     it(@"can retrieve a saved experience", ^{
         Experience *retrievedExperience = getExperienceWithId(firstExperience.dbId);
         retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
-        retrievedExperience.image should equal(@"http://localhost:3000/first.jpg");
+        retrievedExperience.image should equal(@"http://localhost:3000/images/first.jpg");
     });
     
     it(@"can retrieve all experiences", ^{
@@ -87,10 +85,10 @@ describe(@"ExperienceRepository", ^{
         Experience *secondRetrievedExperience = experiences[1];
         
         secondRetrievedExperience.tagline should equal(@"Check out a mural in the mission");
-        secondRetrievedExperience.image should equal(@"http://localhost:3000/second.jpg");
+        secondRetrievedExperience.image should equal(@"http://localhost:3000/images/second.jpg");
         
         firstRetrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
-        firstRetrievedExperience.image should equal(@"http://localhost:3000/first.jpg");
+        firstRetrievedExperience.image should equal(@"http://localhost:3000/images/first.jpg");
     });
 });
 
