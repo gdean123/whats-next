@@ -15,7 +15,7 @@ describe(@"LocationManager", ^{
     it(@"computes the distance (in miles) from a given latitude and longitude", ^{
         locationManager.currentLocation = [[CLLocation alloc] initWithLatitude:37.788319 longitude:-122.40744];
         CLLocation *targetLocation = [[CLLocation alloc] initWithLatitude:37.806207 longitude:-122.423104];
-        [locationManager getDistanceFromLocation:targetLocation] should equal(1.5);
+        [locationManager getDistanceFromLocation:targetLocation] should equal(@"1.5mi");
     });
 });
 
