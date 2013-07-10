@@ -34,21 +34,9 @@
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
     
-    CLLocationDistance distance = [self.locationManager getDistanceFromLocation:location];
-    
-    self.distanceLabel.text = [self formatDistance:distance];
+    self.distanceLabel.text = [self.locationManager getDistanceFromLocation:location];
 }
 
-- (NSString *)formatDistance:(CLLocationDistance)distance
-{
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setMaximumFractionDigits:1];
-    [formatter setRoundingMode: NSNumberFormatterRoundDown];
-    
-    NSString *distanceString = [formatter stringFromNumber:[NSNumber numberWithFloat:distance]];
-    
-    return [NSString stringWithFormat:@"%@mi", distanceString];
-}
 
 - (void)viewDidLoad
 {

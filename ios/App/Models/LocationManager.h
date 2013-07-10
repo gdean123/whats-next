@@ -12,7 +12,7 @@
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 
-- (CLLocationDistance)getDistanceFromLocation:(CLLocation*)location;
+- (NSString *)getDistanceFromLocation:(CLLocation*)location;
 
 @property (nonatomic,assign) id<LocationManagerDelegate> delegate;
 @property (nonatomic, strong) CLLocation *currentLocation;
