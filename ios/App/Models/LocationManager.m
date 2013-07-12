@@ -2,8 +2,9 @@
 
 @interface LocationManager()
 
-@property (nonatomic, strong) CLLocationManager *manager;
+- (NSString *)formatDistance:(CLLocationDistance)distance unit:(NSString *)unit fractionDigits:(int)fractionDigits;
 
+@property (nonatomic, strong) CLLocationManager *manager;
 @property (nonatomic, assign) CLLocationDirection currentHeading;
 
 @end

@@ -7,8 +7,6 @@
 
 @interface ExperienceViewController ()
 
-- (NSString *)formatDistance:(CLLocationDistance)distance;
-
 @property (strong, nonatomic) Experience *experience;
 @property (weak, nonatomic) LocationManager *locationManager;
 
