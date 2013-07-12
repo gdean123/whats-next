@@ -5,10 +5,10 @@
 
 @interface ExperienceBrowserViewController ()
 
-@property (nonatomic, strong) id<Repository> experienceRepository;
-
 - (void)loadExperiences;
+- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(LocationManager *)manager forIndex:(int)i;
 
+@property (nonatomic, strong) id<Repository> experienceRepository;
 @property (nonatomic, strong) NSMutableArray *experienceViewControllers;
 
 @end
@@ -72,9 +72,9 @@
     }];
 }
 
-- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:manager forIndex:(int)i
+- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(LocationManager *)theLocationManager forIndex:(int)i
 {
-    ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience locationManager:manager];
+    ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience locationManager:theLocationManager];
 
     CGRect frame = self.scrollView.frame;
     frame.origin.x = CGRectGetWidth(frame) * i;

@@ -63,7 +63,6 @@
     const double FEET_PER_METER = 3.28084;
     double distanceInMeters = [location distanceFromLocation:self.currentLocation];
     
-    
     double distanceInFeet = distanceInMeters * FEET_PER_METER;
     double roundedDistanceInFeet = round(10.0f * distanceInFeet) / 10.0f;
     
@@ -75,17 +74,15 @@
     const double MILES_PER_METER = 0.00062137;    
     double distanceInMeters = [location distanceFromLocation:self.currentLocation];
     
-    
     double distanceInMiles = distanceInMeters * MILES_PER_METER;
     double roundedDistanceInMiles = round(10.0f * distanceInMiles) / 10.0f;
     
     return roundedDistanceInMiles;
 }
 
-
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.currentLocation = locations.lastObject;
-    [self.delegate locationDidUpdate:self];
+    [self.delegate locationDidUpdate:self.currentLocation];
 }
 
 @end

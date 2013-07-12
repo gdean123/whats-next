@@ -14,12 +14,12 @@
 
 @implementation ExperienceViewController
 
-- (id)initWithExperience:(Experience *)experience locationManager:(LocationManager *)locationManager
+- (id)initWithExperience:(Experience *)theExperience locationManager:(LocationManager *)theLocationManager
 {
     self = [super initWithNibName:@"ExperienceViewController" bundle:nil];
     if (self) {
-        self.experience = experience;
-        self.locationManager = locationManager;
+        self.experience = theExperience;
+        self.locationManager = theLocationManager;
         self.locationManager.delegate = self;
     }
     return self;
@@ -27,14 +27,12 @@
 
 - (void)refreshLocation
 {
-    CLLocationDegrees latitude = [self.experience.latitude doubleValue];
-    CLLocationDegrees longitude = [self.experience.longitude doubleValue];
+    CLLocationDegrees experienceLatitude = [self.experience.latitude doubleValue];
+    CLLocationDegrees experienceLongitude = [self.experience.longitude doubleValue];
+    CLLocation *experienceLocation = [[CLLocation alloc] initWithLatitude:experienceLatitude longitude:experienceLongitude];
     
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
-    
-    self.distanceLabel.text = [self.locationManager getDistanceFromLocation:location];
+    self.distanceLabel.text = [self.locationManager getDistanceFromLocation:experienceLocation];
 }
-
 
 - (void)viewDidLoad
 {
@@ -50,7 +48,7 @@
     (void)[self.imageView initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:image]]]]; 
 }
 
-- (void)locationDidUpdate:(LocationManager *)locationManager
+- (void)locationDidUpdate:(CLLocation *)location
 {
     [self refreshLocation];
 }

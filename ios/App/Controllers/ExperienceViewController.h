@@ -9,6 +9,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
-- (id)initWithExperience:(Experience *)experience locationManager:(LocationManager *)locationManager;
-
+- (id)initWithExperience:(Experience *)theExperience locationManager:(LocationManager *)theLocationManager;
 @end
