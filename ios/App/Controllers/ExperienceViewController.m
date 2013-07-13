@@ -45,7 +45,7 @@
     
     self.taglineLabel.text = self.experience.tagline;
     
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;    
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;    
     NSString *image = self.experience.image;    
     (void)[self.imageView initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:image]]]]; 
 }
