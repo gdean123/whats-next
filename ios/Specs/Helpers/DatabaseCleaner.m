@@ -4,7 +4,7 @@
 
 + (void)cleanThen:(void (^)())successBlock
 {
-    NSURL *baseURL = [NSURL URLWithString:@"http://localhost:3000"];
+    NSURL *baseURL = [NSURL URLWithString:ROOT_URL];
     AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     RKObjectManager *manager = [[RKObjectManager alloc] initWithHTTPClient:client];
         
