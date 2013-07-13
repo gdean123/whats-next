@@ -15,11 +15,6 @@ Experience.create tagline: "Look at the blossoms in Shoreline park",
                   latitude: 37.400915,
                   longitude: -122.094887
 
-Experience.create tagline: "Play with the little dolls in East West Bookshop",
-                  image: "book_store.jpg",
-                  latitude: 37.392493,
-                  longitude: -122.080039
-
 Experience.create tagline: "Watch the sunset on the Dumbarton bridge",
                   image: "bridge.jpg",
                   latitude: 37.512449,
