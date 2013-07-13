@@ -43,7 +43,7 @@ describe(@"ExperienceViewController", ^{
         controller.distanceLabel.text should equal(@"116ft");
     });
     
-    fit(@"only shows location label when location is set", ^{
+    it(@"only shows location label when location is set", ^{
         controller.distanceLabel.hidden should be_truthy;
         
         [locationManager locationManager:nil didUpdateLocations:@[closeLocation]];

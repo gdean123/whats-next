@@ -6,6 +6,7 @@
 
 @property (nonatomic, strong) CLLocationManager *manager;
 @property (nonatomic, assign) CLLocationDirection currentHeading;
+@property (nonatomic, strong) NSMutableSet *subscribers;
 
 @end
 
@@ -25,6 +26,8 @@
         if ([CLLocationManager significantLocationChangeMonitoringAvailable]) {
             [self.manager startMonitoringSignificantLocationChanges];
         }
+        
+        self.subscribers = [[NSMutableSet alloc] init];
     }
     
     return self;
@@ -82,7 +85,15 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.currentLocation = locations.lastObject;
-    [self.delegate locationDidUpdate:self.currentLocation];
+    [self.subscribers makeObjectsPerformSelector:@selector(locationDidUpdate:) withObject:self.currentLocation];
+}
+
+- (void)registerForLocationUpdates:(id<LocationManagerDelegate>)subscriber {
+    [self.subscribers addObject:subscriber];
+}
+
+- (void)unregisterForLocationUpdates:(id<LocationManagerDelegate>)subscriber {
+    [self.subscribers removeObject:subscriber];
 }
 
 @end

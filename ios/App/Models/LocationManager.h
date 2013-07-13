@@ -14,6 +14,8 @@
 
 - (NSString *)getDistanceFromLocation:(CLLocation*)location;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
+- (void)registerForLocationUpdates:(id<LocationManagerDelegate>)subscriber;
+- (void)unregisterForLocationUpdates:(id<LocationManagerDelegate>)subscriber;
 
 @property (nonatomic,assign) id<LocationManagerDelegate> delegate;
 @property (nonatomic, strong) CLLocation *currentLocation;

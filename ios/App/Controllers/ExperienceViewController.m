@@ -20,32 +20,39 @@
     if (self) {
         self.experience = theExperience;
         self.locationManager = theLocationManager;
-        self.locationManager.delegate = self;
+        [self.locationManager registerForLocationUpdates:self];
     }
     return self;
+}
+
+- (void)refreshLocation
+{
+    CLLocationDegrees experienceLatitude = [self.experience.latitude doubleValue];
+    CLLocationDegrees experienceLongitude = [self.experience.longitude doubleValue];
+    CLLocation *experienceLocation = [[CLLocation alloc] initWithLatitude:experienceLatitude longitude:experienceLongitude];    
+    
+    if (self.locationManager.currentLocation != nil) {
+        self.distanceLabel.text = [self.locationManager getDistanceFromLocation:experienceLocation];
+        [self.distanceLabel setHidden:NO];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self refreshLocation];
+    
     self.taglineLabel.text = self.experience.tagline;
     
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    
-    NSString *image = self.experience.image;
-    
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;    
+    NSString *image = self.experience.image;    
     (void)[self.imageView initWithImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:image]]]]; 
 }
 
 - (void)locationDidUpdate:(CLLocation *)location
 {
-    CLLocationDegrees experienceLatitude = [self.experience.latitude doubleValue];
-    CLLocationDegrees experienceLongitude = [self.experience.longitude doubleValue];
-    CLLocation *experienceLocation = [[CLLocation alloc] initWithLatitude:experienceLatitude longitude:experienceLongitude];
-    
-    self.distanceLabel.text = [self.locationManager getDistanceFromLocation:experienceLocation];
-    [self.distanceLabel setHidden:NO];
+    [self refreshLocation];
 }
 
 @end

@@ -24,6 +24,25 @@ describe(@"LocationManager", ^{
         CLLocation *targetLocation = [[CLLocation alloc] initWithLatitude:37.806207 longitude:-122.423104];
         [locationManager getDistanceFromLocation:targetLocation] should equal(@"1.5mi");
     });
+    
+    it(@"broadcast location change to subscribers", ^{
+        id mockLocationManagerDelegate = [OCMockObject mockForProtocol:@protocol(LocationManagerDelegate)];
+        [locationManager registerForLocationUpdates:mockLocationManagerDelegate];
+        [[mockLocationManagerDelegate expect] locationDidUpdate:location];
+        [locationManager locationManager:nil didUpdateLocations:@[location]];
+        [mockLocationManagerDelegate verify];        
+    });
+    
+    it(@"doesn't broadcast location change to unsubscribed objects", ^{
+        id mockLocationManagerDelegate = [OCMockObject mockForProtocol:@protocol(LocationManagerDelegate)];
+        
+        [locationManager registerForLocationUpdates:mockLocationManagerDelegate];
+        [locationManager unregisterForLocationUpdates:mockLocationManagerDelegate];
+        
+        [[mockLocationManagerDelegate reject] locationDidUpdate:location];
+        [locationManager locationManager:nil didUpdateLocations:@[location]];
+        [mockLocationManagerDelegate verify];
+    });
 });
 
 SPEC_END
