@@ -25,19 +25,9 @@
     return self;
 }
 
-- (void)refreshLocation
-{
-    CLLocationDegrees experienceLatitude = [self.experience.latitude doubleValue];
-    CLLocationDegrees experienceLongitude = [self.experience.longitude doubleValue];
-    CLLocation *experienceLocation = [[CLLocation alloc] initWithLatitude:experienceLatitude longitude:experienceLongitude];
-    
-    self.distanceLabel.text = [self.locationManager getDistanceFromLocation:experienceLocation];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self refreshLocation];
     
     self.taglineLabel.text = self.experience.tagline;
     
@@ -50,7 +40,12 @@
 
 - (void)locationDidUpdate:(CLLocation *)location
 {
-    [self refreshLocation];
+    CLLocationDegrees experienceLatitude = [self.experience.latitude doubleValue];
+    CLLocationDegrees experienceLongitude = [self.experience.longitude doubleValue];
+    CLLocation *experienceLocation = [[CLLocation alloc] initWithLatitude:experienceLatitude longitude:experienceLongitude];
+    
+    self.distanceLabel.text = [self.locationManager getDistanceFromLocation:experienceLocation];
+    [self.distanceLabel setHidden:NO];
 }
 
 @end

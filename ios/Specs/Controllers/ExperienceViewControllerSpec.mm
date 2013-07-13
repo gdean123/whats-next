@@ -10,6 +10,8 @@ describe(@"ExperienceViewController", ^{
     __block ExperienceViewController *controller;
     __block Experience *experience;
     __block LocationManager *locationManager;
+    __block CLLocation *farLocation;
+    __block CLLocation *closeLocation;
     
     beforeEach(^{
         experience = [[Experience alloc] initWithDictionary:
@@ -20,6 +22,8 @@ describe(@"ExperienceViewController", ^{
                       }];
         locationManager = [[LocationManager alloc] init];
         controller = [[ExperienceViewController alloc] initWithExperience:experience locationManager:locationManager];
+        farLocation = [[CLLocation alloc] initWithLatitude:37.806207 longitude:-122.423104];
+        closeLocation = [[CLLocation alloc] initWithLatitude:37.788000 longitude:-122.40744];
         [controller.view setNeedsDisplay];
     });
     
@@ -28,17 +32,23 @@ describe(@"ExperienceViewController", ^{
     });
     
     it(@"renders the distance with one digit after the decimal", ^{
-        CLLocation *farLocation = [[CLLocation alloc] initWithLatitude:37.806207 longitude:-122.423104];
         [locationManager locationManager:nil didUpdateLocations:@[farLocation]];
         
         controller.distanceLabel.text should equal(@"1.5mi");
     });
     
     it(@"renders the distance in feet when less than 0.1 m", ^{
-        CLLocation *closeLocation = [[CLLocation alloc] initWithLatitude:37.788000 longitude:-122.40744];
         [locationManager locationManager:nil didUpdateLocations:@[closeLocation]];
 
         controller.distanceLabel.text should equal(@"116ft");
+    });
+    
+    fit(@"only shows location label when location is set", ^{
+        controller.distanceLabel.hidden should be_truthy;
+        
+        [locationManager locationManager:nil didUpdateLocations:@[closeLocation]];
+        
+        controller.distanceLabel.hidden should_not be_truthy;
     });
 });
 
