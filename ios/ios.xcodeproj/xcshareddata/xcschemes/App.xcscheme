@@ -90,7 +90,7 @@
       buildConfiguration = "Development">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Staging"
+      buildConfiguration = "Production"
       customArchiveName = "What&apos;s Next"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
