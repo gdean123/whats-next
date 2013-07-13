@@ -23,10 +23,11 @@
     {
         self.manager = [[CLLocationManager alloc] init];
         self.manager.delegate = self;
-        if ([CLLocationManager significantLocationChangeMonitoringAvailable]) {
-            [self.manager startMonitoringSignificantLocationChanges];
-        }
         
+        self.manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        self.manager.distanceFilter = 10;
+        [self.manager startUpdatingLocation];   
+   
         self.subscribers = [[NSMutableSet alloc] init];
     }
     
