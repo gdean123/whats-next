@@ -27,8 +27,8 @@
 
 - (void)refreshLocation
 {
-    CLLocationDegrees experienceLatitude = [self.experience.latitude doubleValue];
-    CLLocationDegrees experienceLongitude = [self.experience.longitude doubleValue];
+    CLLocationDegrees experienceLatitude = self.experience.latitude;
+    CLLocationDegrees experienceLongitude = self.experience.longitude;
     CLLocation *experienceLocation = [[CLLocation alloc] initWithLatitude:experienceLatitude longitude:experienceLongitude];    
     
     if (self.locationManager.currentLocation != nil) {

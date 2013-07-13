@@ -6,9 +6,9 @@
 
 @property (copy, nonatomic) NSString *tagline;
 @property (copy, nonatomic) NSString *image;
-@property (copy, nonatomic) NSDecimalNumber *latitude;
-@property (copy, nonatomic) NSDecimalNumber *longitude;
+@property (assign, nonatomic) double latitude;
+@property (assign, nonatomic) double longitude;
 
-- (Experience *)initWithDictionary:(NSDictionary *)experienceDictionary;
+- (Experience *)initWithTagline:(NSString *)theTagline image:(NSString *)theImage latitude:(double)theLatitude longitude:(double)theLongitude;
 
 @end

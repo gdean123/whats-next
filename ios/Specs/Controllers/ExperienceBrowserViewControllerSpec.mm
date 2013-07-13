@@ -15,8 +15,8 @@ describe(@"ExperienceBrowserViewController", ^{
     __block Experience *secondExperience;
     
     beforeEach(^{
-        firstExperience = [[Experience alloc] initWithDictionary:@{@"tagline": @"Run the Lyon Street stairs"}];
-        secondExperience = [[Experience alloc] initWithDictionary:@{@"tagline": @"Check out the mural in the Mission"}];
+        firstExperience = [[Experience alloc] initWithTagline:@"Run the Lyon Street stairs" image:nil latitude:37.788319 longitude:-122.40744];
+        secondExperience = [[Experience alloc] initWithTagline:@"Check out the mural in the Mission" image:nil latitude:37.788319 longitude:-122.40744];
         repository = [[FakeExperienceRepository alloc] init];
         controller = [[ExperienceBrowserViewController alloc] initWithRepository:repository];
         [controller.view setNeedsDisplay];

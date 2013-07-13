@@ -5,13 +5,13 @@
 @synthesize tagline;
 @synthesize image;
 
-- (Experience *)initWithDictionary:(NSDictionary *)experienceDictionary
+- (Experience *)initWithTagline:(NSString *)theTagline image:(NSString *)theImage latitude:(double)theLatitude longitude:(double)theLongitude
 {
     Experience *experience = [[Experience alloc] init];
-    experience.tagline = experienceDictionary[@"tagline"];
-    experience.image = experienceDictionary[@"image"];
-    experience.latitude = experienceDictionary[@"latitude"];
-    experience.longitude =  experienceDictionary[@"longitude"];
+    experience.tagline = theTagline;
+    experience.image = theImage;
+    experience.latitude = theLatitude;
+    experience.longitude =  theLongitude;
     return experience;
 }
 

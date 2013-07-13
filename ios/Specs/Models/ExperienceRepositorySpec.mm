@@ -16,7 +16,7 @@ describe(@"ExperienceRepository", ^{
     __block Experience *secondExperience;
 
     Experience *(^createExperience)(NSString *, NSString *) = ^(NSString *tagline, NSString *image) {
-        Experience *modelToCreate = [[Experience alloc] initWithDictionary:@{@"tagline": tagline, @"image": image}];
+        Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline image:image latitude:37.788319 longitude:-122.40744];
         [repository create:modelToCreate then:^(Experience * e){ [blocker doneWaiting]; }];
         [blocker wait];
         
