@@ -36,6 +36,8 @@ describe Experience do
 
     it_should_use_correct_base_url_for 'test', 'http://localhost:3000'
     it_should_use_correct_base_url_for 'development', 'http://localhost:3000'
-    it_should_use_correct_base_url_for 'staging', 'http://engage-me-api.herokuapp'
+    it_should_use_correct_base_url_for 'integration', 'http://localhost:3001'
+    it_should_use_correct_base_url_for 'staging', 'http://engage-me-api-staging.herokuapp.com'
+    it_should_use_correct_base_url_for 'production', 'http://engage-me-api.herokuapp.com'
   end
 end
