@@ -14,6 +14,8 @@ describe(@"ExperienceRepository", ^{
     __block Blocker *blocker;
     __block Experience *firstExperience;
     __block Experience *secondExperience;
+    __block Experience *thirdExperience;
+    __block Experience *fourthExperience;
 
     Experience *(^createExperience)(NSString *, NSString *) = ^(NSString *tagline, NSString *image) {
         Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline image:image latitude:37.788319 longitude:-122.40744];
@@ -36,10 +38,10 @@ describe(@"ExperienceRepository", ^{
         return retrievedExperience;
     };
 
-    NSArray *(^getAllExperiences)() = ^ () {
+    NSArray *(^getExperiencesForPage)(int) = ^ (int page) {
         __block NSArray *retrievedExperiences;
         
-        [repository getAllThen:^(NSArray *experiences){
+        [repository getPage:page then:^(NSArray *experiences){
                        retrievedExperiences = experiences;
                        [blocker doneWaiting];
                    }];
@@ -66,6 +68,8 @@ describe(@"ExperienceRepository", ^{
         
         firstExperience = createExperience(@"Run the Lyon Street stairs", @"first.jpg");
         secondExperience = createExperience(@"Check out a mural in the mission", @"second.jpg");
+        thirdExperience = createExperience(@"Watch the sunset on the Dumbarton bridge", @"third.jpg");
+        fourthExperience = createExperience(@"Visit the Rengstorff House", @"fourth.jpg");
     });
     
     afterEach(^{
@@ -76,19 +80,41 @@ describe(@"ExperienceRepository", ^{
     it(@"can retrieve a saved experience", ^{
         Experience *retrievedExperience = getExperienceWithId(firstExperience.dbId);
         retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
-        retrievedExperience.image should equal(@"http://localhost:3000/images/first.jpg");
-    });
+        retrievedExperience.image should equal(@"http://localhost:3001/images/first.jpg");
+    });    
     
-    it(@"can retrieve all experiences", ^{
-        NSArray *experiences = getAllExperiences();
+    it(@"can retrieve experiences for page 1", ^{
+        NSArray *experiences = getExperiencesForPage(1);
         Experience *firstRetrievedExperience = experiences[0];
         Experience *secondRetrievedExperience = experiences[1];
+        Experience *thirdRetrievedExperience = experiences[2];
+        
+        [experiences count] should equal(3);
         
         secondRetrievedExperience.tagline should equal(@"Check out a mural in the mission");
-        secondRetrievedExperience.image should equal(@"http://localhost:3000/images/second.jpg");
+        secondRetrievedExperience.image should equal(@"http://localhost:3001/images/second.jpg");
+        
+        thirdRetrievedExperience.tagline should equal(@"Watch the sunset on the Dumbarton bridge");
+        thirdRetrievedExperience.image should equal(@"http://localhost:3001/images/third.jpg");
         
         firstRetrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
-        firstRetrievedExperience.image should equal(@"http://localhost:3000/images/first.jpg");
+        firstRetrievedExperience.image should equal(@"http://localhost:3001/images/first.jpg");
+    });
+    
+    it(@"can retrieve experiences for page 2", ^{
+        NSArray *experiences = getExperiencesForPage(2);
+        Experience *firstRetrievedExperience = experiences[0];
+        
+        [experiences count] should equal(1);
+        
+        firstRetrievedExperience.tagline should equal(@"Visit the Rengstorff House");
+        firstRetrievedExperience.image should equal(@"http://localhost:3001/images/fourth.jpg");
+    });
+    
+    it(@"can retrieve no experiences for page after last page", ^{
+        NSArray *experiences = getExperiencesForPage(3);
+        
+        [experiences count] should equal(0);
     });
 });
 

@@ -82,6 +82,15 @@
     } failure:nil];
 }
 
+- (void)getPage:(int)page then:(void (^) (NSArray *experiences))successBlock
+{
+    NSString *path = [NSString stringWithFormat:@"/experiences"];
+    
+    [self.manager getObjectsAtPath:path parameters:@{@"page":[NSString stringWithFormat:@"%d", page]} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successBlock([mappingResult array]);
+    } failure:nil];
+}
+
 - (void)destroy:(Experience *)experience then:(void (^) ())successBlock
 {
     NSString *path = [NSString stringWithFormat:@"/experiences/%@", experience.dbId];
