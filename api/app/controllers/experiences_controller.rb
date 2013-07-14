@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   def index
-    render :json => Experience.all
+    render :json => Experience.paginate(:page => params[:page], :per_page => 3)
   end
 
   def show
