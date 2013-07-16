@@ -73,15 +73,6 @@
     } failure:nil];
 }
 
-- (void)getAllThen:(void (^) (NSArray *experiences))successBlock
-{
-    NSString *path = [NSString stringWithFormat:@"/experiences"];
-    
-    [self.manager getObjectsAtPath:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successBlock([mappingResult array]);
-    } failure:nil];
-}
-
 - (void)getPage:(int)page then:(void (^) (NSArray *experiences))successBlock
 {
     NSString *path = [NSString stringWithFormat:@"/experiences"];

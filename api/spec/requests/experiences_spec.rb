@@ -39,7 +39,7 @@ describe "Experiences" do
     result.first["tagline"].should == @fourth_experience.tagline
   end
 
-  it "returns no experience for page 3" do
+  it "returns no experience for a page past the end" do
     get "/experiences", page: 3
     result = JSON.parse(response.body)
     result.count.should == 0

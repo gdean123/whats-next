@@ -6,6 +6,6 @@
 
 @property (strong, nonatomic) void (^successBlock)(NSArray *);
 
-- (void)getAllThen:(void (^) (NSArray *experiences))successBlock;
+- (void)getPage:(int)page then:(void (^) (NSArray *experiences))successBlock;
 
 @end

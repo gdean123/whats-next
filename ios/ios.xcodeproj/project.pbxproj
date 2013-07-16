@@ -58,6 +58,11 @@
 		9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
 		9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
 		9EC03BD2176D59330065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BD1176D59330065EFF9 /* libPods.a */; };
+		9EDE98851794F51900C6F541 /* SpinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE98831794F51900C6F541 /* SpinnerViewController.m */; };
+		9EDE98861794F51900C6F541 /* SpinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE98831794F51900C6F541 /* SpinnerViewController.m */; };
+		9EDE988A1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */; };
+		9EDE988B1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */; };
+		9EDE988D1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */; };
 		9EDEDC23176C2DFD00B012D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDEDC22176C2DFD00B012D6 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +123,10 @@
 		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9EC03BD1176D59330065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		9EDE98821794F51800C6F541 /* SpinnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpinnerViewController.h; path = App/Controllers/SpinnerViewController.h; sourceTree = SOURCE_ROOT; };
+		9EDE98831794F51900C6F541 /* SpinnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpinnerViewController.m; path = App/Controllers/SpinnerViewController.m; sourceTree = SOURCE_ROOT; };
+		9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpinnerViewController.xib; path = App/Views/SpinnerViewController.xib; sourceTree = SOURCE_ROOT; };
+		9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SpinnerViewControllerSpec.mm; path = Controllers/SpinnerViewControllerSpec.mm; sourceTree = "<group>"; };
 		9EDEDC22176C2DFD00B012D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FC7B54470C504370ADB40E16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -275,6 +284,7 @@
 			children = (
 				5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */,
 				5E5822A517741873005EDA6F /* ExperienceViewControllerSpec.mm */,
+				9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -314,6 +324,8 @@
 		9E2C8D721762DDA400190A4D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EDE98821794F51800C6F541 /* SpinnerViewController.h */,
+				9EDE98831794F51900C6F541 /* SpinnerViewController.m */,
 				9E0BFD59177008A100ABA42F /* ExperienceBrowserViewController.h */,
 				9E0BFD5A177008A100ABA42F /* ExperienceBrowserViewController.m */,
 				305E63E917740622003189BB /* ExperienceViewController.h */,
@@ -379,6 +391,7 @@
 		9E2C8D781762DE0500190A4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */,
 				305E63F0177406E2003189BB /* ExperienceViewController.xib */,
 				9E0BFD561770088400ABA42F /* ExperienceBrowserViewController.xib */,
 			);
@@ -465,6 +478,7 @@
 				9E2C8D9E1762E0AD00190A4D /* InfoPlist.strings in Resources */,
 				9E0BFD571770088400ABA42F /* ExperienceBrowserViewController.xib in Resources */,
 				305E63F1177406E2003189BB /* ExperienceViewController.xib in Resources */,
+				9EDE988A1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +489,7 @@
 				5EFCCF78176536C000E6B5D1 /* InfoPlist.strings in Resources */,
 				9E0BFD581770088400ABA42F /* ExperienceBrowserViewController.xib in Resources */,
 				305E63F2177406E2003189BB /* ExperienceViewController.xib in Resources */,
+				9EDE988B1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +580,7 @@
 				305E63EC17740622003189BB /* ExperienceViewController.m in Sources */,
 				9E689FA81775609700333DDA /* ExperienceRepository.m in Sources */,
 				5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */,
+				9EDE98851794F51900C6F541 /* SpinnerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +603,8 @@
 				9E689FB21775632500333DDA /* ExperienceRepositorySpec.mm in Sources */,
 				5ED77E16178BBAC30049EB07 /* LocationManager.m in Sources */,
 				5ED77E18178BBAE70049EB07 /* LocationManagerSpec.mm in Sources */,
+				9EDE98861794F51900C6F541 /* SpinnerViewController.m in Sources */,
+				9EDE988D1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

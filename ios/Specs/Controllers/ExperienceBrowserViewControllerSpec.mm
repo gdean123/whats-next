@@ -2,6 +2,7 @@
 #import "FakeExperienceRepository.h"
 #import "Experience.h"
 #import "ExperienceViewController.h"
+#import "SpinnerViewController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -13,34 +14,52 @@ describe(@"ExperienceBrowserViewController", ^{
     __block FakeExperienceRepository *repository;
     __block Experience *firstExperience;
     __block Experience *secondExperience;
+    __block Experience *thirdExperience;
+    __block Experience *fourthExperience;
+    
+    void(^swipeToPage)(int) = ^(int page) {
+        [controller.scrollView setContentOffset:(CGPoint{ CGRectGetWidth([controller scrollView].frame) * (page - 1), 0 })];
+        [controller scrollViewDidEndDecelerating:controller.scrollView];
+    };
+    
+    NSString *(^currentTagline)() = ^() {
+        return ((ExperienceViewController *)controller.currentViewController).taglineLabel.text;
+    };
     
     beforeEach(^{
         firstExperience = [[Experience alloc] initWithTagline:@"Run the Lyon Street stairs" image:nil latitude:37.788319 longitude:-122.40744];
         secondExperience = [[Experience alloc] initWithTagline:@"Check out the mural in the Mission" image:nil latitude:37.788319 longitude:-122.40744];
+        thirdExperience = [[Experience alloc] initWithTagline:@"Watch the sunset on the Dumbarton bridge" image:nil latitude:37.788319 longitude:-122.40744];
+        fourthExperience = [[Experience alloc] initWithTagline:@"Visit the Rengstorff House" image:nil latitude:37.788319 longitude:-122.40744];
         repository = [[FakeExperienceRepository alloc] init];
         controller = [[ExperienceBrowserViewController alloc] initWithRepository:repository];
         [controller.view setNeedsDisplay];
     });
+    
+    it(@"shows a spinner", ^{
+        controller.scrollView.subviews[0] should equal(controller.spinnerViewController.view);
+    });
 
-    context(@"when the request for an experience returns", ^{
+    context(@"when the request for the first page returns", ^{
         beforeEach(^{
-            repository.successBlock(@[firstExperience, secondExperience]);
-            [controller.currentExperienceViewController.view setNeedsDisplay];
+            repository.successBlock(@[firstExperience, secondExperience, thirdExperience]);
+            [controller.currentViewController.view setNeedsDisplay];
+        });      
+        
+        it(@"shows the first experience", ^{            
+             currentTagline() should equal(@"Run the Lyon Street stairs");
         });
         
-        it(@"shows an experience", ^{
-            controller.currentExperienceViewController.taglineLabel.text should equal(@"Run the Lyon Street stairs");
+        it(@"shows the second and third experiences when swiped right", ^{
+            swipeToPage(2);            
+            currentTagline() should equal(@"Check out the mural in the Mission");
+            
+            swipeToPage(3);
+            currentTagline() should equal(@"Watch the sunset on the Dumbarton bridge");
         });
         
-        it(@"displays next experience when swiped", ^{
-            [controller.scrollView setContentOffset:(CGPoint{ CGRectGetWidth([controller scrollView].frame), 0 })];
-            [controller scrollViewDidEndDecelerating:controller.scrollView];
-            controller.currentExperienceViewController.taglineLabel.text should equal(@"Check out the mural in the Mission");
-        });
-        
-        it(@"adds an experience view controller for each experience to the scroll view", ^{
-            [controller.scrollView.subviews objectAtIndex:0] should equal(controller.currentExperienceViewController.view);
-            [controller.scrollView.subviews count] should equal(2);
+        it(@"shows a spinner in place of the fourth experience", ^{
+            controller.scrollView.subviews[3] should equal(controller.spinnerViewController.view);
         });
     });
 });
