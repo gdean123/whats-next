@@ -55,7 +55,7 @@
         [self removeSpinner];
         
         self.scrollView.contentSize =
-        CGSizeMake(CGRectGetWidth(self.scrollView.frame) * [experiences count], CGRectGetHeight(self.scrollView.frame));        
+        CGSizeMake(CGRectGetWidth(self.scrollView.frame) * ([experiences count] + 1), CGRectGetHeight(self.scrollView.frame));
         
         for (int i = 0; i < [experiences count]; i++) {
             [self createViewControllerForExperience:experiences[i] withLocationManager:self.locationManager forIndex:i];
@@ -70,13 +70,8 @@
 - (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(LocationManager *)theLocationManager forIndex:(int)i
 {
     ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience locationManager:theLocationManager];
-
-    CGRect frame = self.scrollView.frame;
-    frame.origin.x = CGRectGetWidth(frame) * i;
-    frame.origin.y = 0;
-    experienceViewController.view.frame = frame;
     
-    [self addChild:experienceViewController];
+    [self addChild:experienceViewController atScreen:i];
     
     return experienceViewController;
 }
@@ -90,11 +85,15 @@
     self.currentViewController = self.childViewControllers[page];
 }
 
-- (void)addChild:(UIViewController *)child
+- (void)addChild:(UIViewController *)child atScreen:(int)screen
 {
     [self addChildViewController:child];
     [self.scrollView addSubview:child.view];
     [child didMoveToParentViewController:self];
+    CGRect frame = self.scrollView.frame;
+    frame.origin.x = CGRectGetWidth(frame) * screen;
+    frame.origin.y = 0;
+    child.view.frame = frame;
 }
 
 - (void)removeSpinner
@@ -105,7 +104,7 @@
 
 - (void)addSpinner
 {
-    [self addChild:self.spinnerViewController];
+    [self addChild:self.spinnerViewController atScreen:[self.childViewControllers count]];
 }
 
 @end
