@@ -73,11 +73,11 @@
     } failure:nil];
 }
 
-- (void)getPage:(int)page then:(void (^) (NSArray *experiences))successBlock
+- (void)getGroup:(int)group then:(void (^) (NSArray *experiences))successBlock
 {
     NSString *path = [NSString stringWithFormat:@"/experiences"];
     
-    [self.manager getObjectsAtPath:path parameters:@{@"page":[NSString stringWithFormat:@"%d", page]} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [self.manager getObjectsAtPath:path parameters:@{@"group":[NSString stringWithFormat:@"%d", group]} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successBlock([mappingResult array]);
     } failure:nil];
 }

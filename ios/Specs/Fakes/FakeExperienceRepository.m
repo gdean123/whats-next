@@ -2,9 +2,9 @@
 
 @implementation FakeExperienceRepository
 
-- (void)getPage:(int)page then:(void (^) (NSArray *experiences))successBlock
+- (void)getGroup:(int)group then:(void (^) (NSArray *experiences))successBlock
 {
-    self.page = page;
+    self.group = group;
     self.successBlock = successBlock;
 }
 

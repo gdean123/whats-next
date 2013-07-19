@@ -24,7 +24,7 @@ describe "Experiences" do
   end
 
   it "returns first 3 experiences for page 1" do
-    get "/experiences", page: 1
+    get "/experiences", group: 1
     result = JSON.parse(response.body)
     result.count.should == 3
     result.first["tagline"].should == @first_experience.tagline
@@ -33,14 +33,14 @@ describe "Experiences" do
   end
 
   it "returns the 4th experience for page 2" do
-    get "/experiences", page: 2
+    get "/experiences", group: 2
     result = JSON.parse(response.body)
     result.count.should == 1
     result.first["tagline"].should == @fourth_experience.tagline
   end
 
   it "returns no experience for a page past the end" do
-    get "/experiences", page: 3
+    get "/experiences", group: 3
     result = JSON.parse(response.body)
     result.count.should == 0
   end

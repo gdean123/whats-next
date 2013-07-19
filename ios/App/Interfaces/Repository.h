@@ -4,6 +4,6 @@
 
 @protocol Repository <NSObject>
 
-- (void)getPage:(int)page then:(void (^) (NSArray *experiences))successBlock;
+- (void)getGroup:(int)group then:(void (^) (NSArray *experiences))successBlock;
 
 @end

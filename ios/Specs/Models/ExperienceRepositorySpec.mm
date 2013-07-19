@@ -38,10 +38,10 @@ describe(@"ExperienceRepository", ^{
         return retrievedExperience;
     };
 
-    NSArray *(^getExperiencesForPage)(int) = ^ (int page) {
+    NSArray *(^getExperiencesForGroup)(int) = ^ (int group) {
         __block NSArray *retrievedExperiences;
         
-        [repository getPage:page then:^(NSArray *experiences){
+        [repository getGroup:group then:^(NSArray *experiences){
                        retrievedExperiences = experiences;
                        [blocker doneWaiting];
                    }];
@@ -84,7 +84,7 @@ describe(@"ExperienceRepository", ^{
     });    
     
     it(@"can retrieve experiences for page 1", ^{
-        NSArray *experiences = getExperiencesForPage(1);
+        NSArray *experiences = getExperiencesForGroup(1);
         Experience *firstRetrievedExperience = experiences[0];
         Experience *secondRetrievedExperience = experiences[1];
         Experience *thirdRetrievedExperience = experiences[2];
@@ -102,7 +102,7 @@ describe(@"ExperienceRepository", ^{
     });
     
     it(@"can retrieve experiences for page 2", ^{
-        NSArray *experiences = getExperiencesForPage(2);
+        NSArray *experiences = getExperiencesForGroup(2);
         Experience *firstRetrievedExperience = experiences[0];
         
         [experiences count] should equal(1);
@@ -112,7 +112,7 @@ describe(@"ExperienceRepository", ^{
     });
     
     it(@"can retrieve no experiences for page after last page", ^{
-        NSArray *experiences = getExperiencesForPage(3);
+        NSArray *experiences = getExperiencesForGroup(3);
         
         [experiences count] should equal(0);
     });

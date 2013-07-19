@@ -64,9 +64,9 @@ describe(@"ExperienceBrowserViewController", ^{
         
         context(@"when the request for the second page returns", ^{
             fit(@"shows the fourth experience", ^{
-                repository.page should equal(1);
+                repository.group should equal(1);
                 swipeToPage(4);
-                repository.page should equal(2);
+                repository.group should equal(2);
                 repository.successBlock(@[fourthExperience]);
                 currentTagline() should equal(@"Visit the Rengstorff House");
             });

@@ -6,7 +6,7 @@
 
 @interface ExperienceBrowserViewController ()
 
-- (void)appendExperiencesForPage:(int)page;
+- (void)appendExperiencesForGroup:(int)group;
 - (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(LocationManager *)manager forIndex:(int)i;
 - (void)appendExperiences:(NSArray *)experiences startingAtIndex:(int)index;
 @property (nonatomic, strong) id<Repository> experienceRepository;
@@ -40,16 +40,16 @@
     self.scrollView.scrollsToTop = NO;
     
     [self addSpinner];
-    [self appendExperiencesForPage:1];
+    [self appendExperiencesForGroup:1];
 }
 
-- (void)appendExperiencesForPage:(int)page
+- (void)appendExperiencesForGroup:(int)group
 {    
-    [self.experienceRepository getPage:page then:^(NSArray *experiences) {
+    [self.experienceRepository getGroup:group then:^(NSArray *experiences) {
         if (!experiences || [experiences count] == 0) return;
         
         [self removeSpinner];
-        [self appendExperiences:experiences startingAtIndex:(3 * (page - 1))];
+        [self appendExperiences:experiences startingAtIndex:(3 * (group- 1))];
         [self addSpinner];
     }];
 }
@@ -70,7 +70,7 @@
 
     self.currentViewController = self.childViewControllers[page];
     if (page == 3){
-        [self appendExperiencesForPage:2];
+        [self appendExperiencesForGroup:2];
     }
 }
 

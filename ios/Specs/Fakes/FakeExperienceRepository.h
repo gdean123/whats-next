@@ -5,8 +5,8 @@
 @interface FakeExperienceRepository : NSObject <Repository>
 
 @property (strong, nonatomic) void (^successBlock)(NSArray *);
-@property (assign, nonatomic) int page;
+@property (assign, nonatomic) int group;
 
-- (void)getPage:(int)page then:(void (^) (NSArray *experiences))successBlock;
+- (void)getGroup:(int)group then:(void (^) (NSArray *experiences))successBlock;
 
 @end
