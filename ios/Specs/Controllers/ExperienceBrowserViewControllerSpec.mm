@@ -61,7 +61,18 @@ describe(@"ExperienceBrowserViewController", ^{
         it(@"shows a spinner in place of the fourth experience", ^{
             controller.scrollView.subviews[3] should equal(controller.spinnerViewController.view);
         });
+        
+        context(@"when the request for the second page returns", ^{
+            fit(@"shows the fourth experience", ^{
+                repository.page should equal(1);
+                swipeToPage(4);
+                repository.page should equal(2);
+                repository.successBlock(@[fourthExperience]);
+                currentTagline() should equal(@"Visit the Rengstorff House");
+            });
+        });
     });
+    
 });
 
 SPEC_END
