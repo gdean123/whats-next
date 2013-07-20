@@ -36,6 +36,15 @@ describe(@"ExperienceBrowserScrollView", ^{
         [experienceBrowserScrollView scrollViewDidEndDecelerating:experienceBrowserScrollView];
         [mockExperienceBrowserScrollViewDelegate verify];
     });
+    
+    it(@"tells the delegate when we have swiped left", ^{
+        [[mockExperienceBrowserScrollViewDelegate expect] scrollViewDidSwipeInDirection:ScrollDirectionLeft];
+        experienceBrowserScrollView.lastContentOffsetX = screenWidth;
+        [experienceBrowserScrollView setContentOffset:CGPointZero];
+        
+        [experienceBrowserScrollView scrollViewDidEndDecelerating:experienceBrowserScrollView];
+        [mockExperienceBrowserScrollViewDelegate verify];
+    });
 });
 
 SPEC_END
