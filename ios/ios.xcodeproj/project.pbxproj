@@ -81,7 +81,7 @@
 		5E0EB70217713EDA00E147EE /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repository.h; path = App/Interfaces/Repository.h; sourceTree = SOURCE_ROOT; };
 		5E1801371775F71E0053432C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "App/Supporting Files/Constants.h"; sourceTree = SOURCE_ROOT; };
 		5E5822A517741873005EDA6F /* ExperienceViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceViewControllerSpec.mm; path = Controllers/ExperienceViewControllerSpec.mm; sourceTree = "<group>"; };
-		5E827878173D77F900C34000 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E827878173D77F900C34000 /* What's Next?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Next?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E82787B173D77F900C34000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E82787D173D77F900C34000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E82787F173D77F900C34000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,7 +208,7 @@
 		5E827879173D77F900C34000 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E827878173D77F900C34000 /* App.app */,
+				5E827878173D77F900C34000 /* What's Next?.app */,
 				5EF8DF29176534D2009393E7 /* Specs.octest */,
 			);
 			name = Products;
@@ -426,7 +426,7 @@
 			);
 			name = App;
 			productName = ios;
-			productReference = 5E827878173D77F900C34000 /* App.app */;
+			productReference = 5E827878173D77F900C34000 /* What's Next?.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5EF8DF28176534D2009393E7 /* Specs */ = {
@@ -661,7 +661,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Next?";
 				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
 				WRAPPER_EXTENSION = app;
 			};
@@ -739,7 +739,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Next?";
 				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
 				WRAPPER_EXTENSION = app;
 			};
@@ -843,7 +843,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Next?";
 				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
 				WRAPPER_EXTENSION = app;
 			};
@@ -861,7 +861,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Next?";
 				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
 				WRAPPER_EXTENSION = app;
 			};
