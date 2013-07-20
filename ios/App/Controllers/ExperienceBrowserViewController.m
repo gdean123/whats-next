@@ -2,6 +2,7 @@
 #import "ExperienceRepository.h"
 #import "ExperienceViewController.h"
 #import "SpinnerViewController.h"
+#import "ExperienceBrowserScrollView.h"
 #import "Experience.h"
 
 @interface ExperienceBrowserViewController ()
@@ -22,8 +23,8 @@
     self = [super initWithNibName:@"ExperienceBrowserViewController" bundle:nil];
     if (self) {
         self.experienceRepository = repository;
-        self.locationManager = [[LocationManager alloc] init];        
-        self.spinnerViewController = [[SpinnerViewController alloc] init];       
+        self.locationManager = [[LocationManager alloc] init];
+        self.spinnerViewController = [[SpinnerViewController alloc] init];
     }
     
     return self;
@@ -33,11 +34,7 @@
 {
     [super viewDidLoad];
     
-    self.scrollView.delegate = self;
-    self.scrollView.pagingEnabled = YES;    
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.showsVerticalScrollIndicator = NO;
-    self.scrollView.scrollsToTop = NO;
+    self.scrollView.experienceBrowserScrollViewDelegate = self;
     
     [self addSpinner];
     [self appendExperiencesForGroup:1];
@@ -58,26 +55,28 @@
 {
     ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience locationManager:theLocationManager];
     
-    [self addChild:experienceViewController atScreen:i];
+    [self addChild:experienceViewController atPage:i];
     
     return experienceViewController;
 }
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+- (void)scrollViewDidSwipeInDirection:(ScrollDirection)scrollDirection
 {
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
     NSUInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-
     self.currentViewController = self.childViewControllers[page];
-    if (page == 3){
-        [self appendExperiencesForGroup:2];
+
+    if (scrollDirection == ScrollDirectionRight) {
+        bool pageIsFirstInGroup = (page % 3 == 0);
+        if (pageIsFirstInGroup) {
+            [self appendExperiencesForGroup:(page/3) + 1];
+        }
     }
 }
 
-- (void)addChild:(UIViewController *)child atScreen:(int)screen
+- (void)addChild:(UIViewController *)child atPage:(int)page
 {
     CGRect frame = self.scrollView.frame;
-    frame.origin.x = CGRectGetWidth(frame) * screen;
+    frame.origin.x = CGRectGetWidth(frame) * page;
     frame.origin.y = 0;
     child.view.frame = frame;
     
@@ -94,7 +93,7 @@
 
 - (void)addSpinner
 {
-    [self addChild:self.spinnerViewController atScreen:[self.childViewControllers count]];
+    [self addChild:self.spinnerViewController atPage:[self.childViewControllers count]];
 }
 
 - (void)appendExperiences:(NSArray *)experiences startingAtIndex:(int)index

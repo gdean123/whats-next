@@ -26,6 +26,9 @@
 		5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
 		5ED77E16178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
 		5ED77E18178BBAE70049EB07 /* LocationManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */; };
+		5EDFDD9E179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFDD9D179A389E005383D4 /* ExperienceBrowserScrollView.m */; };
+		5EDFDD9F179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFDD9D179A389E005383D4 /* ExperienceBrowserScrollView.m */; };
+		5EDFDDA1179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFDDA0179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm */; };
 		5EFCCF78176536C000E6B5D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EFCCF75176536C000E6B5D1 /* InfoPlist.strings */; };
 		5EFCCF7B1765379400E6B5D1 /* Cedar-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCCF7A1765379400E6B5D1 /* Cedar-iOS.framework */; };
 		5EFCCF7C176537C800E6B5D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E82787B173D77F900C34000 /* UIKit.framework */; };
@@ -90,6 +93,9 @@
 		5ED77E13178BBAC30049EB07 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = App/Models/LocationManager.h; sourceTree = SOURCE_ROOT; };
 		5ED77E14178BBAC30049EB07 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = App/Models/LocationManager.m; sourceTree = SOURCE_ROOT; };
 		5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LocationManagerSpec.mm; path = Models/LocationManagerSpec.mm; sourceTree = "<group>"; };
+		5EDFDD9C179A389E005383D4 /* ExperienceBrowserScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceBrowserScrollView.h; path = App/Views/ExperienceBrowserScrollView.h; sourceTree = SOURCE_ROOT; };
+		5EDFDD9D179A389E005383D4 /* ExperienceBrowserScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceBrowserScrollView.m; path = App/Views/ExperienceBrowserScrollView.m; sourceTree = SOURCE_ROOT; };
+		5EDFDDA0179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceBrowserScrollViewSpec.mm; path = Views/ExperienceBrowserScrollViewSpec.mm; sourceTree = "<group>"; };
 		5EF8DF29176534D2009393E7 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF8DF3B176534D2009393E7 /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		5EFCCF75176536C000E6B5D1 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "Supporting Files/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 		5EFCCF741765368300E6B5D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5EDFDDA0179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -394,6 +401,8 @@
 				9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */,
 				305E63F0177406E2003189BB /* ExperienceViewController.xib */,
 				9E0BFD561770088400ABA42F /* ExperienceBrowserViewController.xib */,
+				5EDFDD9C179A389E005383D4 /* ExperienceBrowserScrollView.h */,
+				5EDFDD9D179A389E005383D4 /* ExperienceBrowserScrollView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -581,6 +590,7 @@
 				9E689FA81775609700333DDA /* ExperienceRepository.m in Sources */,
 				5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */,
 				9EDE98851794F51900C6F541 /* SpinnerViewController.m in Sources */,
+				5EDFDD9E179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +615,8 @@
 				5ED77E18178BBAE70049EB07 /* LocationManagerSpec.mm in Sources */,
 				9EDE98861794F51900C6F541 /* SpinnerViewController.m in Sources */,
 				9EDE988D1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm in Sources */,
+				5EDFDD9F179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */,
+				5EDFDDA1179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
