@@ -92,11 +92,21 @@ describe(@"ExperienceBrowserViewController", ^{
                 currentTagline() should equal(@"Visit the Rengstorff House");
             });
             
-            it(@"does not make a new request when swiping left", ^{
-                swipeToPage(7, ScrollDirectionRight);
-                repository.group should equal(3);
-                swipeToPage(4, ScrollDirectionLeft);
-                repository.group should equal(3);
+            context(@"when the request for the third group returns", ^{
+                beforeEach(^{
+                    swipeToPage(7, ScrollDirectionRight);
+                    repository.successBlock(thirdGroup);
+                });
+
+                it(@"does not make a new request when swiping left", ^{
+                    repository.group should equal(3);
+                    swipeToPage(4, ScrollDirectionLeft);
+                    repository.group should equal(3);
+                });
+    
+                xit(@"does not show a spinner after last experience", ^{
+                    [controller.scrollView.subviews count] should equal(7);
+                });
             });
         });
     });
