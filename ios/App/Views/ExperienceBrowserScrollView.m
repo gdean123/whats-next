@@ -19,12 +19,12 @@
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     ScrollDirection scrollDirection = ScrollDirectionUnknown;
 
-    if (self.lastContentOffset > scrollView.contentOffset.x)
+    if (self.lastContentOffsetX > scrollView.contentOffset.x)
         scrollDirection = ScrollDirectionLeft;
-    else if (self.lastContentOffset < scrollView.contentOffset.x)
+    else if (self.lastContentOffsetX < scrollView.contentOffset.x)
         scrollDirection = ScrollDirectionRight;
     
-    self.lastContentOffset = scrollView.contentOffset.x;
+    self.lastContentOffsetX = scrollView.contentOffset.x;
 
     [self.experienceBrowserScrollViewDelegate scrollViewDidSwipeInDirection:scrollDirection];
 }

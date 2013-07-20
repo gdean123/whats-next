@@ -59,6 +59,7 @@
     
     return experienceViewController;
 }
+
 - (void)scrollViewDidSwipeInDirection:(ScrollDirection)scrollDirection
 {
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);

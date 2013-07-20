@@ -12,7 +12,7 @@ typedef enum ScrollDirection {
 
 @interface ExperienceBrowserScrollView : UIScrollView<UIScrollViewDelegate>
 
-@property (nonatomic, assign) NSInteger lastContentOffset;
+@property (nonatomic, assign) NSInteger lastContentOffsetX;
 @property (nonatomic, assign) id<ExperienceBrowserScrollViewDelegate> experienceBrowserScrollViewDelegate;
 
 @end
