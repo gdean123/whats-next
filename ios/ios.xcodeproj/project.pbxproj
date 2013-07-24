@@ -50,6 +50,10 @@
 		9E2C8D8D1762DE6300190A4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C8D8B1762DE6300190A4D /* AppDelegate.m */; };
 		9E2C8D8F1762DE6300190A4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C8D8C1762DE6300190A4D /* main.m */; };
 		9E2C8D9E1762E0AD00190A4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E2C8D9B1762E0AD00190A4D /* InfoPlist.strings */; };
+		9E3B6EE2179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B6EE0179F8E6500B2AB42 /* ExperienceRecommendationViewController.m */; };
+		9E3B6EE3179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B6EE0179F8E6500B2AB42 /* ExperienceRecommendationViewController.m */; };
+		9E3B6EE7179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B6EE6179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib */; };
+		9E3B6EE8179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B6EE6179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib */; };
 		9E5CFE0517654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0617654FC4001D0BF0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0417654FC4001D0BF0 /* Model.m */; };
 		9E5CFE0B17657134001D0BF0 /* ModelSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */; };
@@ -121,6 +125,9 @@
 		9E2C8D9B1762E0AD00190A4D /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = "App/Supporting Files/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		9E2C8D9C1762E0AD00190A4D /* ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ios-Info.plist"; path = "App/Supporting Files/ios-Info.plist"; sourceTree = SOURCE_ROOT; };
 		9E2C8D9D1762E0AD00190A4D /* ios-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ios-Prefix.pch"; path = "App/Supporting Files/ios-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		9E3B6EDF179F8E6500B2AB42 /* ExperienceRecommendationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceRecommendationViewController.h; path = App/Controllers/ExperienceRecommendationViewController.h; sourceTree = SOURCE_ROOT; };
+		9E3B6EE0179F8E6500B2AB42 /* ExperienceRecommendationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceRecommendationViewController.m; path = App/Controllers/ExperienceRecommendationViewController.m; sourceTree = SOURCE_ROOT; };
+		9E3B6EE6179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperienceRecommendationViewController.xib; path = App/Views/ExperienceRecommendationViewController.xib; sourceTree = SOURCE_ROOT; };
 		9E5CFE0317654FC4001D0BF0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = App/Models/Model.h; sourceTree = SOURCE_ROOT; };
 		9E5CFE0417654FC4001D0BF0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = App/Models/Model.m; sourceTree = SOURCE_ROOT; };
 		9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ModelSpec.mm; path = Models/ModelSpec.mm; sourceTree = "<group>"; };
@@ -343,6 +350,8 @@
 				9E0BFD5A177008A100ABA42F /* ExperienceBrowserViewController.m */,
 				305E63E917740622003189BB /* ExperienceViewController.h */,
 				305E63EA17740622003189BB /* ExperienceViewController.m */,
+				9E3B6EDF179F8E6500B2AB42 /* ExperienceRecommendationViewController.h */,
+				9E3B6EE0179F8E6500B2AB42 /* ExperienceRecommendationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 		9E2C8D781762DE0500190A4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E3B6EE6179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib */,
 				9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */,
 				305E63F0177406E2003189BB /* ExperienceViewController.xib */,
 				9E0BFD561770088400ABA42F /* ExperienceBrowserViewController.xib */,
@@ -496,6 +506,7 @@
 				9EDE988A1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */,
 				5EDFDDA3179AF854005383D4 /* icon_57.png in Resources */,
 				5EDFDDA5179AF859005383D4 /* icon_114.png in Resources */,
+				9E3B6EE7179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +518,7 @@
 				9E0BFD581770088400ABA42F /* ExperienceBrowserViewController.xib in Resources */,
 				305E63F2177406E2003189BB /* ExperienceViewController.xib in Resources */,
 				9EDE988B1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */,
+				9E3B6EE8179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +611,7 @@
 				5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */,
 				9EDE98851794F51900C6F541 /* SpinnerViewController.m in Sources */,
 				5EDFDD9E179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */,
+				9E3B6EE2179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +638,7 @@
 				9EDE988D1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm in Sources */,
 				5EDFDD9F179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */,
 				5EDFDDA1179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm in Sources */,
+				9E3B6EE3179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +675,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -670,7 +684,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
+				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Production;
@@ -738,7 +752,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -748,7 +762,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
+				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Test;
@@ -843,7 +857,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -852,7 +866,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
+				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Development;
@@ -861,7 +875,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -870,7 +884,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
+				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Staging;

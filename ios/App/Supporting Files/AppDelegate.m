@@ -3,22 +3,29 @@
 #include "Experience.h"
 #include "ExperienceBrowserViewController.h"
 #include "ExperienceRepository.h"
+#include "ExperienceRecommendationViewController.h"
 
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    ExperienceRepository *experienceRepository = [[ExperienceRepository alloc] init];
-
-    ExperienceBrowserViewController *experienceViewController = [[ExperienceBrowserViewController alloc] initWithRepository:experienceRepository];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:experienceViewController];
-
-    self.window.rootViewController = self.navigationController;
     
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    
+    ExperienceRepository *experienceRepository = [[ExperienceRepository alloc] init];
+    
+    ExperienceBrowserViewController *experienceViewController = [[ExperienceBrowserViewController alloc] initWithRepository:experienceRepository];
+    
+    ExperienceRecommendationViewController* experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] init];
+    
+    NSArray* controllers = [NSArray arrayWithObjects:experienceViewController, experienceRecommendationViewController, nil];
+    self.tabBarController.viewControllers = controllers;
+    
+    self.window.rootViewController = self.tabBarController;
+
     
     [self.window makeKeyAndVisible];
     return YES;

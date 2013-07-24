@@ -25,6 +25,9 @@
         self.experienceRepository = repository;
         self.locationManager = [[LocationManager alloc] init];
         self.spinnerViewController = [[SpinnerViewController alloc] init];
+        
+        // associate tabbar item
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
     }
     
     return self;
