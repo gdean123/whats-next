@@ -1,12 +1,6 @@
-//
-//  ExperienceRecommendationViewController.m
-//  ios
-//
-//  Created by Jason Leng on 7/23/13.
-//  Copyright (c) 2013 George Dean. All rights reserved.
-//
-
 #import "ExperienceRecommendationViewController.h"
+#import "ExperienceRepository.h"
+#import "Experience.h"
 
 @interface ExperienceRecommendationViewController ()
 
@@ -27,13 +21,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.taglineTextField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.taglineTextField resignFirstResponder];
+    
+    ExperienceRepository *repository = [[ExperienceRepository alloc] init];
+    
+    Experience *experience = [[Experience alloc] initWithTagline:self.taglineTextField.text image:nil latitude:37.788319 longitude:-122.40744];
+    [repository create:experience then:^(Experience * e) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                        message:@"Your experience has been created!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }];   
+    
+    return NO;
 }
 
 @end
