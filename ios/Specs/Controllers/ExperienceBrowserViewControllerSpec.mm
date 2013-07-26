@@ -103,10 +103,6 @@ describe(@"ExperienceBrowserViewController", ^{
                     swipeToPage(4, ScrollDirectionLeft);
                     repository.group should equal(3);
                 });
-    
-                xit(@"does not show a spinner after last experience", ^{
-                    [controller.scrollView.subviews count] should equal(7);
-                });
             });
         });
     });
