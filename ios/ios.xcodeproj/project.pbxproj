@@ -24,6 +24,7 @@
 		5E83CEF9176C071100D49DAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */; };
 		5E83CEFA176C071800D49DAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */; };
 		5E93EF9917A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */; };
+		5E93EF9C17A22C2600E5CB2B /* FakeLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */; };
 		5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
 		5ED77E16178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
 		5ED77E18178BBAE70049EB07 /* LocationManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */; };
@@ -85,7 +86,6 @@
 		5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceBrowserViewControllerSpec.mm; path = Controllers/ExperienceBrowserViewControllerSpec.mm; sourceTree = "<group>"; };
 		5E0EB6FB17713D7900E147EE /* FakeExperienceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeExperienceRepository.h; path = Fakes/FakeExperienceRepository.h; sourceTree = "<group>"; };
 		5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeExperienceRepository.m; path = Fakes/FakeExperienceRepository.m; sourceTree = "<group>"; };
-		5E0EB70217713EDA00E147EE /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Repository.h; path = App/Interfaces/Repository.h; sourceTree = SOURCE_ROOT; };
 		5E1801371775F71E0053432C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "App/Supporting Files/Constants.h"; sourceTree = SOURCE_ROOT; };
 		5E5822A517741873005EDA6F /* ExperienceViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceViewControllerSpec.mm; path = Controllers/ExperienceViewControllerSpec.mm; sourceTree = "<group>"; };
 		5E827878173D77F900C34000 /* What's Next?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Next?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +98,10 @@
 		5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceRecommendationViewControllerSpec.mm; path = Controllers/ExperienceRecommendationViewControllerSpec.mm; sourceTree = "<group>"; };
+		5E93EF9A17A22C2600E5CB2B /* FakeLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeLocationManager.h; path = Fakes/FakeLocationManager.h; sourceTree = "<group>"; };
+		5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeLocationManager.m; path = Fakes/FakeLocationManager.m; sourceTree = "<group>"; };
+		5E93EF9D17A22E7D00E5CB2B /* ExperienceRepositoryInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceRepositoryInterface.h; path = App/Interfaces/ExperienceRepositoryInterface.h; sourceTree = SOURCE_ROOT; };
+		5E93EF9F17A237A300E5CB2B /* LocationManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManagerInterface.h; path = App/Interfaces/LocationManagerInterface.h; sourceTree = SOURCE_ROOT; };
 		5ED77E13178BBAC30049EB07 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = App/Models/LocationManager.h; sourceTree = SOURCE_ROOT; };
 		5ED77E14178BBAC30049EB07 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = App/Models/LocationManager.m; sourceTree = SOURCE_ROOT; };
 		5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LocationManagerSpec.mm; path = Models/LocationManagerSpec.mm; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				5E0EB6FB17713D7900E147EE /* FakeExperienceRepository.h */,
 				5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */,
+				5E93EF9A17A22C2600E5CB2B /* FakeLocationManager.h */,
+				5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -369,7 +375,8 @@
 		9E2C8D741762DDD100190A4D /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				5E0EB70217713EDA00E147EE /* Repository.h */,
+				5E93EF9F17A237A300E5CB2B /* LocationManagerInterface.h */,
+				5E93EF9D17A22E7D00E5CB2B /* ExperienceRepositoryInterface.h */,
 			);
 			name = Interfaces;
 			sourceTree = "<group>";
@@ -643,6 +650,7 @@
 				5EDFDDA1179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm in Sources */,
 				9E3B6EE3179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */,
 				5E93EF9917A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm in Sources */,
+				5E93EF9C17A22C2600E5CB2B /* FakeLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

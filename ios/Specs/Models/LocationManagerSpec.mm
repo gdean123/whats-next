@@ -16,7 +16,7 @@ describe(@"LocationManager", ^{
     
     it(@"returns the current location", ^{
         [locationManager locationManager:nil didUpdateLocations:@[location]];
-        locationManager.currentLocation should equal(location);
+        [locationManager currentLocation] should equal(location);
     });
     
     it(@"computes the distance (in miles) from a given latitude and longitude", ^{

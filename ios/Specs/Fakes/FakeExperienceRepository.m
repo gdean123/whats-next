@@ -8,4 +8,9 @@
     self.successBlock = successBlock;
 }
 
+- (void)create:(Experience *)experience then:(void (^) (Experience *))successBlock
+{
+    self.lastCreatedExperience = experience;
+}
+
 @end

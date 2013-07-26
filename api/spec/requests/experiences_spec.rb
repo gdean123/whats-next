@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Experiences" do
   before do
-    @first_experience = FactoryGirl.create(:experience, tagline: "Run the Lyon Street steps")
+    @first_experience = FactoryGirl.create(:experience, tagline: "Run the Lyon Street steps", latitude: 123.45, longitude: 456.78)
     @second_experience = FactoryGirl.create(:experience, tagline: "Check out a mural in the mission")
     @third_experience = FactoryGirl.create(:experience, tagline: "Watch the sunset on the Dumbarton bridge")
     @fourth_experience = FactoryGirl.create(:experience, tagline: "Visit the Rengstorff House")
@@ -15,9 +15,14 @@ describe "Experiences" do
   end
 
   it "creates an experience and renders the id" do
-    lambda {
-      post "/experiences", { tagline: @first_experience.tagline }
-    }.should change(Experience, :count).by(1)
+    post "/experiences", {
+        tagline: @first_experience.tagline,
+        latitude: @first_experience.latitude,
+        longitude: @first_experience.longitude }
+
+    Experience.last.tagline.should == @first_experience.tagline
+    Experience.last.latitude.should == @first_experience.latitude
+    Experience.last.longitude.should == @first_experience.longitude
 
     result = JSON.parse(response.body)
     result["id"].should == Experience.last.id

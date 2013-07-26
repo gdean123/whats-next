@@ -16,10 +16,11 @@
     self.tabBarController = [[UITabBarController alloc] init];
     
     ExperienceRepository *experienceRepository = [[ExperienceRepository alloc] init];
+    LocationManager *locationManager = [[LocationManager alloc] init];
     
     ExperienceBrowserViewController *experienceViewController = [[ExperienceBrowserViewController alloc] initWithRepository:experienceRepository];
     
-    ExperienceRecommendationViewController* experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] init];
+    ExperienceRecommendationViewController* experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] initWithRepository:experienceRepository locationManager:locationManager];
     
     NSArray* controllers = [NSArray arrayWithObjects:experienceViewController, experienceRecommendationViewController, nil];
     self.tabBarController.viewControllers = controllers;

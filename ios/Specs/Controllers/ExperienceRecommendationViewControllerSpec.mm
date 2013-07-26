@@ -1,4 +1,6 @@
 #import "ExperienceRecommendationViewController.h"
+#import "FakeExperienceRepository.h"
+#import "FakeLocationManager.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -6,19 +8,29 @@ using namespace Cedar::Doubles;
 SPEC_BEGIN(ExperienceRecommendationViewControllerSpec)
 
 describe(@"ExperienceRecommendationViewController", ^{
-    __block ExperienceRecommendationViewController *experienceRecommendationViewController;
+    __block FakeExperienceRepository *repository;
+    __block FakeLocationManager *locationManager;
+    __block ExperienceRecommendationViewController *controller;
 
     beforeEach(^{
-        experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] init];
-        [experienceRecommendationViewController.view setNeedsDisplay];
+        repository = [[FakeExperienceRepository alloc] init];
+        locationManager = [[FakeLocationManager alloc] initWithLatitude:123 longitude:456];
+        controller = [[ExperienceRecommendationViewController alloc] initWithRepository:repository locationManager:locationManager];
+
+        [controller.view setNeedsDisplay];
     });
     
     xit(@"shows the keyboard immediately", ^{
-        spy_on(experienceRecommendationViewController.taglineTextField);
-        
-        [experienceRecommendationViewController viewDidAppear:NO];
-        
-        experienceRecommendationViewController.taglineTextField should have_received(@selector(becomeFirstResponder));
+        spy_on(controller.taglineTextField);
+        [controller viewDidAppear:NO];
+        controller.taglineTextField should have_received(@selector(becomeFirstResponder));
+    });
+    
+    it(@"creates a new experience at the current location", ^{
+        controller.taglineTextField.text = @"Run the Lyon Street stairs";
+        [controller textFieldShouldReturn:controller.taglineTextField];
+        repository.lastCreatedExperience.latitude should equal(123);
+        repository.lastCreatedExperience.longitude should equal(456);
     });
 });
 

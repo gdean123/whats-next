@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import "LocationManagerInterface.h"
 
 @class LocationManager;
 
@@ -9,8 +9,7 @@
 
 @end
 
-
-@interface LocationManager : NSObject <CLLocationManagerDelegate>
+@interface LocationManager : NSObject <CLLocationManagerDelegate, LocationManagerInterface>
 
 - (NSString *)getDistanceFromLocation:(CLLocation*)location;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
@@ -18,6 +17,5 @@
 - (void)unregisterForLocationUpdates:(id<LocationManagerDelegate>)subscriber;
 
 @property (nonatomic,assign) id<LocationManagerDelegate> delegate;
-@property (nonatomic, strong) CLLocation *currentLocation;
 
 @end

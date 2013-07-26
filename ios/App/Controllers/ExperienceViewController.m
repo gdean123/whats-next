@@ -31,7 +31,7 @@
     CLLocationDegrees experienceLongitude = self.experience.longitude;
     CLLocation *experienceLocation = [[CLLocation alloc] initWithLatitude:experienceLatitude longitude:experienceLongitude];    
     
-    if (self.locationManager.currentLocation != nil) {
+    if ([self.locationManager currentLocation] != nil) {
         self.distanceLabel.text = [self.locationManager getDistanceFromLocation:experienceLocation];
         [self.distanceLabel setHidden:NO];
     }

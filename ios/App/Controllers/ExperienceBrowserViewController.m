@@ -10,7 +10,7 @@
 - (void)appendExperiencesForGroup:(int)group;
 - (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(LocationManager *)manager forIndex:(int)i;
 - (void)appendExperiences:(NSArray *)experiences startingAtIndex:(int)index;
-@property (nonatomic, strong) id<Repository> experienceRepository;
+@property (nonatomic, strong) id<ExperienceRepositoryInterface> experienceRepository;
 
 @end
 
@@ -18,7 +18,7 @@
 
 @synthesize locationManager;
 
-- (id)initWithRepository:(id<Repository>)repository
+- (id)initWithRepository:(id<ExperienceRepositoryInterface>)repository
 {
     self = [super initWithNibName:@"ExperienceBrowserViewController" bundle:nil];
     if (self) {

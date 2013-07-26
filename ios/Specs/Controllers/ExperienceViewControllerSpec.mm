@@ -41,9 +41,7 @@ describe(@"ExperienceViewController", ^{
     
     it(@"only shows location label when location is set", ^{
         controller.distanceLabel.hidden should be_truthy;
-        
         [locationManager locationManager:nil didUpdateLocations:@[closeLocation]];
-        
         controller.distanceLabel.hidden should_not be_truthy;
     });
 });

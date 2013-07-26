@@ -1,6 +1,4 @@
 class Experience < ActiveRecord::Base
-
-  #override the as_json method
   def as_json(options={})
     {
         :image => base_url + "/images/#{self.image}",
@@ -11,6 +9,7 @@ class Experience < ActiveRecord::Base
   end
 
   private
+
   def base_url
     if Rails.env.staging?
       "http://engage-me-api-staging.herokuapp.com"
