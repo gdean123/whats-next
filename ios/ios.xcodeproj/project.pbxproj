@@ -23,6 +23,7 @@
 		5E83CEF8176C033C00D49DAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */; };
 		5E83CEF9176C071100D49DAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */; };
 		5E83CEFA176C071800D49DAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */; };
+		5E93EF9917A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */; };
 		5ED77E15178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
 		5ED77E16178BBAC30049EB07 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E14178BBAC30049EB07 /* LocationManager.m */; };
 		5ED77E18178BBAE70049EB07 /* LocationManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */; };
@@ -96,6 +97,7 @@
 		5E83CEEF176BAF7200D49DAC /* Blocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blocker.m; path = Helpers/Blocker.m; sourceTree = "<group>"; };
 		5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceRecommendationViewControllerSpec.mm; path = Controllers/ExperienceRecommendationViewControllerSpec.mm; sourceTree = "<group>"; };
 		5ED77E13178BBAC30049EB07 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = App/Models/LocationManager.h; sourceTree = SOURCE_ROOT; };
 		5ED77E14178BBAC30049EB07 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = App/Models/LocationManager.m; sourceTree = SOURCE_ROOT; };
 		5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LocationManagerSpec.mm; path = Models/LocationManagerSpec.mm; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				5E0EB6F8176FA62100E147EE /* ExperienceBrowserViewControllerSpec.mm */,
 				5E5822A517741873005EDA6F /* ExperienceViewControllerSpec.mm */,
 				9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */,
+				5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				5EDFDD9F179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */,
 				5EDFDDA1179A42F6005383D4 /* ExperienceBrowserScrollViewSpec.mm in Sources */,
 				9E3B6EE3179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */,
+				5E93EF9917A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

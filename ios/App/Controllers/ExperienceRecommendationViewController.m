@@ -8,11 +8,10 @@
 
 @implementation ExperienceRecommendationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"ExperienceRecommendationViewController" bundle:nil];
     if (self) {
-        // Custom initialization
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:nil tag:1];
     }
     return self;
@@ -21,7 +20,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.taglineTextField.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.taglineTextField becomeFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
