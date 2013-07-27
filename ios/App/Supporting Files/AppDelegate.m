@@ -57,6 +57,8 @@
         
         ExperienceRecommendationViewController* experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] initWithRepository:self.experienceRepository locationManager:self.locationManager];
         
+        experienceRecommendationViewController.delegate = experienceBrowserViewController;
+        
         NSArray* controllers = [NSArray arrayWithObjects:experienceBrowserViewController, experienceRecommendationViewController, nil];
         self.tabBarController.viewControllers = controllers;
     }

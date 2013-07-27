@@ -111,8 +111,7 @@
         [self createViewControllerForExperience:experiences[i] withLocationManager:self.locationManager forIndex:i + index];
     }
     
-    self.scrollView.contentSize =
-    CGSizeMake(CGRectGetWidth(self.scrollView.frame) * ([self.childViewControllers count] + 1), CGRectGetHeight(self.scrollView.frame));
+    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.scrollView.frame) * ([self.childViewControllers count] + 1), CGRectGetHeight(self.scrollView.frame));
     self.currentViewController = self.childViewControllers[index];
 }
 
