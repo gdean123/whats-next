@@ -60,8 +60,11 @@ describe Experience do
   end
 
   it "orders the experiences by proximity" do
-    san_francisco = [37.780213, -122.431008]
-    Experience.close_to(san_francisco).should == [@berkeley_experience, @fremont_experience,
-                                              @santa_cruz_experience, @los_angeles_experience]
+    san_francisco_latitude = 37.780213
+    san_francisco_longitude = -122.431008
+
+    Experience.close_to(san_francisco_latitude, san_francisco_longitude).should ==
+        [@berkeley_experience, @fremont_experience,
+         @santa_cruz_experience, @los_angeles_experience]
   end
 end

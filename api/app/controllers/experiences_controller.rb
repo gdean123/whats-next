@@ -1,9 +1,10 @@
 class ExperiencesController < ApplicationController
   def index
-    location = params[:near].map(&:to_f)
+    near_latitude = params[:near_latitude].to_f
+    near_longitude = params[:near_longitude].to_f
 
     render :json => Experience.
-        close_to(location).
+        close_to(near_latitude, near_longitude).
         for_group(params[:group])
   end
 

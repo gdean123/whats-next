@@ -1,8 +1,12 @@
 require 'spec_helper'
 
 def get_group(group)
-  san_francisco = [37.780213, -122.431008]
-  get "/experiences", group: group, near: san_francisco
+  san_francisco_latitude = 37.780213
+  san_francisco_longitude = -122.431008
+
+  get "/experiences", group: group,
+      near_latitude: san_francisco_latitude,
+      near_longitude: san_francisco_longitude
 end
 
 describe "Experiences" do
