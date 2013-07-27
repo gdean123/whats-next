@@ -1,6 +1,10 @@
 class ExperiencesController < ApplicationController
   def index
-    render :json => Experience.paginate(:page => params[:group], :per_page => 3)
+    location = params[:near].map(&:to_f)
+
+    render :json => Experience.
+        close_to(location).
+        for_group(params[:group])
   end
 
   def show

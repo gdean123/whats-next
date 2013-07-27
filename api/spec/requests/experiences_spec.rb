@@ -1,51 +1,65 @@
 require 'spec_helper'
 
+def get_group(group)
+  san_francisco = [37.780213, -122.431008]
+  get "/experiences", group: group, near: san_francisco
+end
+
 describe "Experiences" do
   before do
-    @first_experience = FactoryGirl.create(:experience, tagline: "Run the Lyon Street steps", latitude: 123.45, longitude: 456.78)
-    @second_experience = FactoryGirl.create(:experience, tagline: "Check out a mural in the mission")
-    @third_experience = FactoryGirl.create(:experience, tagline: "Watch the sunset on the Dumbarton bridge")
-    @fourth_experience = FactoryGirl.create(:experience, tagline: "Visit the Rengstorff House")
+    berkeley = {latitude: 37.892466, longitude: -122.267586}
+    fremont = {latitude: 37.54866, longitude: -121.987435}
+    santa_cruz = {latitude: 36.975541, longitude: -122.032555}
+    los_angeles = {latitude: 34.044694, longitude: -118.233705}
+
+    @berkeley_experience = FactoryGirl.create(:experience, {tagline: "Berkeley experience"}.merge(berkeley))
+    @los_angeles_experience = FactoryGirl.create(:experience, {tagline: "Los Angeles experience"}.merge(los_angeles))
+    @santa_cruz_experience = FactoryGirl.create(:experience, {tagline: "Santa Cruz experience"}.merge(santa_cruz))
+    @fremont_experience = FactoryGirl.create(:experience, {tagline: "Fremont experience"}.merge(fremont))
   end
 
   it "renders an experience" do
-    get "/experiences/#{@first_experience.id}"
+    get "/experiences/#{@berkeley_experience.id}"
     result = JSON.parse(response.body)
-    result["tagline"].should == @first_experience.tagline
+    result["tagline"].should == @berkeley_experience.tagline
   end
 
   it "creates an experience and renders the id" do
     post "/experiences", {
-        tagline: @first_experience.tagline,
-        latitude: @first_experience.latitude,
-        longitude: @first_experience.longitude }
+        tagline: @berkeley_experience.tagline,
+        latitude: @berkeley_experience.latitude,
+        longitude: @berkeley_experience.longitude }
 
-    Experience.last.tagline.should == @first_experience.tagline
-    Experience.last.latitude.should == @first_experience.latitude
-    Experience.last.longitude.should == @first_experience.longitude
+    Experience.last.tagline.should == @berkeley_experience.tagline
+    Experience.last.latitude.should == @berkeley_experience.latitude
+    Experience.last.longitude.should == @berkeley_experience.longitude
 
     result = JSON.parse(response.body)
     result["id"].should == Experience.last.id
   end
 
-  it "returns first 3 experiences for page 1" do
-    get "/experiences", group: 1
+  it "returns closest 3 experiences for page 1" do
+    get_group(1)
+
     result = JSON.parse(response.body)
     result.count.should == 3
-    result.first["tagline"].should == @first_experience.tagline
-    result.second["tagline"].should == @second_experience.tagline
-    result.third["tagline"].should == @third_experience.tagline
+
+    result.first["tagline"].should == @berkeley_experience.tagline
+    result.second["tagline"].should == @fremont_experience.tagline
+    result.third["tagline"].should == @santa_cruz_experience.tagline
   end
 
-  it "returns the 4th experience for page 2" do
-    get "/experiences", group: 2
+  it "returns the 4th closest experience for page 2" do
+    get_group(2)
+
     result = JSON.parse(response.body)
     result.count.should == 1
-    result.first["tagline"].should == @fourth_experience.tagline
+    result.first["tagline"].should == @los_angeles_experience.tagline
   end
 
   it "returns no experience for a page past the end" do
-    get "/experiences", group: 3
+    get_group(3)
+
     result = JSON.parse(response.body)
     result.count.should == 0
   end

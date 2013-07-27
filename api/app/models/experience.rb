@@ -1,4 +1,15 @@
 class Experience < ActiveRecord::Base
+  geocoded_by :address
+
+  def self.for_group(group)
+    page(group).per(3)
+  end
+
+  def self.close_to(location)
+    max_distance = 1000
+    self.near(location, max_distance)
+  end
+
   def as_json(options={})
     {
         :image => base_url + "/images/#{self.image}",
