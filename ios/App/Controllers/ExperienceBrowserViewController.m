@@ -54,7 +54,7 @@
         if (!experiences || [experiences count] == 0) return;
         
         [self removeSpinner];
-        [self appendExperiences:experiences startingAtIndex:(3 * (group- 1))];
+        [self appendExperiences:experiences startingAtIndex:(3 * (group - 1))];
         [self addSpinner];
     }];
 }
@@ -110,16 +110,20 @@
     for (int i = 0; i < [experiences count]; i++) {
         [self createViewControllerForExperience:experiences[i] withLocationManager:self.locationManager forIndex:i + index];
     }
+    
     self.scrollView.contentSize =
     CGSizeMake(CGRectGetWidth(self.scrollView.frame) * ([self.childViewControllers count] + 1), CGRectGetHeight(self.scrollView.frame));
     self.currentViewController = self.childViewControllers[index];
 }
 
-// Doesn't work!
 - (void)clear
 {
-    [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
+    int subviewCount = [[self.scrollView subviews] count];
+    
+    for (int subviewIndex = 0; subviewIndex < subviewCount; subviewIndex++) {
+        [[[self.scrollView subviews] objectAtIndex:0] removeFromSuperview];
+        [[self.childViewControllers objectAtIndex:0] removeFromParentViewController];
+    }
 }
 
 - (void)experienceWasCreated
