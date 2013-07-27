@@ -7,7 +7,7 @@ class Experience < ActiveRecord::Base
 
   def self.close_to(latitude, longitude)
     max_distance = 1000
-    self.near([latitude, longitude], max_distance)
+    self.near([latitude, longitude], max_distance, order: "distance, created_at DESC")
   end
 
   def as_json(options={})
