@@ -4,17 +4,18 @@
 #import "ExperienceViewController.h"
 #import "Experience.h"
 #import "ExperienceBrowserViewController.h"
+#import "LocationManagerInterface.h"
 
 @interface ExperienceViewController ()
 
 @property (strong, nonatomic) Experience *experience;
-@property (weak, nonatomic) LocationManager *locationManager;
+@property (weak, nonatomic) id<LocationManagerInterface> locationManager;
 
 @end
 
 @implementation ExperienceViewController
 
-- (id)initWithExperience:(Experience *)theExperience locationManager:(LocationManager *)theLocationManager
+- (id)initWithExperience:(Experience *)theExperience locationManager:(id<LocationManagerInterface>)theLocationManager
 {
     self = [super initWithNibName:@"ExperienceViewController" bundle:nil];
     if (self) {

@@ -73,11 +73,18 @@
     } failure:nil];
 }
 
-- (void)getGroup:(int)group then:(void (^) (NSArray *experiences))successBlock
+- (void)getGroup:(int)group near:(CLLocation *)location then:(void (^) (NSArray *experiences))successBlock
 {
     NSString *path = [NSString stringWithFormat:@"/experiences"];
     
-    [self.manager getObjectsAtPath:path parameters:@{@"group":[NSString stringWithFormat:@"%d", group]} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    double latitude = location.coordinate.latitude;
+    double longitude = location.coordinate.longitude;
+    
+    NSDictionary *parameters = @{@"group":[NSString stringWithFormat:@"%d", group],
+                                 @"near_latitude":[NSString stringWithFormat:@"%f", latitude],
+                                 @"near_longitude":[NSString stringWithFormat:@"%f", longitude]};
+
+    [self.manager getObjectsAtPath:path parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successBlock([mappingResult array]);
     } failure:nil];
 }

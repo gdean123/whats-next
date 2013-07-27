@@ -9,7 +9,7 @@
 
 - (void)create:(Experience *)experience then:(void (^) (Experience *))successBlock;
 - (void)get:(NSNumber *)id then:(void (^) (Experience *))successBlock;
-- (void)getGroup:(int)group then:(void (^) (NSArray *experiences))successBlock;
+- (void)getGroup:(int)group near:(CLLocation *)location then:(void (^) (NSArray *experiences))successBlock;
 - (void)destroy:(Experience *)experience then:(void (^) ())successBlock;
 
 @end

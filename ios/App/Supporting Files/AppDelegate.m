@@ -1,37 +1,27 @@
 #import "AppDelegate.h"
 #import <RestKit/RestKit.h>
-#include "Experience.h"
-#include "ExperienceBrowserViewController.h"
-#include "ExperienceRepository.h"
-#include "ExperienceRecommendationViewController.h"
-
+#import "Experience.h"
+#import "ExperienceRepository.h"
+#import "LocationManager.h"
+#import "ExperienceRecommendationViewController.h"
+#import "ExperienceBrowserViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
     self.tabBarController = [[UITabBarController alloc] init];
     
-    ExperienceRepository *experienceRepository = [[ExperienceRepository alloc] init];
-    LocationManager *locationManager = [[LocationManager alloc] init];
-    
-    ExperienceBrowserViewController *experienceViewController = [[ExperienceBrowserViewController alloc] initWithRepository:experienceRepository];
-    
-    ExperienceRecommendationViewController* experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] initWithRepository:experienceRepository locationManager:locationManager];
-    
-    NSArray* controllers = [NSArray arrayWithObjects:experienceViewController, experienceRecommendationViewController, nil];
-    self.tabBarController.viewControllers = controllers;
-    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.tabBarController;
-
-    
     [self.window makeKeyAndVisible];
+    
+    self.experienceRepository = [[ExperienceRepository alloc] init];
+    self.locationManager = [[LocationManager alloc] init];
+    [self.locationManager registerForLocationUpdates:self];
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -58,6 +48,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)locationDidUpdate:(CLLocation *)location
+{
+    if (!self.tabBarController.viewControllers) {
+        ExperienceBrowserViewController *experienceBrowserViewController = [[ExperienceBrowserViewController alloc] initWithRepository:self.experienceRepository locationManager:self.locationManager];
+        
+        ExperienceRecommendationViewController* experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] initWithRepository:self.experienceRepository locationManager:self.locationManager];
+        
+        NSArray* controllers = [NSArray arrayWithObjects:experienceBrowserViewController, experienceRecommendationViewController, nil];
+        self.tabBarController.viewControllers = controllers;
+    }
 }
 
 @end

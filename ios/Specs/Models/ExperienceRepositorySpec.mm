@@ -41,7 +41,9 @@ describe(@"ExperienceRepository", ^{
     NSArray *(^getExperiencesForGroup)(int) = ^ (int group) {
         __block NSArray *retrievedExperiences;
         
-        [repository getGroup:group then:^(NSArray *experiences){
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:37.788000 longitude:-122.40744];
+        
+        [repository getGroup:group near:location then:^(NSArray *experiences){
                        retrievedExperiences = experiences;
                        [blocker doneWaiting];
                    }];
@@ -81,9 +83,9 @@ describe(@"ExperienceRepository", ^{
         Experience *retrievedExperience = getExperienceWithId(firstExperience.dbId);
         retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
         retrievedExperience.image should equal(@"http://localhost:3001/images/first.jpg");
-    });    
+    });
     
-    it(@"can retrieve experiences for page 1", ^{
+    it(@"can retrieve experiences for group 1", ^{
         NSArray *experiences = getExperiencesForGroup(1);
         Experience *firstRetrievedExperience = experiences[0];
         Experience *secondRetrievedExperience = experiences[1];
@@ -101,7 +103,7 @@ describe(@"ExperienceRepository", ^{
         firstRetrievedExperience.image should equal(@"http://localhost:3001/images/first.jpg");
     });
     
-    it(@"can retrieve experiences for page 2", ^{
+    it(@"can retrieve experiences for group 2", ^{
         NSArray *experiences = getExperiencesForGroup(2);
         Experience *firstRetrievedExperience = experiences[0];
         
@@ -111,9 +113,8 @@ describe(@"ExperienceRepository", ^{
         firstRetrievedExperience.image should equal(@"http://localhost:3001/images/fourth.jpg");
     });
     
-    it(@"can retrieve no experiences for page after last page", ^{
+    it(@"retrieves no experiences for page after last group", ^{
         NSArray *experiences = getExperiencesForGroup(3);
-        
         [experiences count] should equal(0);
     });
 });

@@ -48,6 +48,8 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+        
+        [self.delegate experienceWasCreated];
     }];   
     
     return NO;

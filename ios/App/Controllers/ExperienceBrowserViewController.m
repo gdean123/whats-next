@@ -3,14 +3,17 @@
 #import "ExperienceViewController.h"
 #import "SpinnerViewController.h"
 #import "ExperienceBrowserScrollView.h"
+#import "LocationManagerInterface.h"
 #import "Experience.h"
 
 @interface ExperienceBrowserViewController ()
 
 - (void)appendExperiencesForGroup:(int)group;
-- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(LocationManager *)manager forIndex:(int)i;
+- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(id<LocationManagerInterface>)theLocationManager forIndex:(int)i;
 - (void)appendExperiences:(NSArray *)experiences startingAtIndex:(int)index;
+
 @property (nonatomic, strong) id<ExperienceRepositoryInterface> experienceRepository;
+@property (nonatomic, strong) id<LocationManagerInterface> locationManager;
 
 @end
 
@@ -18,12 +21,12 @@
 
 @synthesize locationManager;
 
-- (id)initWithRepository:(id<ExperienceRepositoryInterface>)repository
+- (id)initWithRepository:(id<ExperienceRepositoryInterface>)theRepository locationManager:(id<LocationManagerInterface>)theLocationManager
 {
     self = [super initWithNibName:@"ExperienceBrowserViewController" bundle:nil];
     if (self) {
-        self.experienceRepository = repository;
-        self.locationManager = [[LocationManager alloc] init];
+        self.experienceRepository = theRepository;
+        self.locationManager = theLocationManager;
         self.spinnerViewController = [[SpinnerViewController alloc] init];
         
         // associate tabbar item
@@ -44,8 +47,10 @@
 }
 
 - (void)appendExperiencesForGroup:(int)group
-{    
-    [self.experienceRepository getGroup:group then:^(NSArray *experiences) {
+{
+    CLLocation *currentLocation = [self.locationManager currentLocation];
+    
+    [self.experienceRepository getGroup:group near:currentLocation then:^(NSArray *experiences) {
         if (!experiences || [experiences count] == 0) return;
         
         [self removeSpinner];
@@ -54,7 +59,7 @@
     }];
 }
 
-- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(LocationManager *)theLocationManager forIndex:(int)i
+- (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(id<LocationManagerInterface>)theLocationManager forIndex:(int)i
 {
     ExperienceViewController *experienceViewController = [[ExperienceViewController alloc] initWithExperience:experience locationManager:theLocationManager];
     
@@ -109,4 +114,18 @@
     CGSizeMake(CGRectGetWidth(self.scrollView.frame) * ([self.childViewControllers count] + 1), CGRectGetHeight(self.scrollView.frame));
     self.currentViewController = self.childViewControllers[index];
 }
+
+// Doesn't work!
+- (void)clear
+{
+    [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
+}
+
+- (void)experienceWasCreated
+{
+    [self clear];
+    [self appendExperiencesForGroup:1];
+}
+
 @end

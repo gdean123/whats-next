@@ -20,6 +20,11 @@ describe(@"ExperienceRecommendationViewController", ^{
         [controller.view setNeedsDisplay];
     });
     
+    void(^createExperience)() = ^() {
+        controller.taglineTextField.text = @"Run the Lyon Street stairs";
+        [controller textFieldShouldReturn:controller.taglineTextField];
+    };
+    
     xit(@"shows the keyboard immediately", ^{
         spy_on(controller.taglineTextField);
         [controller viewDidAppear:NO];
@@ -27,10 +32,19 @@ describe(@"ExperienceRecommendationViewController", ^{
     });
     
     it(@"creates a new experience at the current location", ^{
-        controller.taglineTextField.text = @"Run the Lyon Street stairs";
-        [controller textFieldShouldReturn:controller.taglineTextField];
+        createExperience();
         repository.lastCreatedExperience.latitude should equal(123);
         repository.lastCreatedExperience.longitude should equal(456);
+    });
+    
+    it(@"notifies its delegate when a new experience is created", ^{
+        id mockRecommendationDelegate = [OCMockObject mockForProtocol:@protocol(RecommendationDelegate)];
+        controller.delegate = mockRecommendationDelegate;
+        [[mockRecommendationDelegate expect] experienceWasCreated];
+        
+        createExperience();
+        repository.completeCreate(nil);
+        [mockRecommendationDelegate verify];
     });
 });
 

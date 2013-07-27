@@ -1,5 +1,6 @@
 #import "ExperienceBrowserViewController.h"
 #import "FakeExperienceRepository.h"
+#import "FakeLocationManager.h"
 #import "Experience.h"
 #import "ExperienceViewController.h"
 #import "SpinnerViewController.h"
@@ -13,6 +14,7 @@ SPEC_BEGIN(ExperienceBrowserViewControllerSpec)
 describe(@"ExperienceBrowserViewController", ^{
     __block ExperienceBrowserViewController *controller;
     __block FakeExperienceRepository *repository;
+    __block FakeLocationManager *locationManager;
     __block NSArray *firstGroup;
     __block NSArray *secondGroup;
     __block NSArray *thirdGroup;
@@ -48,7 +50,8 @@ describe(@"ExperienceBrowserViewController", ^{
         thirdGroup = createGroupWithTaglines(@[@"Jump out of an airplane"]);
         
         repository = [[FakeExperienceRepository alloc] init];
-        controller = [[ExperienceBrowserViewController alloc] initWithRepository:repository];
+        locationManager = [[FakeLocationManager alloc] initWithLatitude:123 longitude:456];
+        controller = [[ExperienceBrowserViewController alloc] initWithRepository:repository locationManager:locationManager];
         [controller.view setNeedsDisplay];
     });
     
@@ -58,7 +61,7 @@ describe(@"ExperienceBrowserViewController", ^{
 
     context(@"when the request for the first group returns", ^{
         beforeEach(^{
-            repository.successBlock(firstGroup);
+            repository.completeFetchForGroup(firstGroup);
             [controller.currentViewController.view setNeedsDisplay];
         });      
         
@@ -77,15 +80,15 @@ describe(@"ExperienceBrowserViewController", ^{
         it(@"shows a spinner in place of the fourth experience and makes a network request", ^{
             controller.scrollView.subviews[3] should equal(controller.spinnerViewController.view);
         
-            repository.group should equal(1);
+            repository.lastGroup should equal(1);
             swipeToPage(4, ScrollDirectionRight);
-            repository.group should equal(2);
+            repository.lastGroup should equal(2);
         });
         
         context(@"when the request for the second group returns", ^{
             beforeEach(^{
                 swipeToPage(4, ScrollDirectionRight);
-                repository.successBlock(secondGroup);
+                repository.completeFetchForGroup(secondGroup);
             });
             
             it(@"shows the fourth experience", ^{
@@ -95,13 +98,30 @@ describe(@"ExperienceBrowserViewController", ^{
             context(@"when the request for the third group returns", ^{
                 beforeEach(^{
                     swipeToPage(7, ScrollDirectionRight);
-                    repository.successBlock(thirdGroup);
+                    repository.completeFetchForGroup(thirdGroup);
                 });
 
                 it(@"does not make a new request when swiping left", ^{
-                    repository.group should equal(3);
+                    repository.lastGroup should equal(3);
                     swipeToPage(4, ScrollDirectionLeft);
-                    repository.group should equal(3);
+                    repository.lastGroup should equal(3);
+                });
+            });
+            
+            context(@"when we are notified that an experience was created", ^{
+                beforeEach(^{
+                    [controller experienceWasCreated];
+                });
+                
+                it(@"makes a new request for experiences near the current location", ^{
+                    repository.lastGroup should equal(1);
+                    repository.lastLocation.coordinate.latitude should equal(123);
+                    repository.lastLocation.coordinate.longitude should equal(456);
+                });
+                
+                fit(@"replaces the old experiences with the new ones", ^{
+                    repository.completeFetchForGroup(firstGroup);
+                    [controller.scrollView.subviews count] should equal(4);
                 });
             });
         });

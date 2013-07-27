@@ -15,4 +15,13 @@
     return fakeLocationManager;
 }
 
+- (void)registerForLocationUpdates:(id<LocationManagerDelegate>)subscriber
+{
+}
+
+- (NSString *)getDistanceFromLocation:(CLLocation*)location
+{
+    return @"invalide distance";
+}
+
 @end

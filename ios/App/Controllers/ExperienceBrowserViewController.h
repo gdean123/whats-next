@@ -1,19 +1,20 @@
 #import <UIKit/UIKit.h>
+
 #import "ExperienceRepositoryInterface.h"
-#import "LocationManager.h"
+#import "LocationManagerInterface.h"
 #import "ExperienceBrowserScrollView.h"
+#import "RecommendationDelegate.h"
 
-@class ExperienceViewController, SpinnerViewController;
+@class ExperienceViewController, SpinnerViewController, LocationManager;
 
-@interface ExperienceBrowserViewController : UIViewController <ExperienceBrowserScrollViewDelegate>
+@interface ExperienceBrowserViewController : UIViewController <ExperienceBrowserScrollViewDelegate, RecommendationDelegate>
 
-- (id)initWithRepository:(id<ExperienceRepositoryInterface>)repository;
+- (id)initWithRepository:(id<ExperienceRepositoryInterface>)repository locationManager:(id<LocationManagerInterface>)locationManager;
 - (void)scrollViewDidSwipeInDirection:(ScrollDirection)scrollDirection;
 
 @property (strong, nonatomic) UIViewController *currentViewController;
 @property (nonatomic, strong) SpinnerViewController *spinnerViewController;
 @property (weak, nonatomic) IBOutlet ExperienceBrowserScrollView *scrollView;
-@property (nonatomic, strong) LocationManager *locationManager;
 
 @end
 
