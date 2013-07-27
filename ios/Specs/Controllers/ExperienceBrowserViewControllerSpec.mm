@@ -119,7 +119,7 @@ describe(@"ExperienceBrowserViewController", ^{
                     repository.lastLocation.coordinate.longitude should equal(456);
                 });
                 
-                fit(@"replaces the old experiences with the new ones", ^{
+                it(@"replaces the old experiences with the new ones", ^{
                     repository.completeFetchForGroup(firstGroup);
                     [controller.scrollView.subviews count] should equal(4);
                 });
