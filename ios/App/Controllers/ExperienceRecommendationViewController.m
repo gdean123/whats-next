@@ -1,5 +1,6 @@
 #import "ExperienceRecommendationViewController.h"
 #import "Experience.h"
+#import "AppDelegate.h"
 
 @interface ExperienceRecommendationViewController ()
 
@@ -26,6 +27,10 @@
     [super viewDidLoad];
     
     self.taglineTextField.delegate = self;
+    
+    [self.cancelButton addTarget:self action:@selector(cancelButtonClick:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
+    
+    [self.recommendButton addTarget:self action:@selector(recommendButtonClick:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -33,26 +38,37 @@
     [self.taglineTextField becomeFirstResponder];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.taglineTextField resignFirstResponder];
-    
+- (void)createExperience
+{
     double latitude = [self.locationManager currentLocation].coordinate.latitude;
     double longitude = [self.locationManager currentLocation].coordinate.longitude;
     
     Experience *experience = [[Experience alloc] initWithTagline:self.taglineTextField.text image:nil latitude:latitude longitude:longitude];
     
-    [self.repository create:experience then:^(Experience * e) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
-                                                        message:@"Your experience has been created!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
+    [self.repository create:experience then:^(Experience * e) {        
         [self.delegate experienceWasCreated];
-    }];   
+    }];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.taglineTextField resignFirstResponder];
+    
+    [self createExperience];
     
     return NO;
 }
 
+-  (void)recommendButtonClick:(id)sender {
+    [self createExperience];
+}
+
+-  (void)cancelButtonClick:(id)sender {
+    [self switchToTab:0];
+}
+
+- (void)switchToTab:(int)tab
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.tabBarController setSelectedIndex:tab];
+}
 @end
