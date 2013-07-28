@@ -17,8 +17,8 @@ describe(@"ExperienceRepository", ^{
     __block Experience *thirdExperience;
     __block Experience *fourthExperience;
 
-    Experience *(^createExperience)(NSString *, NSString *) = ^(NSString *tagline, NSString *image) {
-        Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline image:image latitude:37.788319 longitude:-122.40744];
+    Experience *(^createExperience)(NSString *, NSString *, double, double) = ^(NSString *tagline, NSString *image, double latitude, double longitude) {
+        Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline image:image latitude:latitude longitude:longitude];
         [repository create:modelToCreate then:^(Experience * e){ [blocker doneWaiting]; }];
         [blocker wait];
         
@@ -68,10 +68,10 @@ describe(@"ExperienceRepository", ^{
         
         cleanDatabase();
         
-        firstExperience = createExperience(@"Run the Lyon Street stairs", @"first.jpg");
-        secondExperience = createExperience(@"Check out a mural in the mission", @"second.jpg");
-        thirdExperience = createExperience(@"Watch the sunset on the Dumbarton bridge", @"third.jpg");
-        fourthExperience = createExperience(@"Visit the Rengstorff House", @"fourth.jpg");
+        firstExperience = createExperience(@"Run the Lyon Street stairs", @"first.jpg", 37.788000, -122.40744);
+        secondExperience = createExperience(@"Check out a mural in the mission", @"second.jpg", 37.788000, -123.40744);
+        thirdExperience = createExperience(@"Watch the sunset on the Dumbarton bridge", @"third.jpg", 37.788000, -124.40744);
+        fourthExperience = createExperience(@"Visit the Rengstorff House", @"fourth.jpg", 37.788000, -125.40744);
     });
     
     afterEach(^{

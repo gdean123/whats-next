@@ -5,10 +5,11 @@
 #import "ExperienceBrowserScrollView.h"
 #import "LocationManagerInterface.h"
 #import "Experience.h"
+#import "AppDelegate.h"
 
 @interface ExperienceBrowserViewController ()
 
-- (void)appendExperiencesForGroup:(int)group;
+- (void)appendExperiencesForGroup:(int)group new:(BOOL)new;
 - (ExperienceViewController *)createViewControllerForExperience:(Experience *)experience withLocationManager:(id<LocationManagerInterface>)theLocationManager forIndex:(int)i;
 - (void)appendExperiences:(NSArray *)experiences startingAtIndex:(int)index;
 
@@ -43,10 +44,10 @@
     self.scrollView.experienceBrowserScrollViewDelegate = self;
     
     [self addSpinner];
-    [self appendExperiencesForGroup:1];
+    [self appendExperiencesForGroup:1 new:FALSE];
 }
 
-- (void)appendExperiencesForGroup:(int)group
+- (void)appendExperiencesForGroup:(int)group new:(BOOL)new
 {
     CLLocation *currentLocation = [self.locationManager currentLocation];
     
@@ -56,6 +57,8 @@
         [self removeSpinner];
         [self appendExperiences:experiences startingAtIndex:(3 * (group - 1))];
         [self addSpinner];
+        
+        if (new) [ self showNewExperience];
     }];
 }
 
@@ -77,7 +80,7 @@
     if (scrollDirection == ScrollDirectionRight) {
         bool pageIsFirstInGroup = (page % 3 == 0);
         if (pageIsFirstInGroup) {
-            [self appendExperiencesForGroup:(page/3) + 1];
+            [self appendExperiencesForGroup:(page/3) + 1 new:FALSE];
         }
     }
 }
@@ -128,7 +131,19 @@
 - (void)experienceWasCreated
 {
     [self clear];
-    [self appendExperiencesForGroup:1];
+    [self appendExperiencesForGroup:1 new:TRUE];
+}
+
+- (void)showNewExperience
+{
+    // Switch tab controller
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.tabBarController setSelectedIndex:0];
+    
+    CGPoint firstScreen = {0, 0};
+    // Show first screen
+    [self.scrollView setContentOffset:firstScreen];
+    
 }
 
 @end

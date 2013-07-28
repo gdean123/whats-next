@@ -123,6 +123,11 @@ describe(@"ExperienceBrowserViewController", ^{
                     repository.completeFetchForGroup(firstGroup);
                     [controller.scrollView.subviews count] should equal(4);
                 });
+                
+                it(@"shows the newly created experience", ^{
+                    repository.completeFetchForGroup(firstGroup);                    
+                    controller.scrollView.contentOffset.x should equal(0);
+                });
             });
         });
     });
