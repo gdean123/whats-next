@@ -31,7 +31,7 @@
         self.spinnerViewController = [[SpinnerViewController alloc] init];
         
         // associate tabbar item
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemBookmarks tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Experiences" image:nil tag:0];
     }
     
     return self;

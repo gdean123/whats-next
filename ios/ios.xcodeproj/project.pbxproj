@@ -691,7 +691,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -700,7 +700,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
+				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Production;
@@ -768,7 +768,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -778,7 +778,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
+				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Test;
@@ -873,7 +873,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -882,7 +882,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
+				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Development;
@@ -891,7 +891,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Brown (9J57VH3W3T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -900,7 +900,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "51E4151D-C405-480C-9A71-09F8E6DC55D7";
+				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Staging;
