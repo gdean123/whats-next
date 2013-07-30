@@ -3,7 +3,7 @@
 #import "Experience.h"
 #import "ExperienceRepository.h"
 #import "LocationManager.h"
-#import "ExperienceRecommendationViewController.h"
+#import "RecommendationNavigationController.h"
 #import "ExperienceBrowserViewController.h"
 
 @implementation AppDelegate
@@ -55,11 +55,11 @@
     if (!self.tabBarController.viewControllers) {
         ExperienceBrowserViewController *experienceBrowserViewController = [[ExperienceBrowserViewController alloc] initWithRepository:self.experienceRepository locationManager:self.locationManager];
         
-        ExperienceRecommendationViewController* experienceRecommendationViewController = [[ExperienceRecommendationViewController alloc] initWithRepository:self.experienceRepository locationManager:self.locationManager];
+        RecommendationNavigationController* recommendationNavigationController = [[RecommendationNavigationController alloc] init];
         
-        experienceRecommendationViewController.delegate = experienceBrowserViewController;
+        recommendationNavigationController.delegate = experienceBrowserViewController;
         
-        NSArray* controllers = [NSArray arrayWithObjects:experienceBrowserViewController, experienceRecommendationViewController, nil];
+        NSArray* controllers = [NSArray arrayWithObjects:experienceBrowserViewController, recommendationNavigationController, nil];
         self.tabBarController.viewControllers = controllers;
     }
 }

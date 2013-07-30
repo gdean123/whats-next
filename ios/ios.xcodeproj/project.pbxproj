@@ -63,6 +63,9 @@
 		9E689FA91775609700333DDA /* ExperienceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FA71775609700333DDA /* ExperienceRepository.m */; };
 		9E689FB01775611900333DDA /* DatabaseCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FAF1775611900333DDA /* DatabaseCleaner.m */; };
 		9E689FB21775632500333DDA /* ExperienceRepositorySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E689FB11775632500333DDA /* ExperienceRepositorySpec.mm */; };
+		9EA5A56117A7773300E8DF6B /* RecommendationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5A56017A7773300E8DF6B /* RecommendationNavigationController.m */; };
+		9EA5A56217A7773300E8DF6B /* RecommendationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5A56017A7773300E8DF6B /* RecommendationNavigationController.m */; };
+		9EA5A56417A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5A56317A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm */; };
 		9EB1400A177FA8FA0018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
 		9EB1400B177FCAE50018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
 		9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCC176D4D4F0065EFF9 /* libPods.a */; };
@@ -144,6 +147,9 @@
 		9E689FAE1775611900333DDA /* DatabaseCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseCleaner.h; path = Helpers/DatabaseCleaner.h; sourceTree = "<group>"; };
 		9E689FAF1775611900333DDA /* DatabaseCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseCleaner.m; path = Helpers/DatabaseCleaner.m; sourceTree = "<group>"; };
 		9E689FB11775632500333DDA /* ExperienceRepositorySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceRepositorySpec.mm; path = Models/ExperienceRepositorySpec.mm; sourceTree = "<group>"; };
+		9EA5A55F17A7773300E8DF6B /* RecommendationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendationNavigationController.h; path = App/Controllers/RecommendationNavigationController.h; sourceTree = SOURCE_ROOT; };
+		9EA5A56017A7773300E8DF6B /* RecommendationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendationNavigationController.m; path = App/Controllers/RecommendationNavigationController.m; sourceTree = SOURCE_ROOT; };
+		9EA5A56317A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RecommendationNavigationControllerSpec.mm; path = Controllers/RecommendationNavigationControllerSpec.mm; sourceTree = "<group>"; };
 		9EB14009177FA8FA0018242A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -315,6 +321,7 @@
 				5E5822A517741873005EDA6F /* ExperienceViewControllerSpec.mm */,
 				9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */,
 				5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */,
+				9EA5A56317A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +362,8 @@
 		9E2C8D721762DDA400190A4D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EA5A55F17A7773300E8DF6B /* RecommendationNavigationController.h */,
+				9EA5A56017A7773300E8DF6B /* RecommendationNavigationController.m */,
 				9EDE98821794F51800C6F541 /* SpinnerViewController.h */,
 				9EDE98831794F51900C6F541 /* SpinnerViewController.m */,
 				9E0BFD59177008A100ABA42F /* ExperienceBrowserViewController.h */,
@@ -626,6 +635,7 @@
 				9EDE98851794F51900C6F541 /* SpinnerViewController.m in Sources */,
 				5EDFDD9E179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */,
 				9E3B6EE2179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */,
+				9EA5A56117A7773300E8DF6B /* RecommendationNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +665,8 @@
 				9E3B6EE3179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */,
 				5E93EF9917A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm in Sources */,
 				5E93EF9C17A22C2600E5CB2B /* FakeLocationManager.m in Sources */,
+				9EA5A56217A7773300E8DF6B /* RecommendationNavigationController.m in Sources */,
+				9EA5A56417A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

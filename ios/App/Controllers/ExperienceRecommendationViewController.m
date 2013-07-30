@@ -15,7 +15,6 @@
 {
     self = [super initWithNibName:@"ExperienceRecommendationViewController" bundle:nil];
     if (self) {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:nil tag:1];
         self.repository = repository;
         self.locationManager = locationManager;
     }
