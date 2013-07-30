@@ -55,7 +55,7 @@
     if (!self.tabBarController.viewControllers) {
         ExperienceBrowserViewController *experienceBrowserViewController = [[ExperienceBrowserViewController alloc] initWithRepository:self.experienceRepository locationManager:self.locationManager];
         
-        RecommendationNavigationController* recommendationNavigationController = [[RecommendationNavigationController alloc] init];
+        RecommendationNavigationController* recommendationNavigationController = [[RecommendationNavigationController alloc] initWithRepository:self.experienceRepository locationManager:self.locationManager];
         
         recommendationNavigationController.delegate = experienceBrowserViewController;
         
