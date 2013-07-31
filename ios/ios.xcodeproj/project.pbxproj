@@ -68,6 +68,10 @@
 		9EA5A56417A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5A56317A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm */; };
 		9EB1400A177FA8FA0018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
 		9EB1400B177FCAE50018242A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB14009177FA8FA0018242A /* CoreLocation.framework */; };
+		9EBE01F417A8B99A0094BA99 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE01F217A8B99A0094BA99 /* PhotoViewController.m */; };
+		9EBE01F517A8B99A0094BA99 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE01F217A8B99A0094BA99 /* PhotoViewController.m */; };
+		9EBE01F917A8B9CD0094BA99 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE01F817A8B9CD0094BA99 /* PhotoViewController.xib */; };
+		9EBE01FA17A8B9CD0094BA99 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE01F817A8B9CD0094BA99 /* PhotoViewController.xib */; };
 		9EC03BCD176D4D4F0065EFF9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCC176D4D4F0065EFF9 /* libPods.a */; };
 		9EC03BCF176D4D990065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
 		9EC03BD0176D4DAE0065EFF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC03BCE176D4D990065EFF9 /* Security.framework */; };
@@ -151,6 +155,9 @@
 		9EA5A56017A7773300E8DF6B /* RecommendationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendationNavigationController.m; path = App/Controllers/RecommendationNavigationController.m; sourceTree = SOURCE_ROOT; };
 		9EA5A56317A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RecommendationNavigationControllerSpec.mm; path = Controllers/RecommendationNavigationControllerSpec.mm; sourceTree = "<group>"; };
 		9EB14009177FA8FA0018242A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9EBE01F117A8B99A0094BA99 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoViewController.h; path = App/Controllers/PhotoViewController.h; sourceTree = SOURCE_ROOT; };
+		9EBE01F217A8B99A0094BA99 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewController.m; path = App/Controllers/PhotoViewController.m; sourceTree = SOURCE_ROOT; };
+		9EBE01F817A8B9CD0094BA99 /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhotoViewController.xib; path = App/Views/PhotoViewController.xib; sourceTree = SOURCE_ROOT; };
 		9EC03BCC176D4D4F0065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		9EC03BCE176D4D990065EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9EC03BD1176D59330065EFF9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -372,6 +379,8 @@
 				305E63EA17740622003189BB /* ExperienceViewController.m */,
 				9E3B6EDF179F8E6500B2AB42 /* ExperienceRecommendationViewController.h */,
 				9E3B6EE0179F8E6500B2AB42 /* ExperienceRecommendationViewController.m */,
+				9EBE01F117A8B99A0094BA99 /* PhotoViewController.h */,
+				9EBE01F217A8B99A0094BA99 /* PhotoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -436,6 +445,7 @@
 		9E2C8D781762DE0500190A4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9EBE01F817A8B9CD0094BA99 /* PhotoViewController.xib */,
 				9E3B6EE6179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib */,
 				9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */,
 				305E63F0177406E2003189BB /* ExperienceViewController.xib */,
@@ -530,6 +540,7 @@
 				5EDFDDA3179AF854005383D4 /* icon_57.png in Resources */,
 				5EDFDDA5179AF859005383D4 /* icon_114.png in Resources */,
 				9E3B6EE7179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib in Resources */,
+				9EBE01F917A8B9CD0094BA99 /* PhotoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +553,7 @@
 				305E63F2177406E2003189BB /* ExperienceViewController.xib in Resources */,
 				9EDE988B1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */,
 				9E3B6EE8179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib in Resources */,
+				9EBE01FA17A8B9CD0094BA99 /* PhotoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +648,7 @@
 				5EDFDD9E179A389E005383D4 /* ExperienceBrowserScrollView.m in Sources */,
 				9E3B6EE2179F8E6500B2AB42 /* ExperienceRecommendationViewController.m in Sources */,
 				9EA5A56117A7773300E8DF6B /* RecommendationNavigationController.m in Sources */,
+				9EBE01F417A8B99A0094BA99 /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +680,7 @@
 				5E93EF9C17A22C2600E5CB2B /* FakeLocationManager.m in Sources */,
 				9EA5A56217A7773300E8DF6B /* RecommendationNavigationController.m in Sources */,
 				9EA5A56417A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm in Sources */,
+				9EBE01F517A8B99A0094BA99 /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

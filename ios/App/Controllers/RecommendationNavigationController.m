@@ -1,5 +1,4 @@
 #import "RecommendationNavigationController.h"
-#import "ExperienceRecommendationViewController.h"
 
 @interface RecommendationNavigationController ()
 
@@ -11,12 +10,14 @@
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:nil tag:1];
         [self setNavigationBarHidden:YES];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:nil tag:1];
         
-        ExperienceRecommendationViewController *experienceRecommendationViewController =[[ExperienceRecommendationViewController alloc] initWithRepository:repository locationManager:locationManager];
+        self.photoViewController = [[PhotoViewController alloc] init];
         
-        [self pushViewController:experienceRecommendationViewController animated:YES];
+        self.experienceRecommendationViewController =[[ExperienceRecommendationViewController alloc] initWithRepository:repository locationManager:locationManager];
+        
+        [self pushViewController:self.photoViewController animated:YES];
         
     }
     return self;
@@ -25,5 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];    
 }
 @end
