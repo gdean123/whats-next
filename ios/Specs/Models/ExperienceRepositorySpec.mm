@@ -38,7 +38,7 @@ describe(@"ExperienceRepository", ^{
         return retrievedExperience;
     };
 
-    NSArray *(^getExperiencesForGroup)(int) = ^ (int group) {
+    NSArray *(^getExperiencesForGroup)(int) = ^(int group) {
         __block NSArray *retrievedExperiences;
         
         CLLocation *location = [[CLLocation alloc] initWithLatitude:37.788000 longitude:-122.40744];

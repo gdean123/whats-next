@@ -1,5 +1,42 @@
 PODS:
   - AFNetworking (1.2.1)
+  - AWSiOSSDK (1.6.0):
+    - AWSiOSSDK/AutoScaling
+    - AWSiOSSDK/CloudWatch
+    - AWSiOSSDK/DynamoDB
+    - AWSiOSSDK/EC2
+    - AWSiOSSDK/ElasticLoadBalancing
+    - AWSiOSSDK/Runtime
+    - AWSiOSSDK/S3
+    - AWSiOSSDK/SES
+    - AWSiOSSDK/SimpleDB
+    - AWSiOSSDK/SNS
+    - AWSiOSSDK/SQS
+    - AWSiOSSDK/STS
+  - AWSiOSSDK/AutoScaling (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/CloudWatch (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/DynamoDB (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/EC2 (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/ElasticLoadBalancing (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/Runtime (1.6.0):
+    - AWSiOSSDK/DynamoDB
+  - AWSiOSSDK/S3 (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SES (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SimpleDB (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SNS (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/SQS (1.6.0):
+    - AWSiOSSDK/Runtime
+  - AWSiOSSDK/STS (1.6.0):
+    - AWSiOSSDK/Runtime
   - OCMock (2.1.1)
   - RestKit (0.20.2):
     - RestKit/Core
@@ -21,14 +58,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 1.2.1)
+  - AWSiOSSDK
   - OCMock (~> 2.1.1)
   - RestKit (~> 0.20.0rc)
 
 SPEC CHECKSUMS:
   AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
+  AWSiOSSDK: 947b8f0458299e97b81e269c91293a3e6f6f2f8f
   OCMock: 79212e5e328378af5cfd6edb5feacfd6c49cd8a3
   RestKit: e511651e916245fa4becfb0e8f966a1fa021fcd4
-  SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
-  TransitionKit: 3b3836af6887d16a0834fa35031028792d1d5c0c
+  SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
+  TransitionKit: d0e3344aac92991395d4c2e72d9c5a8ceeb12910
 
 COCOAPODS: 0.18.1

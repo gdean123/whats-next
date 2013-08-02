@@ -44,3 +44,8 @@ Experience.create tagline: "Visit the parrots on telegraph hill",
                   image: "parrots.png",
                   latitude: 37.802223,
                   longitude: -122.405659
+
+Experience.create tagline: "Have coffee and read a book at Borderlands Cafe",
+                  image: "book.png",
+                  latitude: 37.759248,
+                  longitude: -122.421452

@@ -23,8 +23,8 @@ describe(@"RecommendationNavigationController", ^{
         controller.navigationBarHidden should be_truthy;
     });
     
-    it(@"shows ExperienceRecommendationViewController as topViewController", ^{
-        controller.topViewController should be_instance_of([ExperienceRecommendationViewController class]);
+    it(@"shows the photo view controller as the top view controller", ^{
+        controller.topViewController should be_instance_of([PhotoViewController class]);
     });
 });
 

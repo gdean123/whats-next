@@ -5,6 +5,7 @@ link_with %w{App Specs}
 
 pod 'AFNetworking', '~> 1.2.1'
 pod 'RestKit', '~> 0.20.0rc'
+pod 'AWSiOSSDK'
 
 # Link libPods-test to my Specs target only
 target :test, :exclusive => true do
