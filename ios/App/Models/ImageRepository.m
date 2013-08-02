@@ -4,8 +4,6 @@
 
 @interface ImageRepository()
 
--(NSURL *)generatePreSignedURLRequest;
-
 @property (strong, nonatomic) AmazonS3Client *s3;
 
 @end
@@ -15,7 +13,6 @@
 NSString *const AWS_ACCESS_KEY = @"AKIAIDUAQSBMWYKUPMTA";
 NSString *const AWS_SECRET_CODE = @"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";
 NSString *const BUCKET = @"whatsnext";
-NSString *const GUID = @"some-guid";
 
 - (ImageRepository *)init
 {
@@ -30,25 +27,33 @@ NSString *const GUID = @"some-guid";
 
 - (void)create:(UIImage *)imageToCreate then:(void (^) (NSURL *))successBlock
 {
-    S3PutObjectRequest *request = [[S3PutObjectRequest alloc] initWithKey:GUID inBucket:BUCKET];
+    NSString *key = [self generateGUID];
+    
+    S3PutObjectRequest *request = [[S3PutObjectRequest alloc] initWithKey:key inBucket:BUCKET];
     request.contentType = @"image/png";
     request.data = UIImagePNGRepresentation(imageToCreate);
     [self.s3 putObject:request];
 
-    NSURL *url = [self generatePreSignedURLRequest];
+    NSURL *url = [self generatePreSignedURLRequestForKey:key];
     
     successBlock(url);
 }
 
--(NSURL *)generatePreSignedURLRequest
+-(NSURL *)generatePreSignedURLRequestForKey:(NSString *)key
 {
     NSDate *forever = [NSDate dateWithTimeIntervalSinceNow:(NSTimeInterval) 60*60*24*360];
     
     S3GetPreSignedURLRequest *urlRequest = [[S3GetPreSignedURLRequest alloc] init];
-    urlRequest.key     = GUID;
+    urlRequest.key     = key;
     urlRequest.bucket  = BUCKET;
     urlRequest.expires = forever;
     return [self.s3 getPreSignedURL:urlRequest];
+}
+
+-(NSString *)generateGUID
+{
+    CFUUIDRef udid = CFUUIDCreate(NULL);
+    return CFBridgingRelease(CFUUIDCreateString(NULL, udid));
 }
 
 @end
