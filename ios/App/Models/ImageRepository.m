@@ -34,20 +34,14 @@ NSString *const BUCKET = @"whatsnext";
     request.data = UIImagePNGRepresentation(imageToCreate);
     [self.s3 putObject:request];
 
-    NSString *url = [[self generatePreSignedURLRequestForKey:key] absoluteString];
+    NSString *url = [self generateUrlForKey:key];
     
     successBlock(url);
 }
 
--(NSURL *)generatePreSignedURLRequestForKey:(NSString *)key
+-(NSString *)generateUrlForKey:(NSString *)key
 {
-    NSDate *forever = [NSDate dateWithTimeIntervalSinceNow:(NSTimeInterval) 60*60*24*360];
-    
-    S3GetPreSignedURLRequest *urlRequest = [[S3GetPreSignedURLRequest alloc] init];
-    urlRequest.key     = key;
-    urlRequest.bucket  = BUCKET;
-    urlRequest.expires = forever;
-    return [self.s3 getPreSignedURL:urlRequest];
+    return [NSString stringWithFormat:@"https://s3.amazonaws.com/whatsnext/%@", key];
 }
 
 -(NSString *)generateGUID
