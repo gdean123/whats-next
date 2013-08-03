@@ -17,7 +17,7 @@ class ExperiencesController < ApplicationController
   def create
     experience = Experience.create(
         tagline: params[:tagline],
-        image: params[:image],
+        image_url: params[:image_url],
         latitude: params[:latitude],
         longitude: params[:longitude])
 

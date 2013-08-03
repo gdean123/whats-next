@@ -28,11 +28,13 @@ describe(@"ExperienceBuilder", ^{
     it(@"sets the tagline of the created experience", ^{
         [experienceBuilder setTagline:@"Run the Lyon Street steps"];
         [experienceBuilder createThen:^(Experience *) {}];
+        imageRepository.completeCreateWithUrl(nil);
         experienceRepository.lastCreatedExperience.tagline should equal(@"Run the Lyon Street steps");
     });
     
     it(@"sets the location of the created experience", ^{
         [experienceBuilder createThen:^(Experience *) {}];
+        imageRepository.completeCreateWithUrl(nil);
         experienceRepository.lastCreatedExperience.latitude should equal(123);
         experienceRepository.lastCreatedExperience.longitude should equal(456);
     });

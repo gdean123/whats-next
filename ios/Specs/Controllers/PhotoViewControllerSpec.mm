@@ -31,15 +31,11 @@ describe(@"PhotoViewController", ^{
          }];
     };
     
-    bool (^isImageEqual)(UIImage *, UIImage *) = ^(UIImage *image1, UIImage *image2)
-    {
-        return UIImagePNGRepresentation(image1) == UIImagePNGRepresentation(image2);
-    };
-    
     it(@"sets the image on the experience builder when a photo is taken", ^{
         UIImage *image = [UIImage imageNamed:@"new_photo"];
         takePhoto(image);
-        isImageEqual(imageRepository.lastPhoto, image) should be_truthy;
+
+        UIImagePNGRepresentation(experienceBuilder.image) should equal(UIImagePNGRepresentation(image));
     });
 });
 

@@ -17,8 +17,8 @@ describe Experience do
     it {should respond_to(:tagline)}
   end
 
-  describe "should have a image attribute" do
-    it {should respond_to(:image)}
+  describe "should have an image URL attribute" do
+    it {should respond_to(:image_url)}
   end
 
   describe "should have a latitude attribute" do
@@ -39,9 +39,9 @@ describe Experience do
     def self.it_should_use_correct_base_url_for(environment, base_url)
       it "should use correct base url for #{environment} environment" do
         set_environment environment
-        experience = FactoryGirl.create(:experience, image: "mural.png")
+        experience = FactoryGirl.create(:experience, image_url: "mural.png")
         experience_attributes = JSON.parse(experience.to_json)
-        experience_attributes['image'].should == "#{base_url}/images/mural.png"
+        experience_attributes['image_url'].should == "#{base_url}/images/mural.png"
       end
     end
 

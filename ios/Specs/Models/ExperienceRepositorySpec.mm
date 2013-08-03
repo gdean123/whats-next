@@ -17,8 +17,8 @@ describe(@"ExperienceRepository", ^{
     __block Experience *thirdExperience;
     __block Experience *fourthExperience;
 
-    Experience *(^createExperience)(NSString *, NSString *, double, double) = ^(NSString *tagline, NSString *image, double latitude, double longitude) {
-        Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline imageUrl:image latitude:latitude longitude:longitude];
+    Experience *(^createExperience)(NSString *, NSString *, double, double) = ^(NSString *tagline, NSString *imageUrl, double latitude, double longitude) {
+        Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline imageUrl:imageUrl latitude:latitude longitude:longitude];
         [repository create:modelToCreate then:^(Experience * e){ [blocker doneWaiting]; }];
         [blocker wait];
         

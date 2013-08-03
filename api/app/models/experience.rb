@@ -12,7 +12,7 @@ class Experience < ActiveRecord::Base
 
   def as_json(options={})
     {
-        :image => base_url + "/images/#{self.image}",
+        :image_url => base_url + "/images/#{self.image_url}",
         :tagline => self.tagline,
         :latitude => self.latitude,
         :longitude => self.longitude

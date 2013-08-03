@@ -18,6 +18,7 @@ describe(@"ExperienceRecommendationViewController", ^{
 
     beforeEach(^{
         experienceRepository = [[FakeExperienceRepository alloc] init];
+        imageRepository = [[FakeImageRepository alloc] init];
         locationManager = [[FakeLocationManager alloc] initWithLatitude:123 longitude:456];
         builder = [[ExperienceBuilder alloc] initWithExperienceRepository:experienceRepository imageRepository:imageRepository locationManager:locationManager];
         controller = [[ExperienceRecommendationViewController alloc] initWithExperienceBuilder:builder];
@@ -28,6 +29,7 @@ describe(@"ExperienceRecommendationViewController", ^{
     void(^createExperience)() = ^() {
         controller.taglineTextField.text = @"Run the Lyon Street stairs";
         [controller textFieldShouldReturn:controller.taglineTextField];
+        imageRepository.completeCreateWithUrl(nil);
     };
     
     it(@"creates a new experience at the current location", ^{
@@ -43,6 +45,7 @@ describe(@"ExperienceRecommendationViewController", ^{
         [[mockRecommendationDelegate expect] experienceWasCreated];
         
         createExperience();
+        imageRepository.completeCreateWithUrl(nil);
         experienceRepository.completeCreate(nil);
         [mockRecommendationDelegate verify];
     });

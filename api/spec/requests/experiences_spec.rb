@@ -93,9 +93,9 @@ describe "Experiences" do
   end
 
   it "generates the right url" do
-    experience = FactoryGirl.create(:experience, image: "mural.png")
+    experience = FactoryGirl.create(:experience, image_url: "mural.png")
     get "/experiences/#{experience.id}"
     result = JSON.parse(response.body)
-    result["image"].should == "http://localhost:3000/images/mural.png"
+    result["image_url"].should == "http://localhost:3000/images/mural.png"
   end
 end

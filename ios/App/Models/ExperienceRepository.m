@@ -20,7 +20,7 @@
         [responseMapping addAttributeMappingsFromDictionary:@{
          @"id":          @"dbId",
          @"tagline":     @"tagline",
-         @"image":       @"image",
+         @"image_url":   @"imageUrl",
          @"latitude":    @"latitude",
          @"longitude":   @"longitude",
          }];
@@ -33,7 +33,7 @@
         [requestMapping addAttributeMappingsFromDictionary:@{
          @"dbId":          @"id",
          @"tagline":       @"tagline",
-         @"image":         @"image",
+         @"imageUrl":      @"image_url",
          @"latitude":      @"latitude",
          @"longitude":     @"longitude",
          }];
