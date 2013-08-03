@@ -1,7 +1,9 @@
-#import "AppDelegate.h"
 #import <RestKit/RestKit.h>
+
+#import "AppDelegate.h"
 #import "Experience.h"
 #import "ExperienceRepository.h"
+#import "ImageRepository.h"
 #import "LocationManager.h"
 #import "RecommendationNavigationController.h"
 #import "ExperienceBrowserViewController.h"
