@@ -35,23 +35,6 @@ describe Experience do
      }.should change(Experience, :count).by(1)
   end
 
-  describe "to_json" do
-    def self.it_should_use_correct_base_url_for(environment, base_url)
-      it "should use correct base url for #{environment} environment" do
-        set_environment environment
-        experience = FactoryGirl.create(:experience, image_url: "mural.png")
-        experience_attributes = JSON.parse(experience.to_json)
-        experience_attributes['image_url'].should == "#{base_url}/images/mural.png"
-      end
-    end
-
-    it_should_use_correct_base_url_for 'test', 'http://localhost:3000'
-    it_should_use_correct_base_url_for 'development', 'http://localhost:3000'
-    it_should_use_correct_base_url_for 'integration', 'http://localhost:3001'
-    it_should_use_correct_base_url_for 'staging', 'http://engage-me-api-staging.herokuapp.com'
-    it_should_use_correct_base_url_for 'production', 'http://engage-me-api.herokuapp.com'
-  end
-
   it "returns the experiences associated with the given group" do
     second_group = Experience.for_group(2)
 

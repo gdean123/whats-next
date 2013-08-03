@@ -10,10 +10,10 @@ def get_group(group)
 end
 
 def create_experiences
-  @berkeley_experience = FactoryGirl.create(:experience, {tagline: "Berkeley experience"}.merge(berkeley))
-  @los_angeles_experience = FactoryGirl.create(:experience, {tagline: "Los Angeles experience"}.merge(los_angeles))
-  @santa_cruz_experience = FactoryGirl.create(:experience, {tagline: "Santa Cruz experience"}.merge(santa_cruz))
-  @fremont_experience = FactoryGirl.create(:experience, {tagline: "Fremont experience"}.merge(fremont))
+  @berkeley_experience = FactoryGirl.create(:experience, {tagline: "Berkeley experience", image_url:"http://www.berkeley.com"}.merge(berkeley))
+  @los_angeles_experience = FactoryGirl.create(:experience, {tagline: "Los Angeles experience", image_url:"http://www.la.com"}.merge(los_angeles))
+  @santa_cruz_experience = FactoryGirl.create(:experience, {tagline: "Santa Cruz experience", image_url:"http://www.santacruz.com"}.merge(santa_cruz))
+  @fremont_experience = FactoryGirl.create(:experience, {tagline: "Fremont experience", image_url:"http://www.fremont.com"}.merge(fremont))
 end
 
 describe "Experiences" do
@@ -27,6 +27,9 @@ describe "Experiences" do
     get "/experiences/#{@berkeley_experience.id}"
     result = JSON.parse(response.body)
     result["tagline"].should == @berkeley_experience.tagline
+    result["latitude"].should == @berkeley_experience.latitude
+    result["longitude"].should == @berkeley_experience.longitude
+    result["image_url"].should == @berkeley_experience.image_url
   end
 
   it "creates an experience and renders the id" do
@@ -90,12 +93,5 @@ describe "Experiences" do
     expect {
       delete "/experiences/#{experience.id}"
     }.to change(Experience, :count).by(-1)
-  end
-
-  it "generates the right url" do
-    experience = FactoryGirl.create(:experience, image_url: "mural.png")
-    get "/experiences/#{experience.id}"
-    result = JSON.parse(response.body)
-    result["image_url"].should == "http://localhost:3000/images/mural.png"
   end
 end
