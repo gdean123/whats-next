@@ -12,10 +12,12 @@
     if (self) {
         [self setNavigationBarHidden:YES];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:nil tag:1];
+
+        ExperienceBuilder *experienceBuilder = [[ExperienceBuilder alloc] initWithRepository:repository locationManager:locationManager];
         
         self.photoViewController = [[PhotoViewController alloc] init];
         
-        self.experienceRecommendationViewController =[[ExperienceRecommendationViewController alloc] initWithRepository:repository locationManager:locationManager];
+        self.experienceRecommendationViewController =[[ExperienceRecommendationViewController alloc] initWithExperienceBuilder:experienceBuilder];
         
         [self pushViewController:self.photoViewController animated:YES];
         

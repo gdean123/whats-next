@@ -4,19 +4,17 @@
 
 @interface ExperienceRecommendationViewController ()
 
-@property (strong, nonatomic) id<ExperienceRepositoryInterface> repository;
-@property (strong, nonatomic) id<LocationManagerInterface> locationManager;
+@property (strong, nonatomic) ExperienceBuilder *experienceBuilder;
 
 @end
 
 @implementation ExperienceRecommendationViewController
 
-- (id)initWithRepository:(id<ExperienceRepositoryInterface>)repository locationManager:(id<LocationManagerInterface>)locationManager
+-(ExperienceRecommendationViewController *)initWithExperienceBuilder:(ExperienceBuilder *)experienceBuilder
 {
     self = [super initWithNibName:@"ExperienceRecommendationViewController" bundle:nil];
     if (self) {
-        self.repository = repository;
-        self.locationManager = locationManager;
+        self.experienceBuilder = experienceBuilder;
     }
     return self;
 }
@@ -39,19 +37,15 @@
 
 - (void)createExperience
 {
-    double latitude = [self.locationManager currentLocation].coordinate.latitude;
-    double longitude = [self.locationManager currentLocation].coordinate.longitude;
+    self.experienceBuilder.tagline = self.taglineTextField.text;
     
-    Experience *experience = [[Experience alloc] initWithTagline:self.taglineTextField.text image:nil latitude:latitude longitude:longitude];
-    
-    [self.repository create:experience then:^(Experience * e) {        
-        [self.delegate experienceWasCreated];
+    [self.experienceBuilder createThen:^(Experience *experience) {
+        [self.delegate experienceWasCreated];        
     }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.taglineTextField resignFirstResponder];
-    
     [self createExperience];
     
     return NO;

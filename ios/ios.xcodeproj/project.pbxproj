@@ -23,6 +23,9 @@
 		5E83CEF8176C033C00D49DAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */; };
 		5E83CEF9176C071100D49DAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */; };
 		5E83CEFA176C071800D49DAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */; };
+		5E8B401D17ACAA8A00ACF940 /* ExperienceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B401C17ACAA8A00ACF940 /* ExperienceBuilder.m */; };
+		5E8B401E17ACAA8A00ACF940 /* ExperienceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B401C17ACAA8A00ACF940 /* ExperienceBuilder.m */; };
+		5E8B402017ACAAA700ACF940 /* ExperienceBuilderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B401F17ACAAA700ACF940 /* ExperienceBuilderSpec.mm */; };
 		5E93EF9917A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */; };
 		5E93EF9C17A22C2600E5CB2B /* FakeLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */; };
 		5EC56C5B17AB5CEB00BC322C /* new_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EC56C5A17AB5CEB00BC322C /* new_photo.png */; };
@@ -109,6 +112,9 @@
 		5E83CEEF176BAF7200D49DAC /* Blocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blocker.m; path = Helpers/Blocker.m; sourceTree = "<group>"; };
 		5E83CEF3176C032600D49DAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E83CEF6176C033600D49DAC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5E8B401B17ACAA8A00ACF940 /* ExperienceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceBuilder.h; path = App/Models/ExperienceBuilder.h; sourceTree = SOURCE_ROOT; };
+		5E8B401C17ACAA8A00ACF940 /* ExperienceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceBuilder.m; path = App/Models/ExperienceBuilder.m; sourceTree = SOURCE_ROOT; };
+		5E8B401F17ACAAA700ACF940 /* ExperienceBuilderSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceBuilderSpec.mm; path = Models/ExperienceBuilderSpec.mm; sourceTree = "<group>"; };
 		5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceRecommendationViewControllerSpec.mm; path = Controllers/ExperienceRecommendationViewControllerSpec.mm; sourceTree = "<group>"; };
 		5E93EF9A17A22C2600E5CB2B /* FakeLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeLocationManager.h; path = Fakes/FakeLocationManager.h; sourceTree = "<group>"; };
 		5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeLocationManager.m; path = Fakes/FakeLocationManager.m; sourceTree = "<group>"; };
@@ -364,6 +370,7 @@
 				9E5CFE0A17657134001D0BF0 /* ModelSpec.mm */,
 				5ED77E17178BBAE70049EB07 /* LocationManagerSpec.mm */,
 				5EC56C6117AB648400BC322C /* ImageRepositorySpec.mm */,
+				5E8B401F17ACAAA700ACF940 /* ExperienceBuilderSpec.mm */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -426,6 +433,8 @@
 				9E5CFE0417654FC4001D0BF0 /* Model.m */,
 				5EC56C5D17AB645A00BC322C /* ImageRepository.h */,
 				5EC56C5E17AB645A00BC322C /* ImageRepository.m */,
+				5E8B401B17ACAA8A00ACF940 /* ExperienceBuilder.h */,
+				5E8B401C17ACAA8A00ACF940 /* ExperienceBuilder.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -665,6 +674,7 @@
 				9EA5A56117A7773300E8DF6B /* RecommendationNavigationController.m in Sources */,
 				9EBE01F417A8B99A0094BA99 /* PhotoViewController.m in Sources */,
 				5EC56C5F17AB645A00BC322C /* ImageRepository.m in Sources */,
+				5E8B401D17ACAA8A00ACF940 /* ExperienceBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +709,8 @@
 				9EA5A56417A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm in Sources */,
 				9EBE01F517A8B99A0094BA99 /* PhotoViewController.m in Sources */,
 				5EC56C6317AB648400BC322C /* ImageRepositorySpec.mm in Sources */,
+				5E8B401E17ACAA8A00ACF940 /* ExperienceBuilder.m in Sources */,
+				5E8B402017ACAAA700ACF940 /* ExperienceBuilderSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,7 +747,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -744,7 +756,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
+				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Production;
@@ -812,7 +824,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -822,7 +835,8 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TEST=1";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
+				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Test;
@@ -917,7 +931,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -926,7 +940,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
+				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Development;
@@ -935,7 +949,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7B54470C504370ADB40E16 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Daniel Brown (8TS354QARR)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: George Dean (3J389UZZF4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Externals\"",
@@ -944,7 +958,7 @@
 				GCC_PREFIX_HEADER = "App/Supporting Files/ios-Prefix.pch";
 				INFOPLIST_FILE = "App/Supporting Files/ios-Info.plist";
 				PRODUCT_NAME = "What's Next?";
-				PROVISIONING_PROFILE = "7EE97B73-AD6B-4ADF-BD64-2CA6F281B0DC";
+				PROVISIONING_PROFILE = "1D22107B-33CD-429C-8578-41355577B3E5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Staging;

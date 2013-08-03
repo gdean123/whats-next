@@ -2,6 +2,7 @@
 #import "LocationManagerInterface.h"
 #import "ExperienceRepositoryInterface.h"
 #import "RecommendationDelegate.h"
+#import "ExperienceBuilder.h"
 
 @interface ExperienceRecommendationViewController : UIViewController <UITextFieldDelegate>
 
@@ -10,6 +11,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *recommendButton;
 
-- (id)initWithRepository:(id<ExperienceRepositoryInterface>)repository locationManager:(id<LocationManagerInterface>)locationManager;
+-(ExperienceRecommendationViewController *)initWithExperienceBuilder:(ExperienceBuilder *)experienceBuilder;
 
 @end

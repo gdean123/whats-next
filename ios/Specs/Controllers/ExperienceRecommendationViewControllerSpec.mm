@@ -1,4 +1,5 @@
 #import "ExperienceRecommendationViewController.h"
+#import "ExperienceBuilder.h"
 #import "FakeExperienceRepository.h"
 #import "FakeLocationManager.h"
 
@@ -10,12 +11,14 @@ SPEC_BEGIN(ExperienceRecommendationViewControllerSpec)
 describe(@"ExperienceRecommendationViewController", ^{
     __block FakeExperienceRepository *repository;
     __block FakeLocationManager *locationManager;
+    __block ExperienceBuilder *builder;
     __block ExperienceRecommendationViewController *controller;
 
     beforeEach(^{
         repository = [[FakeExperienceRepository alloc] init];
         locationManager = [[FakeLocationManager alloc] initWithLatitude:123 longitude:456];
-        controller = [[ExperienceRecommendationViewController alloc] initWithRepository:repository locationManager:locationManager];
+        builder = [[ExperienceBuilder alloc] initWithRepository:repository locationManager:locationManager];
+        controller = [[ExperienceRecommendationViewController alloc] initWithExperienceBuilder:builder];
 
         [controller.view setNeedsDisplay];
     });
@@ -25,14 +28,9 @@ describe(@"ExperienceRecommendationViewController", ^{
         [controller textFieldShouldReturn:controller.taglineTextField];
     };
     
-    xit(@"shows the keyboard immediately", ^{
-        spy_on(controller.taglineTextField);
-        [controller viewDidAppear:NO];
-        controller.taglineTextField should have_received(@selector(becomeFirstResponder));
-    });
-    
     it(@"creates a new experience at the current location", ^{
         createExperience();
+        repository.lastCreatedExperience.tagline should equal(@"Run the Lyon Street stairs");
         repository.lastCreatedExperience.latitude should equal(123);
         repository.lastCreatedExperience.longitude should equal(456);
     });
