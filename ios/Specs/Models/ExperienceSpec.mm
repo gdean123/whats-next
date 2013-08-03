@@ -10,7 +10,7 @@ describe(@"Experience", ^{
 
     beforeEach(^{
         experience = [[Experience alloc] initWithTagline:@"Run the Lyon Street stairs"
-                                                   image:@"http://localhost:3000/images/parrots.png"
+                                                   imageUrl:@"http://localhost:3000/images/parrots.png"
                                                 latitude:37.806207
                                                longitude:-122.423104];
     });
@@ -19,8 +19,8 @@ describe(@"Experience", ^{
         experience.tagline should equal(@"Run the Lyon Street stairs");
     });
     
-    it(@"has an image attribute", ^{
-        experience.image should equal(@"http://localhost:3000/images/parrots.png");
+    it(@"has an image url attribute", ^{
+        experience.imageUrl should equal(@"http://localhost:3000/images/parrots.png");
     });
     
     it(@"has a latitude attribute", ^{

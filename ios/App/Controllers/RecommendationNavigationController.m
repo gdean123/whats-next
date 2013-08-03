@@ -6,14 +6,14 @@
 
 @implementation RecommendationNavigationController
 
-- (id)initWithRepository:(id<ExperienceRepositoryInterface>)repository locationManager:(id<LocationManagerInterface>)locationManager
+- (id)initWithExperienceRepository:(id<ExperienceRepositoryInterface>)experienceRepository imageRepository:(id<ImageRepositoryInterface>)imageRepository locationManager:(id<LocationManagerInterface>)locationManager
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         [self setNavigationBarHidden:YES];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:nil tag:1];
 
-        ExperienceBuilder *experienceBuilder = [[ExperienceBuilder alloc] initWithRepository:repository locationManager:locationManager];
+        ExperienceBuilder *experienceBuilder = [[ExperienceBuilder alloc] initWithExperienceRepository:experienceRepository imageRepository:imageRepository locationManager:locationManager];
         
         self.photoViewController = [[PhotoViewController alloc] init];
         

@@ -14,7 +14,7 @@ describe(@"ExperienceViewController", ^{
     __block CLLocation *closeLocation;
     
     beforeEach(^{
-        experience = [[Experience alloc] initWithTagline:@"Run the Lyon Street stairs" image:nil latitude:37.788319 longitude:-122.40744];
+        experience = [[Experience alloc] initWithTagline:@"Run the Lyon Street stairs" imageUrl:nil latitude:37.788319 longitude:-122.40744];
 
         locationManager = [[LocationManager alloc] init];
         controller = [[ExperienceViewController alloc] initWithExperience:experience locationManager:locationManager];

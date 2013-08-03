@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "ImageRepositoryInterface.h"
 
-@interface ImageRepository : NSObject<ImageRepositoryInterface>
+@protocol ImageRepositoryInterface <NSObject>
 
 - (void)create:(UIImage *)imageToCreate then:(void (^) (NSString *))successBlock;
 

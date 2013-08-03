@@ -32,7 +32,7 @@ describe(@"ExperienceBrowserViewController", ^{
         NSMutableArray *experiences = [[NSMutableArray alloc] init];
 
         for (int taglineIndex = 0; taglineIndex < [taglines count]; taglineIndex++) {
-            Experience *experience = [[Experience alloc] initWithTagline:taglines[taglineIndex] image:nil latitude:37.788319 longitude:-122.40744];
+            Experience *experience = [[Experience alloc] initWithTagline:taglines[taglineIndex] imageUrl:nil latitude:37.788319 longitude:-122.40744];
             
             [experiences addObject:experience];
         }

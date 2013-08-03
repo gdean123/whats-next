@@ -1,4 +1,5 @@
 #import "PhotoViewController.h"
+#import "ExperienceBuilder.h"
 
 @interface PhotoViewController ()
 
@@ -6,10 +7,11 @@
 
 @implementation PhotoViewController
 
-- (id)init
+- (PhotoViewController *)initWithExperienceBuilder:(ExperienceBuilder *)experienceBuilder
 {
     self = [super initWithNibName:@"PhotoViewController" bundle:nil];
-    if (self) {        
+    if (self) {
+        self.experienceBuilder = experienceBuilder;
     }
     return self;
 }
@@ -38,6 +40,12 @@
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [self.experienceBuilder setImage:image];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

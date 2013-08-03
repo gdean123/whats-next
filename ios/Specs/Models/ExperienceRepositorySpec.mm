@@ -18,7 +18,7 @@ describe(@"ExperienceRepository", ^{
     __block Experience *fourthExperience;
 
     Experience *(^createExperience)(NSString *, NSString *, double, double) = ^(NSString *tagline, NSString *image, double latitude, double longitude) {
-        Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline image:image latitude:latitude longitude:longitude];
+        Experience *modelToCreate = [[Experience alloc] initWithTagline:tagline imageUrl:image latitude:latitude longitude:longitude];
         [repository create:modelToCreate then:^(Experience * e){ [blocker doneWaiting]; }];
         [blocker wait];
         
@@ -82,7 +82,7 @@ describe(@"ExperienceRepository", ^{
     it(@"can retrieve a saved experience", ^{
         Experience *retrievedExperience = getExperienceWithId(firstExperience.dbId);
         retrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
-        retrievedExperience.image should equal(@"http://localhost:3001/images/first.jpg");
+        retrievedExperience.imageUrl should equal(@"http://localhost:3001/images/first.jpg");
     });
     
     it(@"can retrieve experiences for group 1", ^{
@@ -94,13 +94,13 @@ describe(@"ExperienceRepository", ^{
         [experiences count] should equal(3);
         
         secondRetrievedExperience.tagline should equal(@"Check out a mural in the mission");
-        secondRetrievedExperience.image should equal(@"http://localhost:3001/images/second.jpg");
+        secondRetrievedExperience.imageUrl should equal(@"http://localhost:3001/images/second.jpg");
         
         thirdRetrievedExperience.tagline should equal(@"Watch the sunset on the Dumbarton bridge");
-        thirdRetrievedExperience.image should equal(@"http://localhost:3001/images/third.jpg");
+        thirdRetrievedExperience.imageUrl should equal(@"http://localhost:3001/images/third.jpg");
         
         firstRetrievedExperience.tagline should equal(@"Run the Lyon Street stairs");
-        firstRetrievedExperience.image should equal(@"http://localhost:3001/images/first.jpg");
+        firstRetrievedExperience.imageUrl should equal(@"http://localhost:3001/images/first.jpg");
     });
     
     it(@"can retrieve experiences for group 2", ^{
@@ -110,7 +110,7 @@ describe(@"ExperienceRepository", ^{
         [experiences count] should equal(1);
         
         firstRetrievedExperience.tagline should equal(@"Visit the Rengstorff House");
-        firstRetrievedExperience.image should equal(@"http://localhost:3001/images/fourth.jpg");
+        firstRetrievedExperience.imageUrl should equal(@"http://localhost:3001/images/fourth.jpg");
     });
     
     it(@"retrieves no experiences for page after last group", ^{

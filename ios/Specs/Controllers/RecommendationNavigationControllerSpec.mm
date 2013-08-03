@@ -1,6 +1,7 @@
 #import "RecommendationNavigationController.h"
 #import "ExperienceRecommendationViewController.h"
 #import "FakeExperienceRepository.h"
+#import "FakeImageRepository.h"
 #import "FakeLocationManager.h"
 
 using namespace Cedar::Matchers;
@@ -12,11 +13,13 @@ describe(@"RecommendationNavigationController", ^{
     __block RecommendationNavigationController *controller;
     __block FakeLocationManager *locationManager;
     __block FakeExperienceRepository *experienceRepository;
+    __block FakeImageRepository *imageRepository;
     
     beforeEach(^{
         locationManager = [[FakeLocationManager alloc] init];
         experienceRepository = [[FakeExperienceRepository alloc] init];
-        controller = [[RecommendationNavigationController alloc] initWithRepository:experienceRepository locationManager:locationManager];
+        imageRepository = [[FakeImageRepository alloc] init];
+        controller = [[RecommendationNavigationController alloc] initWithExperienceRepository:experienceRepository imageRepository:imageRepository locationManager:locationManager];
     });
     
     it(@"hides navigation bar", ^{

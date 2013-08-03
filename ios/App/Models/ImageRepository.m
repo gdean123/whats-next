@@ -25,7 +25,7 @@ NSString *const BUCKET = @"whatsnext";
     return repository;
 }
 
-- (void)create:(UIImage *)imageToCreate then:(void (^) (NSURL *))successBlock
+- (void)create:(UIImage *)imageToCreate then:(void (^) (NSString *))successBlock
 {
     NSString *key = [self generateGUID];
     
@@ -34,7 +34,7 @@ NSString *const BUCKET = @"whatsnext";
     request.data = UIImagePNGRepresentation(imageToCreate);
     [self.s3 putObject:request];
 
-    NSURL *url = [self generatePreSignedURLRequestForKey:key];
+    NSString *url = [[self generatePreSignedURLRequestForKey:key] absoluteString];
     
     successBlock(url);
 }

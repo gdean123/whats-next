@@ -26,6 +26,8 @@
 		5E8B401D17ACAA8A00ACF940 /* ExperienceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B401C17ACAA8A00ACF940 /* ExperienceBuilder.m */; };
 		5E8B401E17ACAA8A00ACF940 /* ExperienceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B401C17ACAA8A00ACF940 /* ExperienceBuilder.m */; };
 		5E8B402017ACAAA700ACF940 /* ExperienceBuilderSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B401F17ACAAA700ACF940 /* ExperienceBuilderSpec.mm */; };
+		5E8B402217ACB88300ACF940 /* PhotoViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B402117ACB88300ACF940 /* PhotoViewControllerSpec.mm */; };
+		5E8B402517ACBF9500ACF940 /* FakeImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B402417ACBF9500ACF940 /* FakeImageRepository.m */; };
 		5E93EF9917A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */; };
 		5E93EF9C17A22C2600E5CB2B /* FakeLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */; };
 		5EC56C5B17AB5CEB00BC322C /* new_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EC56C5A17AB5CEB00BC322C /* new_photo.png */; };
@@ -115,6 +117,10 @@
 		5E8B401B17ACAA8A00ACF940 /* ExperienceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperienceBuilder.h; path = App/Models/ExperienceBuilder.h; sourceTree = SOURCE_ROOT; };
 		5E8B401C17ACAA8A00ACF940 /* ExperienceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperienceBuilder.m; path = App/Models/ExperienceBuilder.m; sourceTree = SOURCE_ROOT; };
 		5E8B401F17ACAAA700ACF940 /* ExperienceBuilderSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceBuilderSpec.mm; path = Models/ExperienceBuilderSpec.mm; sourceTree = "<group>"; };
+		5E8B402117ACB88300ACF940 /* PhotoViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PhotoViewControllerSpec.mm; path = Controllers/PhotoViewControllerSpec.mm; sourceTree = "<group>"; };
+		5E8B402317ACBF9500ACF940 /* FakeImageRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeImageRepository.h; path = Fakes/FakeImageRepository.h; sourceTree = "<group>"; };
+		5E8B402417ACBF9500ACF940 /* FakeImageRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeImageRepository.m; path = Fakes/FakeImageRepository.m; sourceTree = "<group>"; };
+		5E8B402617ACC02D00ACF940 /* ImageRepositoryInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRepositoryInterface.h; path = App/Interfaces/ImageRepositoryInterface.h; sourceTree = SOURCE_ROOT; };
 		5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceRecommendationViewControllerSpec.mm; path = Controllers/ExperienceRecommendationViewControllerSpec.mm; sourceTree = "<group>"; };
 		5E93EF9A17A22C2600E5CB2B /* FakeLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeLocationManager.h; path = Fakes/FakeLocationManager.h; sourceTree = "<group>"; };
 		5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeLocationManager.m; path = Fakes/FakeLocationManager.m; sourceTree = "<group>"; };
@@ -237,6 +243,8 @@
 				5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */,
 				5E93EF9A17A22C2600E5CB2B /* FakeLocationManager.h */,
 				5E93EF9B17A22C2600E5CB2B /* FakeLocationManager.m */,
+				5E8B402317ACBF9500ACF940 /* FakeImageRepository.h */,
+				5E8B402417ACBF9500ACF940 /* FakeImageRepository.m */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -344,6 +352,7 @@
 				9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */,
 				5E93EF9817A222DA00E5CB2B /* ExperienceRecommendationViewControllerSpec.mm */,
 				9EA5A56317A778D200E8DF6B /* RecommendationNavigationControllerSpec.mm */,
+				5E8B402117ACB88300ACF940 /* PhotoViewControllerSpec.mm */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -416,6 +425,7 @@
 				5E93EF9F17A237A300E5CB2B /* LocationManagerInterface.h */,
 				5E93EF9D17A22E7D00E5CB2B /* ExperienceRepositoryInterface.h */,
 				5E93EFA217A38F3D00E5CB2B /* LocationManagerDelegate.h */,
+				5E8B402617ACC02D00ACF940 /* ImageRepositoryInterface.h */,
 			);
 			name = Interfaces;
 			sourceTree = "<group>";
@@ -711,6 +721,8 @@
 				5EC56C6317AB648400BC322C /* ImageRepositorySpec.mm in Sources */,
 				5E8B401E17ACAA8A00ACF940 /* ExperienceBuilder.m in Sources */,
 				5E8B402017ACAAA700ACF940 /* ExperienceBuilderSpec.mm in Sources */,
+				5E8B402217ACB88300ACF940 /* PhotoViewControllerSpec.mm in Sources */,
+				5E8B402517ACBF9500ACF940 /* FakeImageRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
