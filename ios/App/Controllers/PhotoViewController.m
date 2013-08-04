@@ -1,5 +1,6 @@
 #import "PhotoViewController.h"
 #import "ExperienceBuilder.h"
+#import "RecommendationNavigationController.h"
 
 @interface PhotoViewController ()
 
@@ -46,6 +47,9 @@
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     [self.experienceBuilder setImage:image];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    RecommendationNavigationController *parentController = (RecommendationNavigationController *)self.parentViewController;
+    [parentController pushViewController:parentController.experienceRecommendationViewController animated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
