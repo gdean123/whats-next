@@ -19,8 +19,7 @@
         
         self.experienceRecommendationViewController =[[ExperienceRecommendationViewController alloc] initWithExperienceBuilder:experienceBuilder];
         
-        [self pushViewController:self.photoViewController animated:YES];
-        
+        [self pushViewController:self.photoViewController animated:YES];        
     }
     return self;
 }

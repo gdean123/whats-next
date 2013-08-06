@@ -41,7 +41,7 @@ NSString *const BUCKET = @"whatsnext";
 
 -(NSString *)generateUrlForKey:(NSString *)key
 {
-    return [NSString stringWithFormat:@"https://s3.amazonaws.com/whatsnext/%@", key];
+    return [NSString stringWithFormat:@"https://s3.amazonaws.com/whatsnext/%@.png", key];
 }
 
 -(NSString *)generateGUID

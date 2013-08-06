@@ -21,6 +21,7 @@
     self.experienceRepository = [[ExperienceRepository alloc] init];
     self.locationManager = [[LocationManager alloc] init];
     [self.locationManager registerForLocationUpdates:self];
+    self.imageRepository = [[ImageRepository alloc] init];
     
     return YES;
 }
