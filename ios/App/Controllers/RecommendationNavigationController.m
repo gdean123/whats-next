@@ -15,7 +15,7 @@
 
         ExperienceBuilder *experienceBuilder = [[ExperienceBuilder alloc] initWithExperienceRepository:experienceRepository imageRepository:imageRepository locationManager:locationManager];
         
-        self.photoViewController = [[PhotoViewController alloc] init];
+        self.photoViewController = [[PhotoViewController alloc] initWithExperienceBuilder:experienceBuilder];
         
         self.experienceRecommendationViewController =[[ExperienceRecommendationViewController alloc] initWithExperienceBuilder:experienceBuilder];
         
