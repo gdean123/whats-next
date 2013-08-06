@@ -30,8 +30,8 @@ NSString *const BUCKET = @"whatsnext";
     NSString *key = [self generateGUID];
     
     S3PutObjectRequest *request = [[S3PutObjectRequest alloc] initWithKey:key inBucket:BUCKET];
-    request.contentType = @"image/png";
-    request.data = UIImagePNGRepresentation(imageToCreate);
+    request.contentType = @"image/jpeg";
+    request.data = UIImageJPEGRepresentation(imageToCreate, 0.7);
     [self.s3 putObject:request];
 
     NSString *url = [[self generatePreSignedURLRequestForKey:key] absoluteString];

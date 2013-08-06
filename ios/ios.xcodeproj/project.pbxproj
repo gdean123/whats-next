@@ -105,7 +105,7 @@
 		5E0EB6FC17713D7900E147EE /* FakeExperienceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeExperienceRepository.m; path = Fakes/FakeExperienceRepository.m; sourceTree = "<group>"; };
 		5E1801371775F71E0053432C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "App/Supporting Files/Constants.h"; sourceTree = SOURCE_ROOT; };
 		5E5822A517741873005EDA6F /* ExperienceViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ExperienceViewControllerSpec.mm; path = Controllers/ExperienceViewControllerSpec.mm; sourceTree = "<group>"; };
-		5E827878173D77F900C34000 /* What's Next?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Next?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E827878173D77F900C34000 /* WhatsNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E82787B173D77F900C34000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E82787D173D77F900C34000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E82787F173D77F900C34000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -267,7 +267,7 @@
 		5E827879173D77F900C34000 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E827878173D77F900C34000 /* What's Next?.app */,
+				5E827878173D77F900C34000 /* WhatsNext.app */,
 				5EF8DF29176534D2009393E7 /* Specs.octest */,
 			);
 			name = Products;
@@ -507,7 +507,7 @@
 			);
 			name = App;
 			productName = ios;
-			productReference = 5E827878173D77F900C34000 /* What's Next?.app */;
+			productReference = 5E827878173D77F900C34000 /* WhatsNext.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5EF8DF28176534D2009393E7 /* Specs */ = {
