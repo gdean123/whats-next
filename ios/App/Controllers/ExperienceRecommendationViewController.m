@@ -2,6 +2,8 @@
 #import "Experience.h"
 #import "AppDelegate.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface ExperienceRecommendationViewController ()
 
 @property (strong, nonatomic) ExperienceBuilder *experienceBuilder;
@@ -24,6 +26,12 @@
     [super viewDidLoad];
     
     self.taglineTextField.delegate = self;
+    
+    [[self.cancelButton layer] setBorderWidth:1.0f];
+    [[self.cancelButton layer] setBorderColor:[UIColor grayColor].CGColor];
+    
+    [[self.recommendButton layer] setBorderWidth:1.0f];
+    [[self.recommendButton layer] setBorderColor:[UIColor grayColor].CGColor];
     
     [self.cancelButton addTarget:self action:@selector(cancelButtonClick:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
     

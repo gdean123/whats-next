@@ -23,6 +23,7 @@
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     
     [self presentViewController:picker animated:YES completion:NULL];
 }
