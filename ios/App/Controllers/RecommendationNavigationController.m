@@ -11,7 +11,9 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         [self setNavigationBarHidden:YES];
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:nil tag:1];
+        
+        UIImage *tabarImage = [UIImage imageNamed:@"camera"];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Recommend" image:tabarImage tag:1];
 
         ExperienceBuilder *experienceBuilder = [[ExperienceBuilder alloc] initWithExperienceRepository:experienceRepository imageRepository:imageRepository locationManager:locationManager];
         

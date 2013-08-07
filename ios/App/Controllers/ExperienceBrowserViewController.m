@@ -31,7 +31,8 @@
         self.spinnerViewController = [[SpinnerViewController alloc] init];
         
         // associate tabbar item
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Experiences" image:nil tag:0];
+        UIImage *tabarImage = [UIImage imageNamed:@"thumb-up"];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Experiences" image:tabarImage tag:0];
     }
     
     return self;

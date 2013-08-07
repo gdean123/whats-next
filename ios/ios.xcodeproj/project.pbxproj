@@ -92,6 +92,8 @@
 		9EDE988B1794F5BB00C6F541 /* SpinnerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */; };
 		9EDE988D1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */; };
 		9EDEDC23176C2DFD00B012D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDEDC22176C2DFD00B012D6 /* CoreData.framework */; };
+		9EF4EF7317B1E1D300E40871 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF4EF7117B1E1D300E40871 /* camera.png */; };
+		9EF4EF7417B1E1D300E40871 /* thumb-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF4EF7217B1E1D300E40871 /* thumb-up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +189,8 @@
 		9EDE98891794F5BB00C6F541 /* SpinnerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpinnerViewController.xib; path = App/Views/SpinnerViewController.xib; sourceTree = SOURCE_ROOT; };
 		9EDE988C1794F5FF00C6F541 /* SpinnerViewControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SpinnerViewControllerSpec.mm; path = Controllers/SpinnerViewControllerSpec.mm; sourceTree = "<group>"; };
 		9EDEDC22176C2DFD00B012D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9EF4EF7117B1E1D300E40871 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = App/Resources/camera.png; sourceTree = SOURCE_ROOT; };
+		9EF4EF7217B1E1D300E40871 /* thumb-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumb-up.png"; path = "App/Resources/thumb-up.png"; sourceTree = SOURCE_ROOT; };
 		FC7B54470C504370ADB40E16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -452,6 +456,8 @@
 		9E2C8D761762DDEC00190A4D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9EF4EF7117B1E1D300E40871 /* camera.png */,
+				9EF4EF7217B1E1D300E40871 /* thumb-up.png */,
 				5EC56C5A17AB5CEB00BC322C /* new_photo.png */,
 				9E2C8D811762DE5800190A4D /* Default-568h@2x.png */,
 				9E2C8D821762DE5800190A4D /* Default.png */,
@@ -574,6 +580,8 @@
 				9E3B6EE7179F8EB000B2AB42 /* ExperienceRecommendationViewController.xib in Resources */,
 				9EBE01F917A8B9CD0094BA99 /* PhotoViewController.xib in Resources */,
 				5EC56C5B17AB5CEB00BC322C /* new_photo.png in Resources */,
+				9EF4EF7317B1E1D300E40871 /* camera.png in Resources */,
+				9EF4EF7417B1E1D300E40871 /* thumb-up.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
