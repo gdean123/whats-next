@@ -10,8 +10,8 @@
 
 @implementation ImageRepository
 
-NSString *const AWS_ACCESS_KEY = @"AKIAIDUAQSBMWYKUPMTA";
-NSString *const AWS_SECRET_CODE = @"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";
+NSString *const AWS_ACCESS_KEY = @"...";
+NSString *const AWS_SECRET_CODE = @"...";
 NSString *const BUCKET = @"whatsnext";
 
 - (ImageRepository *)init
