@@ -1,4 +1,4 @@
-engage_me
+What's Next?
 ============
 
-This is currently a skeleton application for an iOS app with a Rails backend
+What's Next is an iPhone app that enables people to browse and recommend experiences.
